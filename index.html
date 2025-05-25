@@ -1,8 +1,160 @@
-<!DOCTYPE html><html lang="tr"><head>  <meta charset="UTF-8" />  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>Pi Network Görev Paneli</title>  <style>    :root {      --mor: #5e3c91;      --sari: #ffcc00;      --açık: #f6f2fb;    }    body {      font-family: 'Segoe UI', sans-serif;      margin: 0;      padding: 0;      background: var(--açık);      color: #333;    }    header {      background: var(--mor);      color: white;      padding: 20px 0;      text-align: center;    }    header img {      width: 60px;      margin-bottom: 10px;    }    h1 {      margin: 10px 0;      font-size: 24px;    }    .container {      max-width: 600px;      margin: 30px auto;      background: white;      padding: 30px 25px;      border-radius: 15px;      box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);    }    .desc {      font-size: 16px;      margin-bottom: 25px;      text-align: center;    }    .task-box {      background: #fdf7e2;      border: 1px solid #ffe999;      padding: 15px;      border-radius: 10px;      margin: 10px 0;    }    .task-box a {      color: var(--mor);      font-weight: bold;      text-decoration: none;      font-size: 17px;    }    .btn {      background: var(--mor);      color: white;      border: none;      padding: 14px 30px;      font-size: 16px;      border-radius: 10px;      margin-top: 25px;      cursor: pointer;      font-weight: bold;      width: 100%;      text-decoration: none;      display: inline-block;      text-align: center;    }    .btn:hover {      background: #472b70;    }    footer {      text-align: center;      font-size: 14px;      color: #aaa;      margin: 40px 0 20px;    }  </style></head><body>
-  <header>    <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Pi_Logo.png" alt="Pi Logo" />    <h1>Pi Network Hediye Görevleri</h1>  </header>
-  <div class="container">    <p class="desc">      Topluluğumuza destek ver, görevleri tamamla ve özel Pi hediyeni hemen kap!    </p>
-    <div class="task-box">      1. <a href="https://instagram.com/pi_network" target="_blank">@pi_network Instagram hesabını takip et</a>    </div>
-    <div class="task-box">      2. <a href="https://instagram.com/pinetcore" target="_blank">@pinetcore Instagram hesabını takip et</a>    </div>
-    <a href="form.html" class="btn">Görevleri Tamamladım</a>  </div>
-  <footer>    © 2025 PiNetcore | Pi topluluğu için geliştirildi  </footer>
-</body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pi Network Community Campaign</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    :root {
+      --primary-color: #612AAF;
+      --secondary-color: #8E44AD;
+      --bg-color: #f7f7f9;
+      --text-color: #222;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header img {
+      width: 100px;
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-size: 32px;
+      margin: 10px 0;
+    }
+    .intro {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .section {
+      max-width: 900px;
+      margin: 50px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .section h2 {
+      color: var(--primary-color);
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    .section p {
+      font-size: 17px;
+    }
+    .tasks {
+      margin-top: 20px;
+    }
+    .task {
+      background: #f0ecfa;
+      border-left: 5px solid var(--secondary-color);
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+    .task a {
+      color: var(--primary-color);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .task a:hover {
+      text-decoration: underline;
+    }
+    .cta-button {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 30px auto 0;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #4e2291;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #888;
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .section {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 26px;
+      }
+      .cta-button {
+        font-size: 16px;
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Pi_Network_Logo.png/240px-Pi_Network_Logo.png" alt="Pi Network Logo" />
+    <h1 id="main-title">Pi Network Community Campaign</h1>
+    <p class="intro" id="main-subtitle">
+      Join our official promotional campaign and get rewarded with 314 Pi for completing two simple social tasks.
+    </p>
+  </header>
+
+  <section class="section">
+    <h2 id="how-to">How to Participate</h2>
+    <p id="description">
+      As a part of growing the Pi Network community and visibility, we’re running a limited-time event where eligible participants can receive a reward of <strong>314 Pi</strong>. To join:
+    </p>
+    <div class="tasks">
+      <div class="task" id="task1">
+        1. Follow the official <a href="https://www.instagram.com/pi_network" target="_blank">pi_network</a> Instagram account.
+      </div>
+      <div class="task" id="task2">
+        2. Follow the <a href="https://www.instagram.com/pinetcore" target="_blank">pinetcore</a> community page on Instagram.
+      </div>
+    </div>
+    <button class="cta-button" onclick="window.location.href='form.html'" id="cta">
+      I Have Completed The Tasks
+    </button>
+  </section>
+
+  <footer id="footer">
+    This event is organized by trusted Pi Network contributors and community advisors.<br />
+    For official information, always refer to the Pi Network mobile app or website.
+  </footer>
+
+  <script>
+    const lang = navigator.language || navigator.userLanguage;
+    if (lang.startsWith('tr')) {
+      document.getElementById("main-title").innerText = "Pi Network Topluluk Kampanyası";
+      document.getElementById("main-subtitle").innerText = "Resmi tanıtım kampanyamıza katılın, iki basit sosyal görevi tamamlayarak 314 Pi kazanın.";
+      document.getElementById("how-to").innerText = "Katılım Şartları";
+      document.getElementById("description").innerText = "Pi Network topluluğunu büyütmek amacıyla düzenlenen bu kampanya kapsamında, aşağıdaki görevleri tamamlayan katılımcılar 314 Pi ile ödüllendirilecektir:";
+      document.getElementById("task1").innerHTML = '1. <a href="https://www.instagram.com/pi_network" target="_blank">pi_network</a> Instagram hesabını takip edin.';
+      document.getElementById("task2").innerHTML = '2. <a href="https://www.instagram.com/pinetcore" target="_blank">pinetcore</a> topluluk sayfasını takip edin.';
+      document.getElementById("cta").innerText = "Görevleri Tamamladım";
+      document.getElementById("footer").innerHTML = "Bu etkinlik, Pi Network danışmanları ve topluluk temsilcileri tarafından düzenlenmektedir.<br />Resmi bilgiler için Pi uygulaması veya web sitesini ziyaret edin.";
+    }
+  </script>
+</body>
+</html>
