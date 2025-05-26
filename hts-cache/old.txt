@@ -1,3 +1,0 @@
-date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
-19:13:07	178/178	---M--	301	error ('Moved%20Permanently')	text/html	date:Mon,%2026%20May%202025%2016:13:07%20GMT	http://pi6th.com/robots.txt		(from )
-19:13:08	178/178	---M--	301	error ('Moved%20Permanently')	text/html	date:Mon,%2026%20May%202025%2016:13:08%20GMT	http://pi6th.com/	C:/Users/M%c4%b0SAF%c4%b0R/Desktop/pi6th/pi6th.com/index.html	(from )
