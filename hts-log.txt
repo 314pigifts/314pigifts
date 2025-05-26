@@ -1,0 +1,32 @@
+HTTrack3.49-2+htsswf+htsjava launched on Mon, 26 May 2025 19:17:21 at https://pi6th.com +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "tr, en, *" https://pi6th.com -O1 "C:\Users\MİSAFİR\Desktop\pi6th" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+19:17:22	Warning: 	HTML file (602 bytes) retransferred due to lack of cache: https://pi6th.com/
+19:17:24	Warning: 	can not create directory to C:/Users/MİSAFİR/Desktop/pi6th/cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css.z
+19:17:24	Warning: 	can not create directory to C:/Users/MİSAFİR/Desktop/pi6th/cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css.z
+19:17:27	Warning: 	can not create directory to C:/Users/MİSAFİR/Desktop/pi6th/app.lazytrack.io/vdweb.min9a49.js.z
+19:17:27	Error: 	Unable to save file C:/Users/MİSAFİR/Desktop/pi6th/app.lazytrack.io/vdweb.min9a49.js: No error
+19:17:28	Warning: 	can not create directory to C:/Users/MİSAFİR/Desktop/pi6th/s10.histats.com/js15_as.js.z
+19:17:28	Error: 	Unable to save file C:/Users/MİSAFİR/Desktop/pi6th/s10.histats.com/js15_as.js: No error
+19:17:28	Warning: 	file not stored in cache due to bogus state (broken size, expected 4547 got 0): s10.histats.com/js15_as.js
+19:17:29	Error: 	"Error when decompressing" (-1) at link https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css (from https://pi6th.com/)
+19:17:29	Error: 	"Error when decompressing" (-1) at link https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css (from https://pi6th.com/)
+19:17:29	Error: 	"Bad Request" (400) at link https://www.googletagmanager.com/gtm.js?id= (from https://pi6th.com/)
+19:17:29	Warning: 	Retry after error -4 (Incorrect length (0 Bytes, 4547 expected)) at link s10.histats.com/js15_as.js (from https://pi6th.com/)
+19:17:29	Error: 	"Bad Request" (400) at link https://pi6th.com/send.php (from https://pi6th.com/)
+19:17:30	Warning: 	can not create directory to C:/Users/MİSAFİR/Desktop/pi6th/s10.histats.com/js15_as.js.z
+19:17:30	Error: 	Unable to save file C:/Users/MİSAFİR/Desktop/pi6th/s10.histats.com/js15_as.js: No error
+19:17:30	Warning: 	file not stored in cache due to bogus state (broken size, expected 4547 got 0): s10.histats.com/js15_as.js
+19:17:30	Warning: 	Retry after error -4 (Incorrect length (0 Bytes, 4547 expected)) at link s10.histats.com/js15_as.js (from https://pi6th.com/)
+19:17:31	Warning: 	can not create directory to C:/Users/MİSAFİR/Desktop/pi6th/s10.histats.com/js15_as.js.z
+19:17:31	Error: 	Unable to save file C:/Users/MİSAFİR/Desktop/pi6th/s10.histats.com/js15_as.js: No error
+19:17:31	Warning: 	file not stored in cache due to bogus state (broken size, expected 4547 got 0): s10.histats.com/js15_as.js
+19:17:31	Error: 	"Incorrect length (0 Bytes, 4547 expected)" (-4) after 2 retries at link s10.histats.com/js15_as.js (from https://pi6th.com/)
+
+HTTrack Website Copier/3.49-2 mirror complete in 10 seconds : 16 links scanned, 8 files written (492238 bytes overall), 8 files updated [822892 bytes received at 82289 bytes/sec], 321998 bytes transferred using HTTP compression in 3 files, ratio 100%, 1.2 requests per connection
+(9 errors, 12 warnings, 0 messages)
